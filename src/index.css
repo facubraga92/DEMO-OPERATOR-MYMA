@@ -1,13 +1,62 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@font-face {
+  font-family: MuseoSans;
+  src: url("./assets/fonts/MuseoSans-500_italic.ttf");
+  fontStyle: 'italic';
+  format: ("ttf");
+  font-display: swap;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@font-face {
+  font-family: MuseoSans;
+  src: url("./assets/fonts/MuseoSans-500.ttf");
+  fontStyle: 'normal';
+  format: ("ttf");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: MuseoSansRounded;
+  src: url("./assets/fonts/MuseoSansRounded-500.ttf");
+  fontStyle: 'normal';
+  fontWeight: 500;
+  format: ("ttf");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: MuseoSansRounded;
+  src: url("./assets/fonts/MuseoSansRounded-900.ttf");
+  fontStyle: 'normal';
+  fontWeight: 900;
+  format: ("ttf");
+  font-display: swap;
+}
+
+#cardNumber,
+#expirationDate,
+#securityCode,
+#form-checkout__securityCode-container {
+  font-family: "MuseoSans", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.4375em;
+  color: rgba(0, 0, 0, 0.87);
+  box-sizing: border-box;
+  position: relative;
+  cursor: text;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #FFF;
+  font-size: 15px;
+  padding: 6px 12px;
+  border-radius: 2rem;
+  width: 100%;
+  height: 64px;
+  margin-bottom: 10px;
 }

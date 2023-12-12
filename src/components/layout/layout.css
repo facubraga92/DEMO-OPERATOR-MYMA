@@ -1,0 +1,17 @@
+.splash-container {
+  opacity: 1; /* Initially visible */
+  transition: opacity 0.7s ease-in-out; /* Smooth transition */
+}
+
+.content-container {
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.7s ease-in-out; /* Smooth transition */
+}
+
+.visible {
+  opacity: 1;
+}
+
+.hidden {
+  opacity: 0;
+}
