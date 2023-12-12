@@ -4,7 +4,7 @@ import TipsAndUpdatesIcon from "@mui/icons-material/TipsAndUpdates";
 const HeaderContainer = styled(AppBar)((props) => {
   return {
     width: "100%",
-    backgroundColor: props.theme.palette.primary.main,
+    backgroundColor: props.theme.palette.purple.main,
     padding: "15px 44px",
     display: "flex",
   };

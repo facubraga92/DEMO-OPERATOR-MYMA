@@ -1,13 +1,13 @@
 import { useNavigate } from "react-router-dom";
 import { styled } from "@mui/material";
 
-
 import { ReactComponent as LogoutIcon } from "../../assets/images/logout-icon.svg";
-import { ReactComponent as WalletIcon } from "../../assets/images/wallet-icon.svg";
-// import { ReactComponent as DoorIcon } from "../../assets/images/door-icon.svg";
-import QrCode2Icon from "@mui/icons-material/QrCode2";
+import { ReactComponent as AlertsIcon } from "../../assets/images/notifications-icon.svg";
+
 import { ReactComponent as HomeIcon } from "../../assets/images/home-icon.svg";
-import { ReactComponent as BuyIcon } from "../../assets/images/buy-icon.svg";
+import { ReactComponent as ExperimentsIcon } from "../../assets/images/erlenmeyer-icon.svg";
+import { ReactComponent as VendingMachineIcon } from "../../assets/images/vending-icon.svg";
+
 import { authLogout } from "../../services/auth.service";
 
 const FooterContainer = styled("div")((props) => {
@@ -16,7 +16,7 @@ const FooterContainer = styled("div")((props) => {
     maxWidth: "calc(600px - 48px)",
     position: "fixed",
     bottom: 0,
-    backgroundColor: props.theme.palette.primary.main,
+    backgroundColor: props.theme.palette.purple.main,
     borderRadius: "20px 20px 0 0",
     border: "solid 2px white",
     borderBottom: "none",
@@ -38,7 +38,7 @@ const FooterButtons = styled("div")((props) => {
     alignItems: "center",
     padding: "10px",
     "& svg": {
-      fill: props.active ? "#EA572E" : "#FFF",
+      fill: props.active ? "black" : "white",
     },
   };
 });
@@ -81,7 +81,7 @@ const Footer = ({ activeIconID = 2 }) => {
         active={1 === activeIconID}
         onClick={() => handleButtonClick("purchases")}
       >
-        <BuyIcon />
+        <VendingMachineIcon />
       </FooterButtons>
       <FooterButtons
         className="joyride-step3"
@@ -89,14 +89,14 @@ const Footer = ({ activeIconID = 2 }) => {
         active={2 === activeIconID}
         onClick={() => handleButtonClick("openDoor")}
       >
-        <QrCode2Icon fontSize="large" />
+        <ExperimentsIcon fontSize="large" />
       </FooterButtons>
       <FooterButtons
         className="joyride-step4"
         active={3 === activeIconID}
         onClick={() => handleButtonClick("cards")}
       >
-        <WalletIcon />
+        <AlertsIcon />
       </FooterButtons>
       <FooterButtons
         className="joyride-step5"

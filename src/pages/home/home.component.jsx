@@ -81,12 +81,16 @@ const HomeBody = ({ storeId, cardId }) => {
   // ]);
 
   const [runTutorial, setRunTutorial] = useState(false);
-  const { storeData } = useSelector((state) => state.store);
   return (
     <>
       <JoyrideTutorial runTutorial={runTutorial} />
       <Header
-        title={storeData?.name ? `${storeData.name}` : "Tienda"}
+        title={
+          <div style={{ display: "flex", justifyContent: "center" }}>
+            <div style={{ fontWeight: "normal" }}>Mi</div>
+            <div style={{ fontWeight: "bold" }}>&nbsp;Portfolio</div>
+          </div>
+        }
         setRunTutorial={setRunTutorial}
         runTutorial={runTutorial}
       />
