@@ -1,6 +1,4 @@
-// import { useSearchParams } from "react-router-dom";
-// import { useNavigate } from "react-router-dom";
-// import { useSelector } from "react-redux";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Box } from "@mui/material";
 import { useEffect } from "react";
@@ -17,6 +15,7 @@ import { getCustomerCards } from "../../services/customer.service";
 import { getStore } from "../../services/store.service";
 
 import BigCard from "../../components/big-card/big-card.component";
+import SmallCard from "../../components/small-card/small-card.component";
 
 const HomeBody = () => {
   const [runTutorial, setRunTutorial] = useState(false);
@@ -29,6 +28,24 @@ const HomeBody = () => {
     quantity: "768",
     currencySymbol: "€",
     percentage: "71%",
+  };
+
+  const smallCardDataPositive = {
+    type: "Rotación",
+    productName: "Ensalada Caesar",
+    productSku: "T: LANZ IZ . EID:002",
+    oldValue: "2",
+    newValue: "10",
+    change: "+80%",
+    variant: "positive",
+  };
+
+  const smallCardDataNegative = {
+    type: "Costos",
+    title: "[Mercadona] Aumento de Precio sku: Sandiwch Pollo",
+    description:
+      "INGRESOS: Baja de ingresos,en caso de no actualizar Precio Venta",
+    variant: "negative",
   };
 
   return (
@@ -53,6 +70,9 @@ const HomeBody = () => {
         }}
       >
         <BigCard {...bigCardData} />
+        <SmallCard {...smallCardDataPositive} />
+        <SmallCard {...smallCardDataPositive} />
+        <SmallCard {...smallCardDataNegative} />
       </Box>
       <Footer />
     </>
