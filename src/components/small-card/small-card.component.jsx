@@ -49,13 +49,29 @@ const SmallCard = ({
               <Typography sx={{ color: "#979797" }}>{type}</Typography>
             </Grid>
             <Grid xs={12} sx={{ display: "flex", alignItems: "center" }}>
-              <Typography sx={{ fontSize: "1rem", fontWeight: "bold" }}>
-                {title}{" "}
+              <Typography
+                sx={{
+                  fontSize: "0.85rem",
+                  fontWeight: "bold",
+                  overflow: "hidden",
+                  textOverflow: "ellipsis",
+                  whiteSpace: "nowrap",
+                }}
+              >
+                {title}
               </Typography>
             </Grid>
             <Grid sx={{ display: "flex", alignItems: "center" }} xs={12}>
-              <Typography sx={{ fontSize: "0.7rem", fontWeight: "bold" }}>
-                {description}{" "}
+              <Typography
+                sx={{
+                  fontSize: "0.65rem",
+                  fontWeight: "bold",
+                  overflow: "hidden",
+                  textOverflow: "ellipsis",
+                  whiteSpace: "nowrap",
+                }}
+              >
+                {description}
               </Typography>
             </Grid>
           </Grid>
@@ -93,12 +109,28 @@ const SmallCard = ({
               <Typography sx={{ color: "#979797" }}>{type}</Typography>
             </Grid>
             <Grid xs={12} sx={{ display: "flex", alignItems: "center" }}>
-              <Typography sx={{ fontSize: "0.8rem", fontWeight: "bold" }}>
+              <Typography
+                sx={{
+                  fontSize: "0.8rem",
+                  fontWeight: "bold",
+                  overflow: "hidden",
+                  textOverflow: "ellipsis",
+                  whiteSpace: "nowrap",
+                }}
+              >
                 {productName}
               </Typography>
             </Grid>
             <Grid sx={{ display: "flex", alignItems: "center" }} xs={12}>
-              <Typography sx={{ fontSize: "0.6rem", fontWeight: "bold" }}>
+              <Typography
+                sx={{
+                  fontSize: "0.6rem",
+                  fontWeight: "bold",
+                  overflow: "hidden",
+                  textOverflow: "ellipsis",
+                  whiteSpace: "nowrap",
+                }}
+              >
                 {productSku}
               </Typography>
             </Grid>
