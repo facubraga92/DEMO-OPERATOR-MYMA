@@ -18,7 +18,8 @@ const BigCard = ({
         xs={12}
         sx={{
           marginInline: "1rem",
-          marginBlock: "1rem",
+          marginBlockStart: "1rem",
+          marginBlockEnd:"0.5rem",
           display: "flex",
           flexDirection: "column",
           width: "350px",

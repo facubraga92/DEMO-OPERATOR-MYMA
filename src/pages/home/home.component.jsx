@@ -16,6 +16,7 @@ import { getStore } from "../../services/store.service";
 
 import BigCard from "../../components/big-card/big-card.component";
 import SmallCard from "../../components/small-card/small-card.component";
+import Section from "../../components/section/section.component";
 
 const HomeBody = () => {
   const [runTutorial, setRunTutorial] = useState(false);
@@ -70,8 +71,10 @@ const HomeBody = () => {
         }}
       >
         <BigCard {...bigCardData} />
+        <Section title="Experimentos" header />
         <SmallCard {...smallCardDataPositive} />
         <SmallCard {...smallCardDataPositive} />
+        <Section title="Alertas & Notificaciones" />
         <SmallCard {...smallCardDataNegative} />
       </Box>
       <Footer />
