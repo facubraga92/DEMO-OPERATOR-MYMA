@@ -177,38 +177,25 @@ const BigCard = ({
               }}
             >
               <ToggleButtonGroup
-                variant="outlined"
                 color="black"
                 sx={{ height: "25px" }}
                 value={"2W"}
                 exclusive
-                aria-label="text alignment"
                 size="small"
               >
-                <ToggleButton value="W" aria-label="left aligned">
+                <ToggleButton value="W" aria-label="week">
                   W{" "}
                 </ToggleButton>
-                <ToggleButton value="2W" aria-label="centered">
+                <ToggleButton value="2W" aria-label="sprint">
                   2W
                 </ToggleButton>
-                <ToggleButton value="M" aria-label="right aligned">
+                <ToggleButton value="M" aria-label="month">
                   M{" "}
                 </ToggleButton>
-                <ToggleButton value="Y" aria-label="justified">
+                <ToggleButton value="Y" aria-label="year">
                   Y{" "}
                 </ToggleButton>
               </ToggleButtonGroup>
-              {/* <ButtonGroup
-                variant="outlined"
-                color="black"
-                sx={{ height: "25px" }}
-                size="small"
-              >
-                <Button value="1W">1W</Button>
-                <Button value="1M">1M</Button>
-                <Button value="1Y">1Y</Button>
-                <Button value="All">All</Button>
-              </ButtonGroup> */}
             </Grid>
           </Grid>
           <Grid
