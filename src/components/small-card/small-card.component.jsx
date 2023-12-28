@@ -45,10 +45,10 @@ const SmallCard = ({
             <ArrowSmallRed />
           </Grid>
           <Grid item sx={{ display: "flex", flexDirection: "column" }} xs={11}>
-            <Grid sx={{ display: "flex", alignItems: "center" }} xs={12}>
+            <Grid item sx={{ display: "flex", alignItems: "center" }} xs={12}>
               <Typography sx={{ color: "#979797" }}>{type}</Typography>
             </Grid>
-            <Grid xs={12} sx={{ display: "flex", alignItems: "center" }}>
+            <Grid item xs={12} sx={{ display: "flex", alignItems: "center" }}>
               <Typography
                 sx={{
                   fontSize: "0.85rem",
@@ -61,7 +61,7 @@ const SmallCard = ({
                 {title}
               </Typography>
             </Grid>
-            <Grid sx={{ display: "flex", alignItems: "center" }} xs={12}>
+            <Grid item sx={{ display: "flex", alignItems: "center" }} xs={12}>
               <Typography
                 sx={{
                   fontSize: "0.65rem",
@@ -105,10 +105,10 @@ const SmallCard = ({
             <ArrowSmallGreen />
           </Grid>
           <Grid item sx={{ display: "flex", flexDirection: "column" }} xs={4}>
-            <Grid sx={{ display: "flex", alignItems: "center" }} xs={12}>
+            <Grid item sx={{ display: "flex", alignItems: "center" }} xs={12}>
               <Typography sx={{ color: "#979797" }}>{type}</Typography>
             </Grid>
-            <Grid xs={12} sx={{ display: "flex", alignItems: "center" }}>
+            <Grid item xs={12} sx={{ display: "flex", alignItems: "center" }}>
               <Typography
                 sx={{
                   fontSize: "0.8rem",
@@ -121,7 +121,7 @@ const SmallCard = ({
                 {productName}
               </Typography>
             </Grid>
-            <Grid sx={{ display: "flex", alignItems: "center" }} xs={12}>
+            <Grid item sx={{ display: "flex", alignItems: "center" }} xs={12}>
               <Typography
                 sx={{
                   fontSize: "0.6rem",

@@ -1,5 +1,11 @@
 import React from "react";
-import { Button, ButtonGroup, Grid, Paper, Typography } from "@mui/material";
+import {
+  Grid,
+  Paper,
+  ToggleButton,
+  ToggleButtonGroup,
+  Typography,
+} from "@mui/material";
 import { ReactComponent as TrendLineChartIcon } from "../../assets/images/trend-line-chart.svg";
 import { ReactComponent as ArrowBigGreen } from "../../assets/images/arrow-green-big.svg";
 
@@ -19,7 +25,7 @@ const BigCard = ({
         sx={{
           marginInline: "1rem",
           marginBlockStart: "1rem",
-          marginBlockEnd:"0.5rem",
+          marginBlockEnd: "0.5rem",
           display: "flex",
           flexDirection: "column",
           width: "350px",
@@ -70,6 +76,7 @@ const BigCard = ({
             }}
           >
             <Grid
+              item
               xs={12}
               sx={{
                 minHeight: "2rem",
@@ -77,24 +84,41 @@ const BigCard = ({
                 alignItems: "center",
               }}
             >
-              <Grid xs={2} sx={{ display: "flex", justifyContent: "center" }}>
+              <Grid
+                item
+                xs={2}
+                sx={{ display: "flex", justifyContent: "center" }}
+              >
                 <TrendLineChartIcon style={{ height: "32px" }} />
               </Grid>
-              <Grid xs={8} sx={{ display: "flex", justifyContent: "center" }}>
+              <Grid
+                item
+                xs={8}
+                sx={{ display: "flex", justifyContent: "center" }}
+              >
                 <Typography sx={{ fontSize: "1.25rem" }}>{headline}</Typography>
               </Grid>
             </Grid>
             <Grid
+              item
               xs={12}
               sx={{
                 minHeight: "4rem",
                 display: "flex",
               }}
             >
-              <Grid xs={2} sx={{ display: "flex", justifyContent: "center" }}>
+              <Grid
+                item
+                xs={2}
+                sx={{ display: "flex", justifyContent: "center" }}
+              >
                 <ArrowBigGreen />
               </Grid>
-              <Grid xs={8} sx={{ display: "flex", justifyContent: "center" }}>
+              <Grid
+                item
+                xs={8}
+                sx={{ display: "flex", justifyContent: "center" }}
+              >
                 {" "}
                 <Typography
                   sx={{
@@ -118,6 +142,7 @@ const BigCard = ({
                 </Typography>
               </Grid>
               <Grid
+                item
                 xs={2}
                 sx={{
                   color: "#fff",
@@ -142,6 +167,7 @@ const BigCard = ({
               </Grid>
             </Grid>
             <Grid
+              item
               xs={12}
               sx={{
                 minHeight: "2rem",
@@ -150,7 +176,27 @@ const BigCard = ({
                 alignItems: "end",
               }}
             >
-              <ButtonGroup
+              <ToggleButtonGroup
+                color="black"
+                sx={{ height: "25px" }}
+                value={"2W"}
+                exclusive
+                size="small"
+              >
+                <ToggleButton value="W" aria-label="week">
+                  W{" "}
+                </ToggleButton>
+                <ToggleButton value="2W" aria-label="sprint">
+                  2W
+                </ToggleButton>
+                <ToggleButton value="M" aria-label="month">
+                  M{" "}
+                </ToggleButton>
+                <ToggleButton value="Y" aria-label="year">
+                  Y{" "}
+                </ToggleButton>
+              </ToggleButtonGroup>
+              {/* <ButtonGroup
                 variant="outlined"
                 color="black"
                 sx={{ height: "25px" }}
@@ -160,7 +206,7 @@ const BigCard = ({
                 <Button value="1M">1M</Button>
                 <Button value="1Y">1Y</Button>
                 <Button value="All">All</Button>
-              </ButtonGroup>
+              </ButtonGroup> */}
             </Grid>
           </Grid>
           <Grid
