@@ -8,15 +8,10 @@ import {
 } from "@mui/material";
 import { ReactComponent as TrendLineChartIcon } from "../../assets/images/trend-line-chart.svg";
 import { ReactComponent as ArrowBigGreen } from "../../assets/images/arrow-green-big.svg";
+import { ReactComponent as ArrowBigRed } from "../../assets/images/arrow-red-big.svg";
 
-const BigCard = ({
-  title,
-  subtitle,
-  headline,
-  quantity,
-  currencySymbol,
-  percentage,
-}) => {
+const BigCard = ({ metricsData, bigCardData, period, setPeriod }) => {
+  const percentage = Math.round(parseFloat(metricsData?.sales?.difference_str));
   return (
     <Grid container>
       <Grid
@@ -53,7 +48,7 @@ const BigCard = ({
                 fontSize: "24px",
               }}
             >
-              {title}
+              {bigCardData.title}
             </Typography>
             <Typography
               sx={{
@@ -62,7 +57,7 @@ const BigCard = ({
                 fontSize: "18px",
               }}
             >
-              {subtitle}
+              {bigCardData.subtitle}
             </Typography>
           </Grid>
           <Grid
@@ -96,7 +91,9 @@ const BigCard = ({
                 xs={8}
                 sx={{ display: "flex", justifyContent: "center" }}
               >
-                <Typography sx={{ fontSize: "1.25rem" }}>{headline}</Typography>
+                <Typography sx={{ fontSize: "1.25rem" }}>
+                  {bigCardData.headline}
+                </Typography>
               </Grid>
             </Grid>
             <Grid
@@ -112,7 +109,11 @@ const BigCard = ({
                 xs={2}
                 sx={{ display: "flex", justifyContent: "center" }}
               >
-                <ArrowBigGreen />
+                {metricsData?.sales?.difference < 0 ? (
+                  <ArrowBigRed />
+                ) : (
+                  <ArrowBigGreen />
+                )}
               </Grid>
               <Grid
                 item
@@ -129,7 +130,7 @@ const BigCard = ({
                     textOverflow: "ellipsis",
                   }}
                 >
-                  {quantity}
+                  {metricsData?.sales?.total}
                 </Typography>
                 <Typography
                   sx={{
@@ -138,7 +139,7 @@ const BigCard = ({
                     alignItems: "flex-end",
                   }}
                 >
-                  {currencySymbol}
+                  {metricsData?.currency?.symbol}
                 </Typography>
               </Grid>
               <Grid
@@ -154,7 +155,9 @@ const BigCard = ({
                 <Typography
                   sx={{
                     fontSize: "1rem",
-                    backgroundColor: "#2CAF5F",
+                    backgroundColor: `${
+                      metricsData?.sales?.difference < 0 ? "#FD3F03" : "#2CAF5F"
+                    }`,
                     borderRadius: "3px",
                     padding: "5px",
                     overflow: "hidden",
@@ -162,7 +165,7 @@ const BigCard = ({
                     textOverflow: "ellipsis",
                   }}
                 >
-                  {percentage}
+                  {`${percentage}%`}
                 </Typography>
               </Grid>
             </Grid>
@@ -179,20 +182,26 @@ const BigCard = ({
               <ToggleButtonGroup
                 color="black"
                 sx={{ height: "25px" }}
-                value={"2W"}
+                value={period}
+                onChange={(event, newValue) => {
+                  // Verificar si el nuevo valor es diferente al valor actual o no es null
+                  if (newValue !== period && newValue !== null) {
+                    setPeriod(newValue);
+                  }
+                }}
                 exclusive
                 size="small"
               >
-                <ToggleButton value="W" aria-label="week">
+                <ToggleButton value="w" aria-label="week">
                   W{" "}
                 </ToggleButton>
-                <ToggleButton value="2W" aria-label="sprint">
+                <ToggleButton value="2w" aria-label="sprint">
                   2W
                 </ToggleButton>
-                <ToggleButton value="M" aria-label="month">
+                <ToggleButton value="m" aria-label="month">
                   M{" "}
                 </ToggleButton>
-                <ToggleButton value="Y" aria-label="year">
+                <ToggleButton value="y" aria-label="year">
                   Y{" "}
                 </ToggleButton>
               </ToggleButtonGroup>
