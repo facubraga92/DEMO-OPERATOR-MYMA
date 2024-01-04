@@ -3,14 +3,18 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
 import React, { useState } from "react";
 
-const Filters = ({dropdownData}) => {
-  const [filters, setFilters] = useState({ clusters: "default" });
+const Filters = ({ dropdownData }) => {
+  const [filters, setFilters] = useState({
+    clusters: "default",
+    locations: "default",
+    categories: "default",
+    machines: "default",
+  });
 
-  const handleAge = (event) => {
-    setFilters({ ...filters, clusters: event.target.value });
+  const handleFilters = (event) => {
+    const { name, value } = event.target;
+    setFilters({ ...filters, [name]: value });
   };
-
-  console.log(dropdownData)
   return (
     <Grid
       container
@@ -28,6 +32,7 @@ const Filters = ({dropdownData}) => {
         xs={3}
       >
         <Select
+          name="clusters"
           IconComponent={() => (
             <KeyboardArrowDownIcon sx={{ fontSize: "0.7rem", color: "#999" }} />
           )}
@@ -56,7 +61,7 @@ const Filters = ({dropdownData}) => {
             },
           }}
           value={filters.clusters}
-          onChange={handleAge}
+          onChange={handleFilters}
         >
           <MenuItem
             sx={{
@@ -68,9 +73,19 @@ const Filters = ({dropdownData}) => {
           >
             Cluster
           </MenuItem>
-          <MenuItem value={10}>Ten</MenuItem>
-          <MenuItem value={20}>Twenty</MenuItem>
-          <MenuItem value={30}>Thirty</MenuItem>
+          {dropdownData?.clusters?.map((element, i) => {
+            if (element !== "default") {
+              return (
+                <MenuItem
+                  sx={{ display: "flex", justifyContent: "center" }}
+                  key={i}
+                  value={element}
+                >
+                  {element}
+                </MenuItem>
+              );
+            }
+          })}
         </Select>
       </Grid>
       <Grid
@@ -79,6 +94,7 @@ const Filters = ({dropdownData}) => {
         xs={3}
       >
         <Select
+          name="locations"
           IconComponent={() => (
             <KeyboardArrowDownIcon sx={{ fontSize: "0.7rem", color: "#999" }} />
           )}
@@ -106,8 +122,8 @@ const Filters = ({dropdownData}) => {
               borderColor: "#663B73",
             },
           }}
-          value={filters.clusters}
-          onChange={handleAge}
+          value={filters.locations}
+          onChange={handleFilters}
         >
           <MenuItem
             sx={{
@@ -119,9 +135,19 @@ const Filters = ({dropdownData}) => {
           >
             Ubicación
           </MenuItem>
-          <MenuItem value={10}>Ten</MenuItem>
-          <MenuItem value={20}>Twenty</MenuItem>
-          <MenuItem value={30}>Thirty</MenuItem>
+          {dropdownData?.locations?.map((element, i) => {
+            if (element !== "default") {
+              return (
+                <MenuItem
+                  sx={{ display: "flex", justifyContent: "center" }}
+                  key={i}
+                  value={element}
+                >
+                  {element}
+                </MenuItem>
+              );
+            }
+          })}
         </Select>
       </Grid>
       <Grid
@@ -130,6 +156,7 @@ const Filters = ({dropdownData}) => {
         xs={3}
       >
         <Select
+          name="categories"
           IconComponent={() => (
             <KeyboardArrowDownIcon sx={{ fontSize: "0.7rem", color: "#999" }} />
           )}
@@ -157,8 +184,8 @@ const Filters = ({dropdownData}) => {
               borderColor: "#663B73",
             },
           }}
-          value={filters.clusters}
-          onChange={handleAge}
+          value={filters.categories}
+          onChange={handleFilters}
         >
           <MenuItem
             sx={{
@@ -170,9 +197,19 @@ const Filters = ({dropdownData}) => {
           >
             Categoría
           </MenuItem>
-          <MenuItem value={10}>Ten</MenuItem>
-          <MenuItem value={20}>Twenty</MenuItem>
-          <MenuItem value={30}>Thirty</MenuItem>
+          {dropdownData?.categories?.map((element, i) => {
+            if (element !== "default") {
+              return (
+                <MenuItem
+                  sx={{ display: "flex", justifyContent: "center" }}
+                  key={i}
+                  value={element}
+                >
+                  {element}
+                </MenuItem>
+              );
+            }
+          })}
         </Select>
       </Grid>
       <Grid
@@ -181,12 +218,13 @@ const Filters = ({dropdownData}) => {
         xs={3}
       >
         <Select
+          name="machines"
           IconComponent={() => (
             <KeyboardArrowDownIcon sx={{ fontSize: "0.7rem", color: "#999" }} />
           )}
-          MenuProps={{ sx: { width: "5rem" } }}
+          MenuProps={{ sx: { width: "auto" } }}
           sx={{
-            width: "5rem",
+            width: "6rem",
             height: "1.5rem",
             fontSize: "0.6rem",
             fontWeight: "bold",
@@ -208,8 +246,8 @@ const Filters = ({dropdownData}) => {
               borderColor: "#663B73",
             },
           }}
-          value={filters.clusters}
-          onChange={handleAge}
+          value={filters.machines}
+          onChange={handleFilters}
         >
           <MenuItem
             sx={{
@@ -221,9 +259,24 @@ const Filters = ({dropdownData}) => {
           >
             Máquinas
           </MenuItem>
-          <MenuItem value={10}>Ten</MenuItem>
-          <MenuItem value={20}>Twenty</MenuItem>
-          <MenuItem value={30}>Thirty</MenuItem>
+          {dropdownData?.machines?.map((element, i) => {
+            return (
+              <MenuItem
+                sx={{
+                  paddingInline: "0",
+                  fontSize: "0.6rem",
+                  display: "flex",
+                  justifyContent: "center",
+                  paddingBlock: "0.5rem",
+                }}
+                key={i}
+                id={element.id}
+                value={element.id}
+              >
+                {element.alias}
+              </MenuItem>
+            );
+          })}
         </Select>
       </Grid>
     </Grid>
