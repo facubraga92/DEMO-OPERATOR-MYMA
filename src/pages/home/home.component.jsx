@@ -19,6 +19,7 @@ import SmallCard from "../../components/small-card/small-card.component";
 import Section from "../../components/section/section.component";
 import Metrics from "../../components/metrics/metrics.component";
 import axios from "axios";
+import Filters from "../../components/filters/filters.component";
 
 const HomeBody = () => {
   const [runTutorial, setRunTutorial] = useState(false);
@@ -26,6 +27,8 @@ const HomeBody = () => {
   const [metricsData, setMetricsData] = useState({});
 
   const [period, setPeriod] = useState("2w");
+
+  const [dropdownData, setDropdownData] = useState({});
 
   useEffect(() => {
     const fetch = async () => {
@@ -38,6 +41,18 @@ const HomeBody = () => {
 
     fetch();
   }, [period]);
+
+  useEffect(() => {
+    const fetch = async () => {
+      const { data } = await axios.get(
+        `http://localhost:3001/api/dd?clientId=natica`
+      );
+
+      setDropdownData(data);
+    };
+
+    fetch();
+  }, []);
 
   //hardcoded fake data.
   const bigCardData = {
@@ -64,37 +79,6 @@ const HomeBody = () => {
     variant: "negative",
   };
 
-  // const metricsData = {
-  //   filters: {
-  //     clientId: "natica",
-  //     perid: "w",
-  //     dateRange: {
-  //       currentPeriod: {
-  //         startDate: "2024-01-01T00:26:34.849Z",
-  //         endDate: "2024-01-07T00:26:34.849Z",
-  //       },
-  //       previousPeriod: {
-  //         startDate: "2023-12-25T00:26:34.851Z",
-  //         endDate: "2023-12-31T00:26:34.851Z",
-  //       },
-  //     },
-  //   },
-  //   sales: {
-  //     total: "60",
-  //     total_previous_period: "31.80",
-  //     avg: "15",
-  //     avg_sale_per_store: "20",
-  //     total_sales_recurring_customer: "10",
-  //   },
-  //   units: {
-  //     total: "0",
-  //     total_previous_period: "29",
-  //     avg_orders_per_customer: "NaN",
-  //     avg_units_per_order: "1.00",
-  //     total_recurring_customers: 0,
-  //   },
-  // };
-
   return (
     <>
       <JoyrideTutorial runTutorial={runTutorial} />
@@ -116,6 +100,7 @@ const HomeBody = () => {
           overflowX: "hidden",
         }}
       >
+        <Filters dropdownData={dropdownData} />
         <BigCard
           period={period}
           setPeriod={setPeriod}
