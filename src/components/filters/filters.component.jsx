@@ -1,7 +1,49 @@
+// eslint-disable-next-line
+import React, { useEffect, useState } from "react";
 import { Grid, MenuItem, Select } from "@mui/material";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import customSelectStyles from "./customSelectStyles";
 
-import React, { useState } from "react";
+const CustomSelect = ({ name, value, onChange, items, label, isMachines }) => (
+  <Select
+    name={name}
+    IconComponent={() => (
+      <KeyboardArrowDownIcon sx={{ fontSize: "0.7rem", color: "#999" }} />
+    )}
+    MenuProps={{ sx: { width: isMachines ? "auto" : "5rem" } }}
+    sx={customSelectStyles(isMachines)}
+    value={value}
+    onChange={onChange}
+  >
+    <MenuItem
+      sx={{
+        fontSize: "1rem",
+        justifyContent: "center",
+        color: "#663B73",
+      }}
+      value="default"
+    >
+      {label}
+    </MenuItem>
+    {items?.map((element, i) => {
+      if (element !== "default") {
+        return (
+          <MenuItem
+            sx={{
+              display: isMachines ? "flex" : "flex",
+              justifyContent: "center",
+            }}
+            key={i}
+            value={isMachines ? element.id : element}
+          >
+            {isMachines ? element.alias : element}
+          </MenuItem>
+        );
+      }
+      return null;
+    })}
+  </Select>
+);
 
 const Filters = ({ dropdownData }) => {
   const [filters, setFilters] = useState({
@@ -11,10 +53,17 @@ const Filters = ({ dropdownData }) => {
     machines: "default",
   });
 
+  //demo
+  // useEffect(() => {
+  //   console.log(filters);
+  // }, [filters]);
+  
+
   const handleFilters = (event) => {
     const { name, value } = event.target;
     setFilters({ ...filters, [name]: value });
   };
+
   return (
     <Grid
       container
@@ -28,256 +77,76 @@ const Filters = ({ dropdownData }) => {
     >
       <Grid
         item
-        sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
         xs={3}
       >
-        <Select
+        <CustomSelect
           name="clusters"
-          IconComponent={() => (
-            <KeyboardArrowDownIcon sx={{ fontSize: "0.7rem", color: "#999" }} />
-          )}
-          MenuProps={{ sx: { width: "5rem" } }}
-          sx={{
-            width: "5rem",
-            height: "1.5rem",
-            fontSize: "0.6rem",
-            fontWeight: "bold",
-            textAlign: "center",
-            color: "#663B73",
-            backgroundColor: "#fff",
-            //inner select padding
-            ".css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input":
-              {
-                padding: 0,
-              },
-            // ".MuiSelect-icon": {
-            //   visibility: "collapse",
-            // },
-            //select no-border
-            ".MuiOutlinedInput-notchedOutline": { border: 0 },
-            //focus border color
-            "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-              borderColor: "#663B73",
-            },
-          }}
           value={filters.clusters}
           onChange={handleFilters}
-        >
-          <MenuItem
-            sx={{
-              fontSize: "0.7rem",
-              justifyContent: "center",
-              color: "#663B73",
-            }}
-            value="default"
-          >
-            Cluster
-          </MenuItem>
-          {dropdownData?.clusters?.map((element, i) => {
-            if (element !== "default") {
-              return (
-                <MenuItem
-                  sx={{ display: "flex", justifyContent: "center" }}
-                  key={i}
-                  value={element}
-                >
-                  {element}
-                </MenuItem>
-              );
-            }
-          })}
-        </Select>
+          items={dropdownData?.clusters}
+          label="Cluster"
+          width="5rem"
+        />
       </Grid>
       <Grid
         item
-        sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
         xs={3}
       >
-        <Select
+        <CustomSelect
           name="locations"
-          IconComponent={() => (
-            <KeyboardArrowDownIcon sx={{ fontSize: "0.7rem", color: "#999" }} />
-          )}
-          MenuProps={{ sx: { width: "5rem" } }}
-          sx={{
-            width: "5rem",
-            height: "1.5rem",
-            fontSize: "0.6rem",
-            fontWeight: "bold",
-            textAlign: "center",
-            color: "#663B73",
-            backgroundColor: "#fff",
-            //inner select padding
-            ".css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input":
-              {
-                padding: 0,
-              },
-            // ".MuiSelect-icon": {
-            //   visibility: "collapse",
-            // },
-            //select no-border
-            ".MuiOutlinedInput-notchedOutline": { border: 0 },
-            //focus border color
-            "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-              borderColor: "#663B73",
-            },
-          }}
           value={filters.locations}
           onChange={handleFilters}
-        >
-          <MenuItem
-            sx={{
-              fontSize: "0.7rem",
-              justifyContent: "center",
-              color: "#663B73",
-            }}
-            value="default"
-          >
-            Ubicación
-          </MenuItem>
-          {dropdownData?.locations?.map((element, i) => {
-            if (element !== "default") {
-              return (
-                <MenuItem
-                  sx={{ display: "flex", justifyContent: "center" }}
-                  key={i}
-                  value={element}
-                >
-                  {element}
-                </MenuItem>
-              );
-            }
-          })}
-        </Select>
+          items={dropdownData?.locations}
+          label="Ubicación"
+          width="5rem"
+        />
       </Grid>
       <Grid
         item
-        sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
         xs={3}
       >
-        <Select
+        <CustomSelect
           name="categories"
-          IconComponent={() => (
-            <KeyboardArrowDownIcon sx={{ fontSize: "0.7rem", color: "#999" }} />
-          )}
-          MenuProps={{ sx: { width: "5rem" } }}
-          sx={{
-            width: "5rem",
-            height: "1.5rem",
-            fontSize: "0.6rem",
-            fontWeight: "bold",
-            textAlign: "center",
-            color: "#663B73",
-            backgroundColor: "#fff",
-            //inner select padding
-            ".css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input":
-              {
-                padding: 0,
-              },
-            // ".MuiSelect-icon": {
-            //   visibility: "collapse",
-            // },
-            //select no-border
-            ".MuiOutlinedInput-notchedOutline": { border: 0 },
-            //focus border color
-            "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-              borderColor: "#663B73",
-            },
-          }}
           value={filters.categories}
           onChange={handleFilters}
-        >
-          <MenuItem
-            sx={{
-              fontSize: "0.7rem",
-              justifyContent: "center",
-              color: "#663B73",
-            }}
-            value="default"
-          >
-            Categoría
-          </MenuItem>
-          {dropdownData?.categories?.map((element, i) => {
-            if (element !== "default") {
-              return (
-                <MenuItem
-                  sx={{ display: "flex", justifyContent: "center" }}
-                  key={i}
-                  value={element}
-                >
-                  {element}
-                </MenuItem>
-              );
-            }
-          })}
-        </Select>
+          items={dropdownData?.categories}
+          label="Categoría"
+          width="5rem"
+        />
       </Grid>
       <Grid
         item
-        sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
         xs={3}
       >
-        <Select
+        <CustomSelect
           name="machines"
-          IconComponent={() => (
-            <KeyboardArrowDownIcon sx={{ fontSize: "0.7rem", color: "#999" }} />
-          )}
-          MenuProps={{ sx: { width: "auto" } }}
-          sx={{
-            width: "6rem",
-            height: "1.5rem",
-            fontSize: "0.6rem",
-            fontWeight: "bold",
-            textAlign: "center",
-            color: "#663B73",
-            backgroundColor: "#fff",
-            //inner select padding
-            ".css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input":
-              {
-                padding: 0,
-              },
-            // ".MuiSelect-icon": {
-            //   visibility: "collapse",
-            // },
-            //select no-border
-            ".MuiOutlinedInput-notchedOutline": { border: 0 },
-            //focus border color
-            "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-              borderColor: "#663B73",
-            },
-          }}
           value={filters.machines}
           onChange={handleFilters}
-        >
-          <MenuItem
-            sx={{
-              fontSize: "0.7rem",
-              justifyContent: "center",
-              color: "#663B73",
-            }}
-            value="default"
-          >
-            Máquinas
-          </MenuItem>
-          {dropdownData?.machines?.map((element, i) => {
-            return (
-              <MenuItem
-                sx={{
-                  paddingInline: "0",
-                  fontSize: "0.6rem",
-                  display: "flex",
-                  justifyContent: "center",
-                  paddingBlock: "0.5rem",
-                }}
-                key={i}
-                id={element.id}
-                value={element.id}
-              >
-                {element.alias}
-              </MenuItem>
-            );
-          })}
-        </Select>
+          items={dropdownData?.machines}
+          label="Máquinas"
+          width="auto"
+          isMachines={true}
+        />
       </Grid>
     </Grid>
   );
