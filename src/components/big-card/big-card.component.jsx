@@ -122,8 +122,8 @@ const BigCard = ({ metricsData, bigCardData, period, setPeriod }) => {
               >
                 {" "}
                 <Typography
+                  variant="h2"
                   sx={{
-                    fontSize: "4rem",
                     lineHeight: "4rem",
                     overflow: "hidden",
                     whiteSpace: "nowrap",
