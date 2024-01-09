@@ -1,25 +1,24 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Box } from "@mui/material";
+import { Box, Skeleton } from "@mui/material";
 import { useEffect } from "react";
 import { useState } from "react";
-
-import { getProducts, getProductsPromo } from "../../services/product.service";
-
+// import { getProducts, getProductsPromo } from "../../services/product.service";
+// import { getCustomerCards } from "../../services/customer.service";
+// import { getStore } from "../../services/store.service";
 import Footer from "../../components/footer/footer.component";
 import Header from "../../components/header/header.component";
-
 import JoyrideTutorial from "../../utils/joyRideTutorial";
 import ReactGA from "react-ga4";
-import { getCustomerCards } from "../../services/customer.service";
-import { getStore } from "../../services/store.service";
-
 import BigCard from "../../components/big-card/big-card.component";
-import SmallCard from "../../components/small-card/small-card.component";
+// import SmallCard from "../../components/small-card/small-card.component";
 import Section from "../../components/section/section.component";
 import Metrics from "../../components/metrics/metrics.component";
 import axios from "axios";
 import Filters from "../../components/filters/filters.component";
+import Slider from "react-slick";
+import "../../../node_modules/slick-carousel/slick/slick.css";
+import "../../../node_modules/slick-carousel/slick/slick-theme.css";
 
 const HomeBody = () => {
   const [runTutorial, setRunTutorial] = useState(false);
@@ -29,6 +28,9 @@ const HomeBody = () => {
   const [period, setPeriod] = useState("2w");
 
   const [dropdownData, setDropdownData] = useState({});
+
+  const [machinesSelectorDisabled, setMachinesSelectorDisabled] =
+    useState(true);
 
   useEffect(() => {
     const fetch = async () => {
@@ -54,13 +56,34 @@ const HomeBody = () => {
     fetch();
   }, []);
 
+  const handleSlideChange = (index) => {
+    // Check if the index of the current slide is 0
+    const isZero = index === 0;
+    // Update the variable based on the condition
+    setMachinesSelectorDisabled(isZero);
+    // You can perform more actions as needed
+  };
+
+  const bigSliderSettings = {
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    afterChange: handleSlideChange,
+  };
+
   //hardcoded fake data.
-  const bigCardData = {
+  const bigCardFirstSlider = {
     title: "Ingresos",
     subtitle: "Marina de Empresas",
     headline: "Ingresos Brutos",
   };
-
+  const bigCardSecondSlider = {
+    title: "Unidades",
+    subtitle: "Marina de Empresas",
+    headline: "Unidades",
+  };
+  // eslint-disable-next-line
   const smallCardDataPositive = {
     type: "Rotación",
     productName: "Ensalada Caesar",
@@ -70,7 +93,7 @@ const HomeBody = () => {
     change: "+80%",
     variant: "positive",
   };
-
+  // eslint-disable-next-line
   const smallCardDataNegative = {
     type: "Costos",
     title: "[Mercadona] Aumento de Precio sku: Sandiwch Pollo",
@@ -100,20 +123,55 @@ const HomeBody = () => {
           overflowX: "hidden",
         }}
       >
-        <Filters dropdownData={dropdownData} />
-        <BigCard
+        <Filters
+          machinesSelectorDisabled={machinesSelectorDisabled}
+          dropdownData={dropdownData}
+        />
+        <Slider {...bigSliderSettings}>
+          <div>
+            <BigCard
+              period={period}
+              setPeriod={setPeriod}
+              bigCardData={bigCardFirstSlider}
+              metricsData={metricsData}
+              logo="trendlinechart"
+            />
+          </div>
+          <div>
+            <BigCard
+              bigCardData={bigCardSecondSlider}
+              metricsData={metricsData}
+              logo="shopcart"
+            />
+          </div>
+        </Slider>
+        {/* <BigCard
           period={period}
           setPeriod={setPeriod}
           bigCardData={bigCardData}
           metricsData={metricsData}
-        />
+        /> */}
         <Section title="KPIS Relevante" />
-        <Metrics metricsData={metricsData} />
-        <Section title="Experimentos" header />
-        <SmallCard {...smallCardDataPositive} />
+        <Slider>
+          <div>
+            <Metrics slideIndex="0" metricsData={metricsData} />
+          </div>
+          <div>
+            <Metrics slideIndex="1" metricsData={metricsData} />
+          </div>
+        </Slider>
+        <Section title="Información Relevante" />
+        <Skeleton
+          animation="pulse"
+          sx={{ marginInline: "1rem", marginBlockEnd: "1rem" }}
+          variant="rectangular"
+          height={118}
+        />
+
+        {/* <SmallCard {...smallCardDataPositive} />
         <SmallCard {...smallCardDataPositive} />
         <Section title="Alertas & Notificaciones" />
-        <SmallCard {...smallCardDataNegative} />
+        <SmallCard {...smallCardDataNegative} /> */}
       </Box>
       <Footer />
     </>
@@ -121,11 +179,15 @@ const HomeBody = () => {
 };
 
 const Home = () => {
+  // eslint-disable-next-line
   const dispatch = useDispatch();
+  // eslint-disable-next-line
   const { getProductsStatus, getProductsPromoStatus } = useSelector(
     (state) => state.products
   );
+  // eslint-disable-next-line
   const { customerCardsStatus } = useSelector((state) => state.customer);
+  // eslint-disable-next-line
   const { storeStatus } = useSelector((state) => state.store);
 
   useEffect(() => {
@@ -140,26 +202,26 @@ const Home = () => {
     const setStoreId = async () => {
       try {
         const storeId = await localStorage.getItem("storeId");
-
+        // eslint-disable-next-line
         const isValidStoreId = storeId && storeId !== "null" && storeId !== "";
 
-        if (getProductsPromoStatus === "idle") {
-          dispatch(
-            getProductsPromo(isValidStoreId ? { storeId } : { storeId: 0 })
-          );
-        }
-        if (getProductsStatus === "idle") {
-          dispatch(getProducts(isValidStoreId ? { storeId } : { storeId: 0 }));
-        }
-        if (customerCardsStatus === "idle") {
-          dispatch(getCustomerCards());
-        }
-        if (customerCardsStatus === "idle") {
-          dispatch(getCustomerCards());
-        }
-        if (storeStatus === "idle") {
-          dispatch(getStore(isValidStoreId && { storeId }));
-        }
+        // if (getProductsPromoStatus === "idle") {
+        //   dispatch(
+        //     getProductsPromo(isValidStoreId ? { storeId } : { storeId: 0 })
+        //   );
+        // }
+        // if (getProductsStatus === "idle") {
+        //   dispatch(getProducts(isValidStoreId ? { storeId } : { storeId: 0 }));
+        // }
+        // if (customerCardsStatus === "idle") {
+        //   dispatch(getCustomerCards());
+        // }
+        // if (customerCardsStatus === "idle") {
+        //   dispatch(getCustomerCards());
+        // }
+        // if (storeStatus === "idle") {
+        //   dispatch(getStore(isValidStoreId && { storeId }));
+        // }
       } catch (error) {
         // console.error(error);
       }

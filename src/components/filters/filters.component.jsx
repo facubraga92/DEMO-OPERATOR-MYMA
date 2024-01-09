@@ -1,10 +1,18 @@
 // eslint-disable-next-line
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Grid, MenuItem, Select } from "@mui/material";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import customSelectStyles from "./customSelectStyles";
 
-const CustomSelect = ({ name, value, onChange, items, label, isMachines }) => (
+const CustomSelect = ({
+  name,
+  value,
+  onChange,
+  items,
+  label,
+  isMachines,
+  disabled,
+}) => (
   <Select
     name={name}
     IconComponent={() => (
@@ -14,6 +22,7 @@ const CustomSelect = ({ name, value, onChange, items, label, isMachines }) => (
     sx={customSelectStyles(isMachines)}
     value={value}
     onChange={onChange}
+    disabled={disabled}
   >
     <MenuItem
       sx={{
@@ -45,7 +54,7 @@ const CustomSelect = ({ name, value, onChange, items, label, isMachines }) => (
   </Select>
 );
 
-const Filters = ({ dropdownData }) => {
+const Filters = ({ dropdownData, machinesSelectorDisabled }) => {
   const [filters, setFilters] = useState({
     clusters: "default",
     locations: "default",
@@ -57,7 +66,6 @@ const Filters = ({ dropdownData }) => {
   // useEffect(() => {
   //   console.log(filters);
   // }, [filters]);
-  
 
   const handleFilters = (event) => {
     const { name, value } = event.target;
@@ -146,6 +154,7 @@ const Filters = ({ dropdownData }) => {
           label="Máquinas"
           width="auto"
           isMachines={true}
+          disabled={machinesSelectorDisabled}
         />
       </Grid>
     </Grid>

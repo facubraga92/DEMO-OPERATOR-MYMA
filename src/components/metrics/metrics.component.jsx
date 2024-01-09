@@ -45,7 +45,7 @@ const MetricItem = ({ value, label, symbol }) => (
   </Grid>
 );
 
-const Metrics = ({ metricsData }) => (
+const Metrics = ({ metricsData, slideIndex }) => (
   <Grid container>
     <Grid
       item
@@ -60,17 +60,39 @@ const Metrics = ({ metricsData }) => (
       }}
     >
       <MetricItem
-        symbol={metricsData?.currency?.symbol}
-        value={metricsData?.sales?.avg}
-        label="Ticket Promedio"
+        symbol={slideIndex === "0" && metricsData?.currency?.symbol}
+        value={
+          slideIndex === "0"
+            ? Math.round(metricsData?.sales?.avg)
+            : Math.round(metricsData?.units?.avg_orders_per_customer)
+        }
+        label={
+          slideIndex === "0" ? "Ticket Promedio" : "Ordenes Promedio x Cliente"
+        }
       />
       <MetricItem
-        value={metricsData?.sales?.avg_sale_per_store}
-        label="Ingresos Medios x Tienda"
+        symbol={slideIndex === "0" && metricsData?.currency?.symbol}
+        value={
+          slideIndex === "0"
+            ? Math.round(metricsData?.sales?.avg_sale_per_store)
+            : Math.round(metricsData?.units?.avg_units_per_order)
+        }
+        label={
+          slideIndex === "0" ? "Ingresos Medios x Tienda" : "Productos x Orden"
+        }
       />
       <MetricItem
-        value={metricsData?.sales?.total_sales_recurring_customer}
-        label="Ingresos x Cliente Recurrente"
+        symbol={slideIndex === "0" && metricsData?.currency?.symbol}
+        value={
+          slideIndex === "0"
+            ? Math.round(metricsData?.sales?.total_sales_recurring_customer)
+            : Math.round(metricsData?.units?.total_recurring_customers)
+        }
+        label={
+          slideIndex === "0"
+            ? "Ingresos x Cliente Recurrente"
+            : " Clientes Recurrentes (>10 meses)"
+        }
       />
     </Grid>
   </Grid>

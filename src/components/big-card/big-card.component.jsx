@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   Grid,
   Paper,
@@ -9,9 +9,29 @@ import {
 import { ReactComponent as TrendLineChartIcon } from "../../assets/images/trend-line-chart.svg";
 import { ReactComponent as ArrowBigGreen } from "../../assets/images/arrow-green-big.svg";
 import { ReactComponent as ArrowBigRed } from "../../assets/images/arrow-red-big.svg";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCartOutlined";
 
-const BigCard = ({ metricsData, bigCardData, period, setPeriod }) => {
-  const percentage = Math.round(parseFloat(metricsData?.sales?.difference_str));
+const BigCard = ({ metricsData, bigCardData, period, setPeriod, logo }) => {
+  //Using logo prop for set up metricsData property to fill cards.
+  const [metricsProperty, setMetricsProperty] = useState("sales");
+
+  useEffect(
+    () => {
+      if (logo === "trendlinechart") {
+        setMetricsProperty("sales");
+      }
+      if (logo === "shopcart") {
+        setMetricsProperty("units");
+      }
+    },
+    // eslint-disable-next-line
+    [metricsProperty]
+  );
+
+  const percentage = Math.round(
+    parseFloat(metricsData?.[metricsProperty]?.difference_str)
+  );
+
   return (
     <Grid container>
       <Grid
@@ -84,7 +104,12 @@ const BigCard = ({ metricsData, bigCardData, period, setPeriod }) => {
                 xs={2}
                 sx={{ display: "flex", justifyContent: "center" }}
               >
-                <TrendLineChartIcon style={{ height: "32px" }} />
+                {logo === "trendlinechart" && (
+                  <TrendLineChartIcon style={{ height: "32px" }} />
+                )}
+                {logo === "shopcart" && (
+                  <ShoppingCartIcon sx={{ fontSize: "32px" }} />
+                )}
               </Grid>
               <Grid
                 item
@@ -109,7 +134,7 @@ const BigCard = ({ metricsData, bigCardData, period, setPeriod }) => {
                 xs={2}
                 sx={{ display: "flex", justifyContent: "center" }}
               >
-                {metricsData?.sales?.difference < 0 ? (
+                {metricsData?.[metricsProperty]?.difference < 0 ? (
                   <ArrowBigRed />
                 ) : (
                   <ArrowBigGreen />
@@ -130,17 +155,19 @@ const BigCard = ({ metricsData, bigCardData, period, setPeriod }) => {
                     textOverflow: "ellipsis",
                   }}
                 >
-                  {metricsData?.sales?.total}
+                  {metricsData?.[metricsProperty]?.total}
                 </Typography>
-                <Typography
-                  sx={{
-                    fontSize: "2rem",
-                    display: "flex",
-                    alignItems: "flex-end",
-                  }}
-                >
-                  {metricsData?.currency?.symbol}
-                </Typography>
+                {logo === "trendlinechart" && (
+                  <Typography
+                    sx={{
+                      fontSize: "2rem",
+                      display: "flex",
+                      alignItems: "flex-end",
+                    }}
+                  >
+                    {metricsData?.currency?.symbol}
+                  </Typography>
+                )}
               </Grid>
               <Grid
                 item
@@ -156,7 +183,9 @@ const BigCard = ({ metricsData, bigCardData, period, setPeriod }) => {
                   sx={{
                     fontSize: "1rem",
                     backgroundColor: `${
-                      metricsData?.sales?.difference < 0 ? "#FD3F03" : "#2CAF5F"
+                      metricsData?.[metricsProperty]?.difference < 0
+                        ? "#FD3F03"
+                        : "#2CAF5F"
                     }`,
                     borderRadius: "3px",
                     padding: "5px",
@@ -179,32 +208,34 @@ const BigCard = ({ metricsData, bigCardData, period, setPeriod }) => {
                 alignItems: "end",
               }}
             >
-              <ToggleButtonGroup
-                color="black"
-                sx={{ height: "25px" }}
-                value={period}
-                onChange={(event, newValue) => {
-                  // Verificar si el nuevo valor es diferente al valor actual o no es null
-                  if (newValue !== period && newValue !== null) {
-                    setPeriod(newValue);
-                  }
-                }}
-                exclusive
-                size="small"
-              >
-                <ToggleButton value="w" aria-label="week">
-                  W{" "}
-                </ToggleButton>
-                <ToggleButton value="2w" aria-label="sprint">
-                  2W
-                </ToggleButton>
-                <ToggleButton value="m" aria-label="month">
-                  M{" "}
-                </ToggleButton>
-                <ToggleButton value="y" aria-label="year">
-                  Y{" "}
-                </ToggleButton>
-              </ToggleButtonGroup>
+              {period && (
+                <ToggleButtonGroup
+                  color="black"
+                  sx={{ height: "25px" }}
+                  value={period}
+                  onChange={(event, newValue) => {
+                    // Verificar si el nuevo valor es diferente al valor actual o no es null
+                    if (newValue !== period && newValue !== null) {
+                      setPeriod(newValue);
+                    }
+                  }}
+                  exclusive
+                  size="small"
+                >
+                  <ToggleButton value="w" aria-label="week">
+                    W{" "}
+                  </ToggleButton>
+                  <ToggleButton value="2w" aria-label="sprint">
+                    2W
+                  </ToggleButton>
+                  <ToggleButton value="m" aria-label="month">
+                    M{" "}
+                  </ToggleButton>
+                  <ToggleButton value="y" aria-label="year">
+                    Y{" "}
+                  </ToggleButton>
+                </ToggleButtonGroup>
+              )}
             </Grid>
           </Grid>
           <Grid
