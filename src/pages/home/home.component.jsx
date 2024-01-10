@@ -64,8 +64,8 @@ const HomeBody = () => {
     // You can perform more actions as needed
   };
 
-  const bigSliderSettings = {
-    infinite: true,
+  const sliderSettings = {
+    infinite: false,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -127,7 +127,7 @@ const HomeBody = () => {
           machinesSelectorDisabled={machinesSelectorDisabled}
           dropdownData={dropdownData}
         />
-        <Slider {...bigSliderSettings}>
+        <Slider {...sliderSettings}>
           <div>
             <BigCard
               period={period}
@@ -139,6 +139,8 @@ const HomeBody = () => {
           </div>
           <div>
             <BigCard
+              period={period}
+              setPeriod={setPeriod}
               bigCardData={bigCardSecondSlider}
               metricsData={metricsData}
               logo="shopcart"
@@ -152,7 +154,7 @@ const HomeBody = () => {
           metricsData={metricsData}
         /> */}
         <Section title="KPIS Relevante" />
-        <Slider>
+        <Slider {...sliderSettings}>
           <div>
             <Metrics slideIndex="0" metricsData={metricsData} />
           </div>
