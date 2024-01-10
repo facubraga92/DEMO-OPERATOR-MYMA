@@ -1,5 +1,5 @@
-import { AppBar, Grid, styled, Typography } from "@mui/material";
-import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+import { AppBar, Avatar, Grid, styled, Typography } from "@mui/material";
+// import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import TipsAndUpdatesIcon from "@mui/icons-material/TipsAndUpdates";
 const HeaderContainer = styled(AppBar)((props) => {
   return {
@@ -10,7 +10,8 @@ const HeaderContainer = styled(AppBar)((props) => {
   };
 });
 
-const Header = ({ title, setRunTutorial, runTutorial }) => {
+const Header = ({ title, setRunTutorial, runTutorial, avatar }) => {
+  // eslint-disable-next-line
   const openWhatsApp = () => {
     var number = `${process.env.REACT_APP_WA_NUMBER}`;
     var url = "https://api.whatsapp.com/send?phone=" + number;
@@ -37,6 +38,7 @@ const Header = ({ title, setRunTutorial, runTutorial }) => {
               right: -44,
               top: "50%",
               transform: "translateY(-50%)",
+              marginInlineEnd: "1rem",
             }}
           >
             {title === "Tienda" && (
@@ -45,8 +47,19 @@ const Header = ({ title, setRunTutorial, runTutorial }) => {
               </div>
             )}
 
-            <div className="joyride-step6" onClick={openWhatsApp}>
+            {/* <div className="joyride-step6" onClick={openWhatsApp}>
               <WhatsAppIcon style={{ margin: 10 }} />
+            </div> */}
+            <div>
+              <Avatar
+                sx={{
+                  backgroundColor: "#D9D9D9",
+                  color: "#000",
+                  fontWeight: "bold",
+                }}
+              >
+                {avatar}
+              </Avatar>{" "}
             </div>
           </div>
         </Grid>

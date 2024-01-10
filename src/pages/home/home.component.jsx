@@ -114,6 +114,7 @@ const HomeBody = () => {
         }
         setRunTutorial={setRunTutorial}
         runTutorial={runTutorial}
+        avatar="FB"
       />
       <Box
         sx={{
