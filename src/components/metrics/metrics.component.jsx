@@ -27,19 +27,21 @@ const MetricItem = ({ value, label, symbol }) => (
           marginTop: "1.5rem",
         }}
       >
-        {value}
+        {`${value}`}
       </Typography>
-      <Typography
-        sx={{
-          fontSize: "1rem",
-          fontWeight: "bold",
-          marginTop: "1.5rem",
-          display: "flex",
-          alignItems: "end",
-        }}
-      >
-        {symbol}
-      </Typography>
+      {symbol && (
+        <Typography
+          sx={{
+            fontSize: "1rem",
+            fontWeight: "bold",
+            marginTop: "1.5rem",
+            display: "flex",
+            alignItems: "end",
+          }}
+        >
+          {`${symbol}`}
+        </Typography>
+      )}
     </Grid>
     <Grid item sx={{ display: "flex", alignItems: "center" }} xs={12}>
       <Typography

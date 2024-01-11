@@ -51,8 +51,8 @@ const Footer = ({ activeIconID = 2 }) => {
       case "home":
         navigate("/home");
         break;
-      case "purchases":
-        navigate("/purchases");
+      case "machines":
+        navigate("/machines");
         break;
       case "openDoor":
         navigate("/read-qr");
@@ -79,7 +79,7 @@ const Footer = ({ activeIconID = 2 }) => {
       <FooterButtons
         className="joyride-step2"
         active={1 === activeIconID}
-        onClick={() => handleButtonClick("purchases")}
+        onClick={() => handleButtonClick("machines")}
       >
         <VendingMachineIcon />
       </FooterButtons>
