@@ -29,8 +29,8 @@ const HomeBody = () => {
 
   const [dropdownData, setDropdownData] = useState({});
 
-  const [machinesSelectorDisabled, setMachinesSelectorDisabled] =
-    useState(true);
+  // const [machinesSelectorDisabled, setMachinesSelectorDisabled] =
+  //   useState(true);
 
   useEffect(() => {
     const fetch = async () => {
@@ -56,20 +56,20 @@ const HomeBody = () => {
     fetch();
   }, []);
 
-  const handleSlideChange = (index) => {
-    // Check if the index of the current slide is 0
-    const isZero = index === 0;
-    // Update the variable based on the condition
-    setMachinesSelectorDisabled(isZero);
-    // You can perform more actions as needed
-  };
+  // const handleSlideChange = (index) => {
+  //   // Check if the index of the current slide is 0
+  //   const isZero = index === 0;
+  //   // Update the variable based on the condition
+  //   setMachinesSelectorDisabled(isZero);
+  //   // You can perform more actions as needed
+  // };
 
   const sliderSettings = {
     infinite: false,
     speed: 500,
-    slidesToShow: 1,
+    slidesToShow: 1.06,
     slidesToScroll: 1,
-    afterChange: handleSlideChange,
+    // afterChange: handleSlideChange,
   };
 
   //hardcoded fake data.
@@ -124,10 +124,7 @@ const HomeBody = () => {
           overflowX: "hidden",
         }}
       >
-        <Filters
-          machinesSelectorDisabled={machinesSelectorDisabled}
-          dropdownData={dropdownData}
-        />
+        <Filters machinesSelectorDisabled dropdownData={dropdownData} />
         <Slider {...sliderSettings}>
           <div>
             <BigCard
@@ -170,7 +167,6 @@ const HomeBody = () => {
           variant="rectangular"
           height={118}
         />
-
         {/* <SmallCard {...smallCardDataPositive} />
         <SmallCard {...smallCardDataPositive} />
         <Section title="Alertas & Notificaciones" />

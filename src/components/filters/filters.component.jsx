@@ -81,6 +81,8 @@ const Filters = ({ dropdownData, machinesSelectorDisabled }) => {
         alignContent: "center",
         paddingInline: "1rem",
         height: "2.5rem",
+        position: "fixed",
+        zIndex: "1",
       }}
     >
       <Grid

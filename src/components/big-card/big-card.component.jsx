@@ -39,7 +39,7 @@ const BigCard = ({ metricsData, bigCardData, period, setPeriod, logo }) => {
         xs={12}
         sx={{
           marginInline: "1rem",
-          marginBlockStart: "1rem",
+          marginBlockStart: "2.5rem",
           marginBlockEnd: "0.5rem",
           display: "flex",
           flexDirection: "column",
@@ -143,16 +143,19 @@ const BigCard = ({ metricsData, bigCardData, period, setPeriod, logo }) => {
               <Grid
                 item
                 xs={8}
-                sx={{ display: "flex", justifyContent: "center" }}
+                sx={{
+                  display: "flex",
+                  justifyContent: "center",
+                }}
               >
                 {" "}
                 <Typography
-                  variant="h2"
+                  variant="h3"
+                  noWrap
                   sx={{
-                    lineHeight: "4rem",
                     overflow: "hidden",
-                    whiteSpace: "nowrap",
-                    textOverflow: "ellipsis",
+                    display: "flex",
+                    alignItems: "center",
                   }}
                 >
                   {metricsData?.[metricsProperty]?.total}
@@ -160,9 +163,9 @@ const BigCard = ({ metricsData, bigCardData, period, setPeriod, logo }) => {
                 {logo === "trendlinechart" && (
                   <Typography
                     sx={{
-                      fontSize: "2rem",
+                      fontSize: "1.8rem",
                       display: "flex",
-                      alignItems: "flex-end",
+                      alignItems: "end",
                     }}
                   >
                     {metricsData?.currency?.symbol}
@@ -191,7 +194,7 @@ const BigCard = ({ metricsData, bigCardData, period, setPeriod, logo }) => {
                     padding: "5px",
                     overflow: "hidden",
                     whiteSpace: "nowrap",
-                    textOverflow: "ellipsis",
+                    // textOverflow: "ellipsis",
                   }}
                 >
                   {`${percentage}%`}

@@ -30,7 +30,13 @@ const MetricItem = ({ value, label, symbol }) => (
         {value}
       </Typography>
       <Typography
-        sx={{ fontSize: "1rem", fontWeight: "bold", marginTop: "1.5rem" }}
+        sx={{
+          fontSize: "1rem",
+          fontWeight: "bold",
+          marginTop: "1.5rem",
+          display: "flex",
+          alignItems: "end",
+        }}
       >
         {symbol}
       </Typography>
