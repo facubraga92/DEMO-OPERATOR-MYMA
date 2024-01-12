@@ -77,6 +77,7 @@ const Filters = ({ dropdownData, machinesSelectorDisabled }) => {
       container
       sx={{
         display: "flex",
+        maxWidth: "552px",
         backgroundColor: "#F8F8F8",
         alignContent: "center",
         paddingInline: "1rem",

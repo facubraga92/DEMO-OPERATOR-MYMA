@@ -46,7 +46,9 @@ const SmallCard = ({
           </Grid>
           <Grid item sx={{ display: "flex", flexDirection: "column" }} xs={11}>
             <Grid item sx={{ display: "flex", alignItems: "center" }} xs={12}>
-              <Typography sx={{ color: "#979797" }}>{type}</Typography>
+              <Typography sx={{ color: "#FF0707", fontWeight: "bold" }}>
+                {type}
+              </Typography>
             </Grid>
             <Grid item xs={12} sx={{ display: "flex", alignItems: "center" }}>
               <Typography
@@ -106,7 +108,9 @@ const SmallCard = ({
           </Grid>
           <Grid item sx={{ display: "flex", flexDirection: "column" }} xs={4}>
             <Grid item sx={{ display: "flex", alignItems: "center" }} xs={12}>
-              <Typography sx={{ color: "#979797" }}>{type}</Typography>
+              <Typography sx={{ color: "#00A87C", fontWeight: "bold" }}>
+                {type}
+              </Typography>
             </Grid>
             <Grid item xs={12} sx={{ display: "flex", alignItems: "center" }}>
               <Typography

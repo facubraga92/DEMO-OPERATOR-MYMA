@@ -10,6 +10,7 @@ import Section from "../../components/section/section.component";
 import Metrics from "../../components/metrics/metrics.component";
 import Footer from "../../components/footer/footer.component";
 import axios from "axios";
+import MediumCard from "../../components/medium-card/medium-card.component";
 
 const MyMachine = () => {
   const [dropdownData, setDropdownData] = useState({});
@@ -24,7 +25,46 @@ const MyMachine = () => {
     // afterChange: handleSlideChange,
   };
 
-  //hardcoded fake data.
+  // HARDCODED FAKE DATA //
+
+  const mediumCardDataPositive = {
+    type: "TOP 3",
+    title: "Experimentos en [15 días]",
+    list: [
+      { "Sandwich Pastrami": "+39 Ventas" },
+      { "Sandwich Mila": "+27 Ventas" },
+      { "Ensaladilla Tusa": "+26 Ventas" },
+    ],
+    value: "",
+    icon: "experiment",
+    variant: "positive",
+  };
+  const mediumCardDataNegative = {
+    type: "TOP 3",
+    title: "Menos Vendidos en [15 días]",
+    list: [
+      { "Ensalada MEX": "6 Ventas" },
+      { "Carne / Papas": "4 Ventas" },
+      { "Ensalada Pasta": "3 Ventas" },
+    ],
+    value: "",
+    icon: "vending",
+    variant: "negative",
+  };
+  const mediumCardDataNeutral = {
+    type: "CAMP ID",
+    title: "101",
+    subtitle: "NO te quedes sin el tuyo!",
+    list: [
+      "Sandwich de Pollo",
+      "Precio PROMO a 3.00€",
+      "SLOT 45 - MAQUINA LANZADERA",
+    ],
+    imgURL:
+      "https://okdiario.com/img/2023/01/16/sandwich-de-pollo-de-mercadona.jpg",
+    variant: "neutral",
+  };
+
   const bigCardFirstSlider = {
     title: "Ingresos",
     subtitle: "Marina de Empresas",
@@ -35,6 +75,8 @@ const MyMachine = () => {
     subtitle: "Marina de Empresas",
     headline: "Unidades",
   };
+
+  // END OF HARDCODED FAKE DATA //
 
   useEffect(() => {
     const fetch = async () => {
@@ -111,14 +153,17 @@ const MyMachine = () => {
           </div>
         </Slider>
         <Section title="Información Relevante" />
-        <Skeleton
+        {/* <Skeleton
           animation="pulse"
           sx={{ marginInline: "1rem", marginBlockEnd: "1rem" }}
           variant="rectangular"
           height={118}
-        />
-        {/* <SmallCard {...smallCardDataPositive} />
-    <SmallCard {...smallCardDataPositive} />
+        /> */}
+        <MediumCard {...mediumCardDataPositive} />
+        <MediumCard {...mediumCardDataNegative} />
+        <MediumCard {...mediumCardDataNeutral} />
+        {/* <SmallCard {...mediumCardDataPositive} />
+   <SmallCard {...smallCardDataPositive} />
     <Section title="Alertas & Notificaciones" />
     <SmallCard {...smallCardDataNegative} /> */}
       </Box>
