@@ -20,9 +20,9 @@ const MediumCard = ({
 }) => {
   const icons = {
     none: null,
-    experiment: <ExperimentsIcon style={{ fill: "black" }} fontSize="large" />,
-    vending: <VendingMachineIcon style={{ fill: "black" }} />,
-    blocks: <ChangesIcon style={{ fill: "black" }} />, //still remaining fix ChangesIcon
+    experiment: <ExperimentsIcon style={{ fill: "black", height: "1.5rem" }} />,
+    vending: <VendingMachineIcon style={{ fill: "black", height: "1.5rem" }} />,
+    blocks: <ChangesIcon style={{ fill: "black", height: "1.5rem" }} />,
   };
 
   const variants = {
@@ -69,7 +69,7 @@ const MediumCard = ({
           <Grid
             item
             sx={{ display: "flex", alignItems: "center", maxHeight: 1 / 3 }}
-            xs={4}
+            xs={12}
           >
             {icons[icon]}
           </Grid>

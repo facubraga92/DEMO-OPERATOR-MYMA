@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Header from "../../components/header/header.component";
-import { Box, Skeleton } from "@mui/material";
+import { Box } from "@mui/material";
 import Filters from "../../components/filters/filters.component";
 import Slider from "react-slick";
 import "../../../node_modules/slick-carousel/slick/slick.css";
@@ -161,12 +161,6 @@ const MyMachine = () => {
           </div>
         </Slider>
         <Section title="Información Relevante" />
-        {/* <Skeleton
-          animation="pulse"
-          sx={{ marginInline: "1rem", marginBlockEnd: "1rem" }}
-          variant="rectangular"
-          height={118}
-        /> */}
         <MediumCard {...mediumCardDataPositive} />
         <MediumCard {...mediumCardDataNegative} />
         <MediumCard {...mediumCardDataNeutral} />
