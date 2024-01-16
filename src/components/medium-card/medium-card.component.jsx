@@ -3,6 +3,7 @@ import { ReactComponent as ArrowMediumRed } from "../../assets/images/arrow-red-
 import { ReactComponent as ArrowMediumGreen } from "../../assets/images/arrow-green-big.svg";
 import { ReactComponent as ExperimentsIcon } from "../../assets/images/experiments-icon.svg";
 import { ReactComponent as VendingMachineIcon } from "../../assets/images/vending-icon.svg";
+import { ReactComponent as ChangesIcon } from "../../assets/images/changes-icon.svg";
 
 import React from "react";
 
@@ -15,11 +16,13 @@ const MediumCard = ({
   icon,
   imgURL,
   variant,
+  arrow,
 }) => {
   const icons = {
     none: null,
     experiment: <ExperimentsIcon style={{ fill: "black" }} fontSize="large" />,
     vending: <VendingMachineIcon style={{ fill: "black" }} />,
+    blocks: <ChangesIcon style={{ fill: "black" }} />, //still remaining fix ChangesIcon
   };
 
   const variants = {
@@ -71,7 +74,7 @@ const MediumCard = ({
             {icons[icon]}
           </Grid>
           <Grid item sx={{ display: "flex", alignItems: "center" }} xs={8}>
-            {variants[variant].arrow}
+            {arrow !== false && variants[variant].arrow}
           </Grid>
         </Grid>
         <Grid
@@ -82,21 +85,55 @@ const MediumCard = ({
           }}
           xs={11}
         >
-          <Grid
-            item
-            sx={{ display: "flex", maxHeight: 1 / 3, alignItems: "center" }}
-            xs={12}
-          >
-            <Typography
-              sx={{
-                color: variants[variant].color,
-                fontWeight: "bold",
-              }}
+          {variant === "neutral" ? (
+            <Grid item sx={{ display: "flex", maxHeight: 1 / 3 }} xs={12}>
+              <Grid item sx={{ display: "flex", flexDirection: "column" }}>
+                <Grid sx={{ display: "flex" }} item>
+                  <Typography
+                    sx={{
+                      color: variants[variant].color,
+                      fontWeight: "bold",
+                    }}
+                  >
+                    {type}&nbsp;
+                    {variant === "neutral" ? `:` : `-`}
+                  </Typography>
+                  <Typography>
+                    &nbsp;{variant === "neutral" ? ` ${title}` : ` ${title}`}
+                  </Typography>
+                </Grid>
+                {variant === "neutral" && (
+                  <Grid
+                    item
+                    sx={{
+                      display: "flex",
+                      flexDirection: "column",
+                    }}
+                  >
+                    <Typography variant="subtitle2" sx={{ fontWeight: "bold" }}>
+                      {subtitle}
+                    </Typography>
+                  </Grid>
+                )}
+              </Grid>
+            </Grid>
+          ) : (
+            <Grid
+              item
+              sx={{ display: "flex", maxHeight: 1 / 3, alignItems: "center" }}
+              xs={12}
             >
-              {type}
-            </Typography>
-            <Typography>&nbsp;- {title}</Typography>
-          </Grid>
+              <Typography
+                sx={{
+                  color: variants[variant].color,
+                  fontWeight: "bold",
+                }}
+              >
+                {type}
+              </Typography>
+              <Typography>&nbsp;- {title}</Typography>
+            </Grid>
+          )}
           <Grid
             item
             sx={{ display: "flex", alignItems: "center", maxHeight: 2 / 3 }}
@@ -111,7 +148,11 @@ const MediumCard = ({
                   {list.map((element, index) => (
                     <li key={index}>
                       <Typography sx={{ fontWeight: "bold" }}>
-                        {Object.keys(element)}: {element[Object.keys(element)]}
+                        {Object.entries(element).map(([key, value]) => (
+                          <span key={key}>
+                            {key}: {value}
+                          </span>
+                        ))}
                       </Typography>
                     </li>
                   ))}
@@ -119,7 +160,7 @@ const MediumCard = ({
               ) : list && variant === "neutral" ? (
                 <ul style={{ paddingLeft: "1rem" }}>
                   {list.map((element, index) => (
-                    <li key={index}>
+                    <li style={{ marginBlock: "-0.5rem" }} key={index}>
                       <Typography variant="caption" fontWeight="bold">
                         {element}
                       </Typography>

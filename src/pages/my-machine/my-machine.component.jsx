@@ -54,7 +54,7 @@ const MyMachine = () => {
   const mediumCardDataNeutral = {
     type: "CAMP ID",
     title: "101",
-    subtitle: "NO te quedes sin el tuyo!",
+    subtitle: "¡NO te quedes sin el tuyo!",
     list: [
       "Sandwich de Pollo",
       "Precio PROMO a 3.00€",
@@ -63,6 +63,14 @@ const MyMachine = () => {
     imgURL:
       "https://okdiario.com/img/2023/01/16/sandwich-de-pollo-de-mercadona.jpg",
     variant: "neutral",
+  };
+  const mediumCardDataExperiment = {
+    type: "EXPERIMENTO",
+    title: "102 Sandwich Pastrami",
+    icon: "blocks",
+    value: "+168",
+    variant: "positive",
+    arrow: false,
   };
 
   const bigCardFirstSlider = {
@@ -162,6 +170,7 @@ const MyMachine = () => {
         <MediumCard {...mediumCardDataPositive} />
         <MediumCard {...mediumCardDataNegative} />
         <MediumCard {...mediumCardDataNeutral} />
+        <MediumCard {...mediumCardDataExperiment} />
         {/* <SmallCard {...mediumCardDataPositive} />
    <SmallCard {...smallCardDataPositive} />
     <Section title="Alertas & Notificaciones" />
