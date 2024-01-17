@@ -172,7 +172,7 @@ const HomeBody = () => {
         <Section title="Alertas & Notificaciones" />
         <SmallCard {...smallCardDataNegative} /> */}
       </Box>
-      <Footer />
+      <Footer  activeIconID={0}/>
     </>
   );
 };

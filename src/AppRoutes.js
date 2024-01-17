@@ -25,6 +25,7 @@ import { Auth, Callback } from "./App";
 import Loading from "./components/loading/loading.component";
 import Ads from "./pages/ads/ads.component";
 import MyMachine from "./pages/my-machine/my-machine.component";
+import MyExperiments from "./pages/my-experiments/my-experiments.component";
 
 const AppRoutes = () => (
   <Routes>
@@ -173,6 +174,14 @@ const AppRoutes = () => (
         element={
           <PrivateRoute>
             <MyMachine />
+          </PrivateRoute>
+        }
+      />
+      <Route
+        path="experiments"
+        element={
+          <PrivateRoute>
+            <MyExperiments />
           </PrivateRoute>
         }
       />

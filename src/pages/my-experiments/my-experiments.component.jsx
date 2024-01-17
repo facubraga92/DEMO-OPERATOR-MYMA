@@ -1,18 +1,19 @@
 import React, { useEffect, useState } from "react";
 import Header from "../../components/header/header.component";
-import { Box } from "@mui/material";
+import { Box, Skeleton } from "@mui/material";
 import Filters from "../../components/filters/filters.component";
 import Slider from "react-slick";
 import "../../../node_modules/slick-carousel/slick/slick.css";
 import "../../../node_modules/slick-carousel/slick/slick-theme.css";
 import BigCard from "../../components/big-card/big-card.component";
 import Section from "../../components/section/section.component";
-import Metrics from "../../components/metrics/metrics.component";
+// import Metrics from "../../components/metrics/metrics.component";
 import Footer from "../../components/footer/footer.component";
 import axios from "axios";
-import MediumCard from "../../components/medium-card/medium-card.component";
+// import MediumCard from "../../components/medium-card/medium-card.component";
+// import ExperimentsCard from "../../components/experiments-card/experiments-card.component";
 
-const MyMachine = () => {
+const MyExperiments = () => {
   const [dropdownData, setDropdownData] = useState({});
   const [metricsData, setMetricsData] = useState({});
   const [period, setPeriod] = useState("2w");
@@ -26,51 +27,15 @@ const MyMachine = () => {
   };
 
   // HARDCODED FAKE DATA //
-
-  const mediumCardDataPositive = {
-    type: "TOP 3",
-    title: "Experimentos en [15 días]",
-    list: [
-      { "Sandwich Pastrami": "+39 Ventas" },
-      { "Sandwich Mila": "+27 Ventas" },
-      { "Ensaladilla Tusa": "+26 Ventas" },
-    ],
-    value: "",
-    icon: "experiment",
+  // eslint-disable-next-line
+  const smallCardDataPositive = {
+    type: "Rotación",
+    productName: "Ensalada Caesar",
+    productSku: "T: LANZ IZ . EID:002",
+    oldValue: "2",
+    newValue: "10",
+    change: "+80%",
     variant: "positive",
-  };
-  const mediumCardDataNegative = {
-    type: "TOP 3",
-    title: "Menos Vendidos en [15 días]",
-    list: [
-      { "Ensalada MEX": "6 Ventas" },
-      { "Carne / Papas": "4 Ventas" },
-      { "Ensalada Pasta": "3 Ventas" },
-    ],
-    value: "",
-    icon: "vending",
-    variant: "negative",
-  };
-  const mediumCardDataNeutral = {
-    type: "CAMP ID",
-    title: "101",
-    subtitle: "¡NO te quedes sin el tuyo!",
-    list: [
-      "Sandwich de Pollo",
-      "Precio PROMO a 3.00€",
-      "SLOT 45 - MAQUINA LANZADERA",
-    ],
-    imgURL:
-      "https://okdiario.com/img/2023/01/16/sandwich-de-pollo-de-mercadona.jpg",
-    variant: "neutral",
-  };
-  const mediumCardDataExperiment = {
-    type: "EXPERIMENTO",
-    title: "102 Sandwich Pastrami",
-    icon: "blocks",
-    value: "+168",
-    variant: "positive",
-    arrow: false,
   };
 
   const bigCardFirstSlider = {
@@ -115,8 +80,8 @@ const MyMachine = () => {
       <Header
         title={
           <div style={{ display: "flex", justifyContent: "center" }}>
-            <div style={{ fontWeight: "normal" }}>Mi</div>
-            <div style={{ fontWeight: "bold" }}>&nbsp;Máquina</div>
+            <div style={{ fontWeight: "normal" }}>Mis</div>
+            <div style={{ fontWeight: "bold" }}>&nbsp;Experimentos</div>
           </div>
         }
         avatar="FB"
@@ -151,28 +116,17 @@ const MyMachine = () => {
           </div>
         </Slider>
 
-        <Section title="KPIS Relevante" />
-        <Slider {...sliderSettings}>
-          <div>
-            <Metrics slideIndex="0" metricsData={metricsData} />
-          </div>
-          <div>
-            <Metrics slideIndex="1" metricsData={metricsData} />
-          </div>
-        </Slider>
-        <Section title="Información Relevante" />
-        <MediumCard {...mediumCardDataPositive} />
-        <MediumCard {...mediumCardDataNegative} />
-        <MediumCard {...mediumCardDataNeutral} />
-        <MediumCard {...mediumCardDataExperiment} />
-        {/* <SmallCard {...mediumCardDataPositive} />
-   <SmallCard {...smallCardDataPositive} />
-    <Section title="Alertas & Notificaciones" />
-    <SmallCard {...smallCardDataNegative} /> */}
+        <Section title="EXPERIMENTOS" />
+        {/* <ExperimentsCard {...smallCardDataPositive} /> */}
+        <Skeleton
+          variant="rectangular"
+          height={150}
+          sx={{ marginInline: "1rem" }}
+        />
       </Box>
-      <Footer activeIconID={1} />
+      <Footer activeIconID={2} />
     </>
   );
 };
 
-export default MyMachine;
+export default MyExperiments;

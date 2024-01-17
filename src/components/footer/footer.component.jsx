@@ -1,12 +1,13 @@
 import { useNavigate } from "react-router-dom";
 import { styled } from "@mui/material";
 
-import { ReactComponent as LogoutIcon } from "../../assets/images/logout-icon.svg";
+// import { ReactComponent as LogoutIcon } from "../../assets/images/logout-icon.svg";
 import { ReactComponent as AlertsIcon } from "../../assets/images/notifications-icon.svg";
 
 import { ReactComponent as HomeIcon } from "../../assets/images/home-icon.svg";
 import { ReactComponent as ExperimentsIcon } from "../../assets/images/erlenmeyer-icon.svg";
 import { ReactComponent as VendingMachineIcon } from "../../assets/images/vending-icon.svg";
+import InsightsOutlinedIcon from "@mui/icons-material/InsightsOutlined";
 
 import { authLogout } from "../../services/auth.service";
 
@@ -43,7 +44,7 @@ const FooterButtons = styled("div")((props) => {
   };
 });
 
-const Footer = ({ activeIconID = 2 }) => {
+const Footer = ({ activeIconID }) => {
   const navigate = useNavigate();
 
   const handleButtonClick = (eventName) => {
@@ -54,13 +55,13 @@ const Footer = ({ activeIconID = 2 }) => {
       case "machines":
         navigate("/machines");
         break;
-      case "openDoor":
-        navigate("/read-qr");
+      case "experiments":
+        navigate("/experiments");
         break;
       case "cards":
         navigate("/cards");
         break;
-      case "logout":
+      case "insights":
         authLogout();
         break;
       default:
@@ -85,9 +86,9 @@ const Footer = ({ activeIconID = 2 }) => {
       </FooterButtons>
       <FooterButtons
         className="joyride-step3"
-        main
+        // main
         active={2 === activeIconID}
-        onClick={() => handleButtonClick("openDoor")}
+        onClick={() => handleButtonClick("experiments")}
       >
         <ExperimentsIcon fontSize="large" />
       </FooterButtons>
@@ -101,9 +102,9 @@ const Footer = ({ activeIconID = 2 }) => {
       <FooterButtons
         className="joyride-step5"
         active={4 === activeIconID}
-        onClick={() => handleButtonClick("logout")}
+        onClick={() => handleButtonClick("insights")}
       >
-        <LogoutIcon />
+        <InsightsOutlinedIcon fontSize="large" />
       </FooterButtons>
     </FooterContainer>
   );
