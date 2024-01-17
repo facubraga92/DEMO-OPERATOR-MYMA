@@ -17,7 +17,7 @@ const FooterContainer = styled("div")((props) => {
     maxWidth: "calc(600px - 48px)",
     position: "fixed",
     bottom: 0,
-    backgroundColor: props.theme.palette.purple.main,
+    backgroundColor: "#F8F8F8",
     borderRadius: "20px 20px 0 0",
     border: "solid 2px white",
     borderBottom: "none",
@@ -39,7 +39,7 @@ const FooterButtons = styled("div")((props) => {
     alignItems: "center",
     padding: "10px",
     "& svg": {
-      fill: props.active ? "black" : "white",
+      fill: props.active ? props.theme.palette.purple.main : "black",
     },
   };
 });
