@@ -113,7 +113,7 @@ const Footer = ({ activeIconID }) => {
             active={1 === activeIconID}
             onClick={() => handleButtonClick("machines")}
           >
-            <VendingMachineIcon />
+            <VendingMachineIcon height="26px" />
           </FooterButtons>
         </Grid>
         <Grid item sx={{ display: "flex" }}>

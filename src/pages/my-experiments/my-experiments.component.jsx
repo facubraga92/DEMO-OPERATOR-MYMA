@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Header from "../../components/header/header.component";
-import { Box, Skeleton } from "@mui/material";
+import { Box } from "@mui/material";
 import Filters from "../../components/filters/filters.component";
 import Slider from "react-slick";
 import "../../../node_modules/slick-carousel/slick/slick.css";
@@ -11,7 +11,7 @@ import Section from "../../components/section/section.component";
 import Footer from "../../components/footer/footer.component";
 import axios from "axios";
 // import MediumCard from "../../components/medium-card/medium-card.component";
-// import ExperimentsCard from "../../components/experiments-card/experiments-card.component";
+import ExperimentsCard from "../../components/experiments-card/experiments-card.component";
 
 const MyExperiments = () => {
   const [dropdownData, setDropdownData] = useState({});
@@ -117,12 +117,13 @@ const MyExperiments = () => {
         </Slider>
 
         <Section title="EXPERIMENTOS" />
+        <ExperimentsCard {...smallCardDataPositive} />
         {/* <ExperimentsCard {...smallCardDataPositive} /> */}
-        <Skeleton
+        {/* <Skeleton
           variant="rectangular"
           height={150}
           sx={{ marginInline: "1rem" }}
-        />
+        /> */}
       </Box>
       <Footer activeIconID={2} />
     </>
