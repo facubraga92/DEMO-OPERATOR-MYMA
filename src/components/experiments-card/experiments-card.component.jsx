@@ -1,13 +1,14 @@
-import React from "react";
-import { Button, Grid, Typography } from "@mui/material";
+import React, { useState } from "react";
+import { Grid, Typography } from "@mui/material";
 import { ReactComponent as ExperimentsIcon } from "../../assets/images/experiments-icon.svg";
 import { ReactComponent as MoneyLossIcon } from "../../assets/images/money-loss-icon.svg";
 import CalendarMonthOutlinedIcon from "@mui/icons-material/CalendarMonthOutlined";
-import AdsClickIcon from "@mui/icons-material/AdsClick";
 
 import Slider from "react-slick";
 import "../../../node_modules/slick-carousel/slick/slick.css";
 import "../../../node_modules/slick-carousel/slick/slick-theme.css";
+import InProgressButton from "./in-progress-button.component";
+import StartButton from "./start-button.component";
 
 const sliderSettings = {
   infinite: false,
@@ -49,6 +50,8 @@ const ExperimentsCard = ({
   description,
   variant,
 }) => {
+  const [toggleButton, setToggleButton] = useState(false);
+
   return (
     <Slider {...sliderSettings}>
       <div>
@@ -358,29 +361,15 @@ const ExperimentsCard = ({
                   }}
                   xs={11}
                 >
-                  <Button
-                    variant="contained"
-                    sx={{
-                      height: "2.5rem",
-                      borderRadius: "1.2rem",
-                      display: "flex",
-                      backgroundColor: "#663B73",
-                      textTransform: "none",
-                      paddingLeft: "2rem",
-                      "&:active": {
-                        backgroundColor: "#663B73",
-                      },
-                      "&:focus": {
-                        backgroundColor: "#663B73",
-                      },
-                      "&:hover": {
-                        backgroundColor: "#663B73",
-                      },
-                    }}
-                    endIcon={<AdsClickIcon />}
-                  >
-                    Iniciar
-                  </Button>
+                  {toggleButton ? (
+                    <InProgressButton
+                      onClick={() => setToggleButton(!toggleButton)}
+                    />
+                  ) : (
+                    <StartButton
+                      onClick={() => setToggleButton(!toggleButton)}
+                    />
+                  )}
                 </Grid>
               </Grid>
             </Grid>
