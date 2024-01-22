@@ -7,141 +7,95 @@ import { ReactComponent as CalendarAlertIcon } from "../../../assets/images/cale
 const MiddleSectionProblem = () => {
   return (
     <>
-      {/* mid section  */}
-      <Grid
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          paddingInline: "1rem",
-          maxHeight: 3.5 / 6,
-        }}
-        item
-        xs={12}
-      >
-        <Grid item sx={{ height: 1 / 4, display: "flex" }}>
-          <Grid
-            item
-            sx={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-            xs={1}
-          >
-            {/* <ExperimentsIcon style={{ width: "1.3rem" }} /> */}
-          </Grid>
-          <Grid
-            sx={{
-              overflow: "hidden",
-              display: "flex",
-              alignItems: "center",
-            }}
-            item
-            xs={11}
-          >
-            <Typography
-              sx={{
-                fontSize: "0.79rem",
-                lineHeight: "1",
-                fontWeight: "bold",
-                color: "#EA572E",
-              }}
-            >
-              PROBLEMA
-            </Typography>
-          </Grid>
+      <Grid item sx={{ height: 1 / 4, display: "flex" }}>
+        <Grid
+          item
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+          xs={1}
+        >
+          {/* <ExperimentsIcon style={{ width: "1.3rem" }} /> */}
+          <CircularArrowsIcon style={{ height: "1.2rem", width: "1.2rem" }} />
         </Grid>
-        <Grid item sx={{ height: 1 / 4, display: "flex" }}>
-          <Grid
-            item
+        <Grid
+          sx={{
+            overflow: "hidden",
+            display: "flex",
+            alignItems: "center",
+          }}
+          item
+          xs={11}
+        >
+          <Typography
             sx={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
+              fontSize: "0.79rem",
+              lineHeight: "1",
+              fontWeight: "bold",
             }}
-            xs={1}
           >
-            {/* <ExperimentsIcon style={{ width: "1.3rem" }} /> */}
-            <CircularArrowsIcon style={{ height: "1.2rem", width: "1.2rem" }} />
-          </Grid>
-          <Grid
-            sx={{
-              overflow: "hidden",
-              display: "flex",
-              alignItems: "center",
-            }}
-            item
-            xs={11}
-          >
-            <Typography
-              sx={{
-                fontSize: "0.79rem",
-                lineHeight: "1",
-                fontWeight: "bold",
-              }}
-            >
-              Baja de Rotacion de [SKU 002]
-            </Typography>
-          </Grid>
+            Baja de Rotacion de [SKU 002]
+          </Typography>
         </Grid>
-        <Grid item sx={{ height: 1 / 4, display: "flex" }}>
-          <Grid
-            item
-            sx={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-            xs={1}
-          >
-            {/* <CalendarMonthOutlinedIcon fontSize="medium" /> */}
-            <CalendarAlertIcon style={{ height: "1.2rem", width: "1.2rem" }} />
-          </Grid>
-          <Grid
-            sx={{
-              overflow: "hidden",
-              display: "flex",
-              alignItems: "center",
-            }}
-            item
-            xs={11}
-          >
-            <Typography
-              sx={{
-                fontSize: "0.79rem",
-                lineHeight: "1",
-                fontWeight: "bold",
-              }}
-            >
-              Ventas: [2] Unidades durante [15] dias.
-            </Typography>
-          </Grid>
+      </Grid>
+      <Grid item sx={{ height: 1 / 4, display: "flex" }}>
+        <Grid
+          item
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+          xs={1}
+        >
+          {/* <CalendarMonthOutlinedIcon fontSize="medium" /> */}
+          <CalendarAlertIcon style={{ height: "1.2rem", width: "1.2rem" }} />
         </Grid>
-        <Grid item sx={{ height: 1 / 4, display: "flex" }}>
-          <Grid
-            item
+        <Grid
+          sx={{
+            overflow: "hidden",
+            display: "flex",
+            alignItems: "center",
+          }}
+          item
+          xs={11}
+        >
+          <Typography
             sx={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
+              fontSize: "0.79rem",
+              lineHeight: "1",
+              fontWeight: "bold",
             }}
-            xs={1}
           >
-            {/* <CalendarMonthOutlinedIcon fontSize="medium" /> */}
-            <MoneyLossIcon style={{ height: "1.2rem", width: "1.2rem" }} />
-          </Grid>
-          <Grid sx={{ display: "flex", alignItems: "center" }} item xs={11}>
-            <Typography
-              sx={{
-                fontSize: "0.79rem",
-                lineHeight: "1",
-                fontWeight: "bold",
-              }}
-            >
-              Impacto Negativo: [-20 €] perdidos x dia. [-100 €] perdidos x
-              semana
-            </Typography>
-          </Grid>
+            Ventas: [2] Unidades durante [15] dias.
+          </Typography>
+        </Grid>
+      </Grid>
+      <Grid item sx={{ height: 1 / 4, display: "flex" }}>
+        <Grid
+          item
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+          xs={1}
+        >
+          {/* <CalendarMonthOutlinedIcon fontSize="medium" /> */}
+          <MoneyLossIcon style={{ height: "1.2rem", width: "1.2rem" }} />
+        </Grid>
+        <Grid sx={{ display: "flex", alignItems: "center" }} item xs={11}>
+          <Typography
+            sx={{
+              fontSize: "0.79rem",
+              lineHeight: "1",
+              fontWeight: "bold",
+            }}
+          >
+            Impacto Negativo: [-20 €] perdidos x dia. [-100 €] perdidos x semana
+          </Typography>
         </Grid>
       </Grid>
       {/* mid section end  */}
