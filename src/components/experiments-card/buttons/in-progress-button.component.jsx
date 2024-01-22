@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "@mui/material";
-import { ReactComponent as AtomIcon } from "../../assets/images/atom-icon.svg";
+import { ReactComponent as AtomIcon } from "../../../assets/images/atom-icon.svg";
 
 const InProgressButton = ({ onClick }) => {
   return (
