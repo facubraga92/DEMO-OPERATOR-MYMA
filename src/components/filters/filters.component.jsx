@@ -58,7 +58,7 @@ const Filters = ({ dropdownData, machinesSelectorDisabled }) => {
   const [filters, setFilters] = useState({
     clusters: "default",
     locations: "default",
-    categories: "default",
+    categories: "default", //label: "Tipo"
     machines: "default",
   });
 
@@ -136,7 +136,7 @@ const Filters = ({ dropdownData, machinesSelectorDisabled }) => {
           value={filters.categories}
           onChange={handleFilters}
           items={dropdownData?.categories}
-          label="Categoría"
+          label="Tipo"
           width="5rem"
         />
       </Grid>
