@@ -9,9 +9,21 @@ import {
 import { ReactComponent as TrendLineChartIcon } from "../../assets/images/trend-line-chart.svg";
 import { ReactComponent as ArrowBigGreen } from "../../assets/images/arrow-green-big.svg";
 import { ReactComponent as ArrowBigRed } from "../../assets/images/arrow-red-big.svg";
+import { ReactComponent as ExperimentsIcon } from "../../assets/images/experiments-icon.svg";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCartOutlined";
+import ProgressBar from "@ramonak/react-progress-bar";
 
-const BigCard = ({ metricsData, bigCardData, period, setPeriod, logo }) => {
+const BigCard = ({
+  metricsData,
+  bigCardData,
+  period,
+  setPeriod,
+  logo,
+  experimentsPage,
+  sales,
+  units,
+  sprintProgress,
+}) => {
   //Using logo prop for set up metricsData property to fill cards.
   const [metricsProperty, setMetricsProperty] = useState("sales");
 
@@ -23,10 +35,25 @@ const BigCard = ({ metricsData, bigCardData, period, setPeriod, logo }) => {
       if (logo === "shopcart") {
         setMetricsProperty("units");
       }
+      if (logo === "experiment" && sales) {
+        setMetricsProperty("sales");
+      }
+      if (logo === "experiment" && units) {
+        setMetricsProperty("units");
+      }
     },
     // eslint-disable-next-line
     [metricsProperty]
   );
+
+  const currencyContent =
+    logo === "trendlinechart"
+      ? metricsData?.currency?.symbol
+      : logo === "shopcart"
+      ? "u"
+      : logo === "experiment" && sales
+      ? metricsData?.currency?.symbol
+      : "u";
 
   const percentage = Math.round(
     parseFloat(metricsData?.[metricsProperty]?.difference_str)
@@ -53,7 +80,8 @@ const BigCard = ({ metricsData, bigCardData, period, setPeriod, logo }) => {
             xs={12}
             sx={{
               minHeight: "89px",
-              backgroundColor: "#663B73",
+              // backgroundColor: "#663B73",
+              backgroundColor: experimentsPage ? "#00A87C" : "#663B73",
               borderRadius: "10px 10px 0px 0px",
               padding: "16px",
               display: "flex",
@@ -110,13 +138,17 @@ const BigCard = ({ metricsData, bigCardData, period, setPeriod, logo }) => {
                 {logo === "shopcart" && (
                   <ShoppingCartIcon sx={{ fontSize: "32px" }} />
                 )}
+                {logo === "experiment" && (
+                  <ExperimentsIcon sx={{ fontSize: "32px" }} />
+                )}
               </Grid>
               <Grid
                 item
-                xs={8}
+                xs={experimentsPage ? 10 : 8}
                 sx={{ display: "flex", justifyContent: "center" }}
               >
-                <Typography sx={{ fontSize: "1.25rem" }}>
+                {/* <Typography sx={{ fontSize: "1.25rem" }}> */}
+                <Typography noWrap sx={{ fontSize: "1.25rem" }}>
                   {bigCardData.headline}
                 </Typography>
               </Grid>
@@ -158,19 +190,19 @@ const BigCard = ({ metricsData, bigCardData, period, setPeriod, logo }) => {
                     alignItems: "center",
                   }}
                 >
-                  {metricsData?.[metricsProperty]?.total}
+                  {metricsData?.[metricsProperty]?.total.toLocaleString(
+                    "es-ES"
+                  )}
                 </Typography>
-                {logo === "trendlinechart" && (
-                  <Typography
-                    sx={{
-                      fontSize: "1.8rem",
-                      display: "flex",
-                      alignItems: "end",
-                    }}
-                  >
-                    {metricsData?.currency?.symbol}
-                  </Typography>
-                )}
+                <Typography
+                  sx={{
+                    fontSize: "1.8rem",
+                    display: "flex",
+                    alignItems: "end",
+                  }}
+                >
+                  {currencyContent}
+                </Typography>
               </Grid>
               <Grid
                 item
@@ -211,6 +243,7 @@ const BigCard = ({ metricsData, bigCardData, period, setPeriod, logo }) => {
                 alignItems: "end",
               }}
             >
+              {sprintProgress && <ProgressBar bgColor="#663B73" width="10rem" completed={sprintProgress} />}
               {period && (
                 <ToggleButtonGroup
                   color="black"
@@ -246,7 +279,7 @@ const BigCard = ({ metricsData, bigCardData, period, setPeriod, logo }) => {
             xs={12}
             sx={{
               minHeight: "35px",
-              backgroundColor: "#663B73",
+              backgroundColor: experimentsPage ? "#00A87C" : "#663B73",
               borderRadius: "0px 0px 10px 10px",
             }}
           ></Grid>

@@ -16,6 +16,7 @@ import ExperimentsCard from "../../components/experiments-card/experiments-card.
 const MyExperiments = () => {
   const [dropdownData, setDropdownData] = useState({});
   const [metricsData, setMetricsData] = useState({});
+  // eslint-disable-next-line
   const [period, setPeriod] = useState("2w");
 
   const sliderSettings = {
@@ -39,14 +40,14 @@ const MyExperiments = () => {
   };
 
   const bigCardFirstSlider = {
-    title: "Ingresos",
-    subtitle: "Marina de Empresas",
-    headline: "Ingresos Brutos",
+    title: "Ingresos Incrementales",
+    subtitle: "Lanzadera - Com Izq",
+    headline: "Ingresos Adicionales Experimentos",
   };
   const bigCardSecondSlider = {
-    title: "Unidades",
+    title: "Unidades Incrementales",
     subtitle: "Marina de Empresas",
-    headline: "Unidades",
+    headline: "Unidades Adicionales Experimentos",
   };
 
   // END OF HARDCODED FAKE DATA //
@@ -98,20 +99,22 @@ const MyExperiments = () => {
         <Slider {...sliderSettings}>
           <div>
             <BigCard
-              period={period}
-              setPeriod={setPeriod}
+              sprintProgress={70}
               bigCardData={bigCardFirstSlider}
               metricsData={metricsData}
-              logo="trendlinechart"
+              logo="experiment"
+              experimentsPage
+              sales
             />
           </div>
           <div>
             <BigCard
-              period={period}
-              setPeriod={setPeriod}
+              sprintProgress={70}
               bigCardData={bigCardSecondSlider}
               metricsData={metricsData}
-              logo="shopcart"
+              logo="experiment"
+              experimentsPage
+              units
             />
           </div>
         </Slider>
