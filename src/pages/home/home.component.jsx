@@ -1,17 +1,12 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Box, Skeleton } from "@mui/material";
-import { useEffect } from "react";
-import { useState } from "react";
-// import { getProducts, getProductsPromo } from "../../services/product.service";
-// import { getCustomerCards } from "../../services/customer.service";
-// import { getStore } from "../../services/store.service";
+import { useEffect, useState } from "react";
 import Footer from "../../components/footer/footer.component";
 import Header from "../../components/header/header.component";
 import JoyrideTutorial from "../../utils/joyRideTutorial";
 import ReactGA from "react-ga4";
 import BigCard from "../../components/big-card/big-card.component";
-// import SmallCard from "../../components/small-card/small-card.component";
 import Section from "../../components/section/section.component";
 import Metrics from "../../components/metrics/metrics.component";
 import axios from "axios";
@@ -19,6 +14,7 @@ import Filters from "../../components/filters/filters.component";
 import Slider from "react-slick";
 import "../../../node_modules/slick-carousel/slick/slick.css";
 import "../../../node_modules/slick-carousel/slick/slick-theme.css";
+import { bigCardFirstSlider, bigCardSecondSlider } from "../../utils/fakeData";
 
 const HomeBody = () => {
   const [runTutorial, setRunTutorial] = useState(false);
@@ -72,36 +68,6 @@ const HomeBody = () => {
     // afterChange: handleSlideChange,
   };
 
-  //hardcoded fake data.
-  const bigCardFirstSlider = {
-    title: "Ingresos",
-    subtitle: "Marina de Empresas",
-    headline: "Ingresos Brutos",
-  };
-  const bigCardSecondSlider = {
-    title: "Unidades",
-    subtitle: "Marina de Empresas",
-    headline: "Unidades",
-  };
-  // eslint-disable-next-line
-  const smallCardDataPositive = {
-    type: "Rotación",
-    productName: "Ensalada Caesar",
-    productSku: "T: LANZ IZ . EID:002",
-    oldValue: "2",
-    newValue: "10",
-    change: "+80%",
-    variant: "positive",
-  };
-  // eslint-disable-next-line
-  const smallCardDataNegative = {
-    type: "Costos",
-    title: "[Mercadona] Aumento de Precio sku: Sandiwch Pollo",
-    description:
-      "INGRESOS: Baja de ingresos,en caso de no actualizar Precio Venta",
-    variant: "negative",
-  };
-
   return (
     <>
       <JoyrideTutorial runTutorial={runTutorial} />
@@ -145,12 +111,6 @@ const HomeBody = () => {
             />
           </div>
         </Slider>
-        {/* <BigCard
-          period={period}
-          setPeriod={setPeriod}
-          bigCardData={bigCardData}
-          metricsData={metricsData}
-        /> */}
         <Section title="KPIS Relevante" />
         <Slider {...sliderSettings}>
           <div>
@@ -167,12 +127,8 @@ const HomeBody = () => {
           variant="rectangular"
           height={118}
         />
-        {/* <SmallCard {...smallCardDataPositive} />
-        <SmallCard {...smallCardDataPositive} />
-        <Section title="Alertas & Notificaciones" />
-        <SmallCard {...smallCardDataNegative} /> */}
       </Box>
-      <Footer  activeIconID={0}/>
+      <Footer activeIconID={0} />
     </>
   );
 };

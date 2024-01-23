@@ -11,6 +11,13 @@ import Metrics from "../../components/metrics/metrics.component";
 import Footer from "../../components/footer/footer.component";
 import axios from "axios";
 import MediumCard from "../../components/medium-card/medium-card.component";
+import {
+  mediumCardDataNeutral,
+  mediumCardDataPositive,
+  smallCardDataNegative,
+  smallCardDataPositive,
+} from "../../utils/fakeData";
+import SmallCard from "../../components/small-card/small-card.component";
 
 const MyMachine = () => {
   const [dropdownData, setDropdownData] = useState({});
@@ -26,53 +33,6 @@ const MyMachine = () => {
   };
 
   // HARDCODED FAKE DATA //
-
-  const mediumCardDataPositive = {
-    type: "TOP 3",
-    title: "Experimentos en [15 días]",
-    list: [
-      { "Sandwich Pastrami": "+39 Ventas" },
-      { "Sandwich Mila": "+27 Ventas" },
-      { "Ensaladilla Tusa": "+26 Ventas" },
-    ],
-    value: "",
-    icon: "experiment",
-    variant: "positive",
-  };
-  const mediumCardDataNegative = {
-    type: "TOP 3",
-    title: "Menos Vendidos en [15 días]",
-    list: [
-      { "Ensalada MEX": "6 Ventas" },
-      { "Carne / Papas": "4 Ventas" },
-      { "Ensalada Pasta": "3 Ventas" },
-    ],
-    value: "",
-    icon: "vending",
-    variant: "negative",
-  };
-  const mediumCardDataNeutral = {
-    type: "CAMP ID",
-    title: "101",
-    subtitle: "¡NO te quedes sin el tuyo!",
-    list: [
-      "Sandwich de Pollo",
-      "Precio PROMO a 3.00€",
-      "SLOT 45 - MAQUINA LANZADERA",
-    ],
-    imgURL:
-      "https://okdiario.com/img/2023/01/16/sandwich-de-pollo-de-mercadona.jpg",
-    variant: "neutral",
-  };
-  const mediumCardDataExperiment = {
-    type: "EXPERIMENTO",
-    title: "102 Sandwich Pastrami",
-    icon: "blocks",
-    value: "+168",
-    variant: "positive",
-    arrow: false,
-  };
-
   const bigCardFirstSlider = {
     title: "Ingresos",
     subtitle: "Marina de Empresas",
@@ -160,15 +120,26 @@ const MyMachine = () => {
             <Metrics slideIndex="1" metricsData={metricsData} />
           </div>
         </Slider>
-        <Section title="Información Relevante" />
-        <MediumCard {...mediumCardDataPositive} />
-        <MediumCard {...mediumCardDataNegative} />
-        <MediumCard {...mediumCardDataNeutral} />
-        <MediumCard {...mediumCardDataExperiment} />
-        {/* <SmallCard {...mediumCardDataPositive} />
-   <SmallCard {...smallCardDataPositive} />
-    <Section title="Alertas & Notificaciones" />
-    <SmallCard {...smallCardDataNegative} /> */}
+        <Section title="Experimentos" />
+        <Slider {...sliderSettings}>
+          <SmallCard {...smallCardDataPositive} />
+          <SmallCard {...smallCardDataPositive} />
+        </Slider>
+        <Section title="Alertas" />
+        <Slider {...sliderSettings}>
+          <SmallCard {...smallCardDataNegative} />
+          <SmallCard {...smallCardDataNegative} />
+        </Slider>
+        <Section title="Insights" />
+        <Slider {...sliderSettings}>
+          <MediumCard {...mediumCardDataPositive} />
+          <MediumCard {...mediumCardDataPositive} />
+        </Slider>
+        <Section title="Campañas" />
+        <Slider {...sliderSettings}>
+          <MediumCard {...mediumCardDataNeutral} />
+          <MediumCard {...mediumCardDataNeutral} />
+        </Slider>
       </Box>
       <Footer activeIconID={1} />
     </>
