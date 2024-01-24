@@ -127,18 +127,6 @@ const HomeBody = () => {
           variant="rectangular"
           height={118}
         />
-        {/* VARIANTE A (positiva y negativa) - Terminadas
-        <MediumCardVariantA {...mediumCardDataPositive} />
-        <MediumCardVariantA {...mediumCardDataNegative} />
-        VARIANTE B - Terminada
-        <MediumCardVariantB {...mediumCardDataExperiment} />
-        VARIANTE C - Terminada
-        <MediumCardVariantC {...mediumCardDataNeutral} />
-        VARIANTE D (ganador y perdedor) - Terminadas
-        <MediumCardVariantD {...mediumCardDataWinnerOfMonth} />
-        <MediumCardVariantD {...mediumCardDataLoserOfMonth} />
-        VARIANTE E - Terminada
-        <MediumCardVariantE {...mediumCardDataTopSpendingPerTurns} /> */}
       </Box>
       <Footer activeIconID={0} />
     </>

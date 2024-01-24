@@ -132,13 +132,13 @@ const MyMachine = () => {
         </Slider>
         <Section title="Insights" />
         <Slider {...sliderSettings}>
-          <MediumCard {...mediumCardDataPositive} />
-          <MediumCard {...mediumCardDataPositive} />
+          <MediumCard variant={"a"} data={mediumCardDataPositive} />
+          <MediumCard variant={"a"} data={mediumCardDataPositive} />
         </Slider>
         <Section title="Campañas" />
         <Slider {...sliderSettings}>
-          <MediumCard {...mediumCardDataNeutral} />
-          <MediumCard {...mediumCardDataNeutral} />
+          <MediumCard variant={"c"} data={mediumCardDataNeutral} />
+          <MediumCard variant={"c"} data={mediumCardDataNeutral} />
         </Slider>
       </Box>
       <Footer activeIconID={1} />
