@@ -11,7 +11,6 @@ import axios from "axios";
 import {
   mediumCardDataLoserOfMonth,
   mediumCardDataNegative,
-  mediumCardDataNeutral,
   mediumCardDataPositive,
   mediumCardDataTopSpendingPerTurns,
   mediumCardDataWinnerOfMonth,
