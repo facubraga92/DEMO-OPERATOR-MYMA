@@ -84,3 +84,30 @@ export const mediumCardDataExperiment = {
   variant: "positive",
   arrow: false,
 };
+
+export const mediumCardDataWinnerOfMonth = {
+  type: "GANADOR DEL MES",
+  content:
+    "Este [mes] el Producto mas vendido es [Ensalada Pasta] con  [60 Ventas]",
+  variant: "positive",
+  arrow: false,
+};
+export const mediumCardDataLoserOfMonth = {
+  type: "PERDEDOR DEL MES",
+  content:
+    "Este [mes] el Producto menos vendido es [Ensalada Pasta] con solo [3 Ventas]",
+  variant: "negative",
+  arrow: false,
+};
+export const mediumCardDataTopSpendingPerTurns = {
+  type: "TOP Consumo Turnos",
+  list: [
+    { Desayuno: "X Unidades / X Euros / Particpacion X%" },
+    { Almuerzo: "X Unidades / X Euros / Particpacion X%" },
+    { Comida: "X Unidades / X Euros / Particpacion X%" },
+    { Merienda: "X Unidades / X Euros / Particpacion X%" },
+    { Cena: "X Unidades / X Euros / Particpacion X%" },
+  ],
+  variant: "neutral",
+  arrow: false,
+};
