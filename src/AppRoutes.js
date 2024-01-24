@@ -26,6 +26,7 @@ import Loading from "./components/loading/loading.component";
 import Ads from "./pages/ads/ads.component";
 import MyMachine from "./pages/my-machine/my-machine.component";
 import MyExperiments from "./pages/my-experiments/my-experiments.component";
+import Alerts from "./pages/alerts/alerts.component";
 
 const AppRoutes = () => (
   <Routes>
@@ -182,6 +183,14 @@ const AppRoutes = () => (
         element={
           <PrivateRoute>
             <MyExperiments />
+          </PrivateRoute>
+        }
+      />
+      <Route
+        path="alerts"
+        element={
+          <PrivateRoute>
+            <Alerts />
           </PrivateRoute>
         }
       />

@@ -26,6 +26,18 @@ export const smallCardDataNegative = {
     "INGRESOS: Baja de ingresos,en caso de no actualizar Precio Venta",
   variant: "negative",
 };
+export const smallCardDataNegativeAlertsCosts = {
+  type: "Costos",
+  title: "Aumento [SKU X] en [X centimos]",
+  description: "Acción: Ajustar precios para no perder beneficios",
+  variant: "negative",
+};
+export const smallCardDataNegativeAlertsRotation = {
+  type: "Rotación",
+  title: "Aumento [SKU X] en [X centimos]",
+  description: "Acción: Ajustar precios para no perder beneficios",
+  variant: "negative",
+};
 
 export const mediumCardDataPositive = {
   type: "TOP 3",

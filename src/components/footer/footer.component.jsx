@@ -58,8 +58,8 @@ const Footer = ({ activeIconID }) => {
       case "experiments":
         navigate("/experiments");
         break;
-      case "cards":
-        navigate("/cards");
+      case "alerts":
+        navigate("/alerts");
         break;
       case "insights":
         authLogout();
@@ -170,7 +170,7 @@ const Footer = ({ activeIconID }) => {
           <FooterButtons
             className="joyride-step4"
             active={3 === activeIconID}
-            onClick={() => handleButtonClick("cards")}
+            onClick={() => handleButtonClick("alerts")}
           >
             <AlertsIcon />
           </FooterButtons>
