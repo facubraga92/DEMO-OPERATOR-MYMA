@@ -38,7 +38,7 @@ const Header = ({ title, setRunTutorial, runTutorial, avatar }) => {
               right: -44,
               top: "50%",
               transform: "translateY(-50%)",
-              marginInlineEnd: "1rem",
+              marginInlineEnd: "0.5rem",
             }}
           >
             {title === "Tienda" && (

@@ -27,6 +27,7 @@ import Ads from "./pages/ads/ads.component";
 import MyMachine from "./pages/my-machine/my-machine.component";
 import MyExperiments from "./pages/my-experiments/my-experiments.component";
 import Alerts from "./pages/alerts/alerts.component";
+import Insights from "./pages/insights/insights.component";
 
 const AppRoutes = () => (
   <Routes>
@@ -191,6 +192,14 @@ const AppRoutes = () => (
         element={
           <PrivateRoute>
             <Alerts />
+          </PrivateRoute>
+        }
+      />
+      <Route
+        path="insights"
+        element={
+          <PrivateRoute>
+            <Insights />
           </PrivateRoute>
         }
       />

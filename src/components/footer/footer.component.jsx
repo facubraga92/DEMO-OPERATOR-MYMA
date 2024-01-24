@@ -9,7 +9,7 @@ import { ReactComponent as ExperimentsIcon } from "../../assets/images/erlenmeye
 import { ReactComponent as VendingMachineIcon } from "../../assets/images/vending-icon.svg";
 import InsightsOutlinedIcon from "@mui/icons-material/InsightsOutlined";
 
-import { authLogout } from "../../services/auth.service";
+// import { authLogout } from "../../services/auth.service";
 
 const FooterContainer = styled("div")((props) => {
   return {
@@ -62,7 +62,7 @@ const Footer = ({ activeIconID }) => {
         navigate("/alerts");
         break;
       case "insights":
-        authLogout();
+        navigate("/insights");
         break;
       default:
     }
