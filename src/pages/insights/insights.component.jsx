@@ -9,9 +9,11 @@ import Section from "../../components/section/section.component";
 import Footer from "../../components/footer/footer.component";
 import axios from "axios";
 import {
+  mediumCardDataLoserOfMonth,
   mediumCardDataNegative,
-  mediumCardDataNeutral,
   mediumCardDataPositive,
+  mediumCardDataTopSpendingPerTurns,
+  mediumCardDataWinnerOfMonth,
 } from "../../utils/fakeData";
 import MediumCard from "../../components/medium-card/medium-card.component";
 
@@ -66,12 +68,8 @@ const Insights = () => {
           </Grid>
           <Grid sx={{ marginBlockStart: "0.5rem" }} item xs={12}>
             <Slider {...sliderSettings}>
-              <div>
-                <MediumCard {...mediumCardDataPositive} />
-              </div>
-              <div>
-                <MediumCard {...mediumCardDataPositive} />
-              </div>
+              <MediumCard variant={"a"} data={mediumCardDataPositive} />
+              <MediumCard variant={"d"} data={mediumCardDataWinnerOfMonth} />
             </Slider>
           </Grid>
           <Grid item xs={12}>
@@ -79,12 +77,8 @@ const Insights = () => {
           </Grid>
           <Grid sx={{ marginBlockStart: "0.5rem" }} item xs={12}>
             <Slider {...sliderSettings}>
-              <div>
-                <MediumCard {...mediumCardDataNegative} />
-              </div>
-              <div>
-                <MediumCard {...mediumCardDataNegative} />
-              </div>
+              <MediumCard variant={"a"} data={mediumCardDataNegative} />
+              <MediumCard variant={"d"} data={mediumCardDataLoserOfMonth} />
             </Slider>
           </Grid>
           <Grid item xs={12}>
@@ -92,9 +86,10 @@ const Insights = () => {
           </Grid>
           <Grid sx={{ marginBlockStart: "0.5rem" }} item xs={12}>
             <Slider {...sliderSettings}>
-              <div>
-                <MediumCard {...mediumCardDataNeutral} />
-              </div>
+              <MediumCard
+                variant={"e"}
+                data={mediumCardDataTopSpendingPerTurns}
+              />
             </Slider>
           </Grid>
         </Grid>
