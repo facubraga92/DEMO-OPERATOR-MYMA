@@ -9,12 +9,15 @@ import ReactGA from "react-ga4";
 import BigCard from "../../components/big-card/big-card.component";
 import Section from "../../components/section/section.component";
 import Metrics from "../../components/metrics/metrics.component";
-import axios from "axios";
 import Filters from "../../components/filters/filters.component";
 import Slider from "react-slick";
 import "../../../node_modules/slick-carousel/slick/slick.css";
 import "../../../node_modules/slick-carousel/slick/slick-theme.css";
-import { bigCardFirstSlider, bigCardSecondSlider } from "../../utils/fakeData";
+import {
+  bigCardFirstSlider,
+  bigCardSecondSlider,
+  portfolioFakeData,
+} from "../../utils/fakeData";
 
 const HomeBody = () => {
   const [runTutorial, setRunTutorial] = useState(false);
@@ -28,15 +31,13 @@ const HomeBody = () => {
 
   useEffect(() => {
     const fetch = async () => {
-      const { data } = await axios.get(
-        `http://localhost:3001/api/metrics?clientId=natica&period=${period}`
-      );
-
-      setMetricsData(data);
+      setMetricsData(portfolioFakeData[period]);
     };
 
     fetch();
   }, [period]);
+
+  console.log(metricsData)
 
   // const handleSlideChange = (index) => {
   //   // Check if the index of the current slide is 0

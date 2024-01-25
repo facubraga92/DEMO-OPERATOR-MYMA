@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 import { Grid, MenuItem, Select } from "@mui/material";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import customSelectStyles from "./customSelectStyles";
-import axios from "axios";
 import { dropdownFakeData } from "../../utils/fakeData";
 
 const CustomSelect = ({
@@ -66,8 +65,6 @@ const Filters = ({ machinesSelectorDisabled }) => {
 
     fetch();
   }, []);
-
-  console.log(dropdownData);
 
   const [filters, setFilters] = useState({
     clusters: "default", //label: "Cliente"
