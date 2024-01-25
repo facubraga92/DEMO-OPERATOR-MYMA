@@ -111,3 +111,24 @@ export const mediumCardDataTopSpendingPerTurns = {
   variant: "neutral",
   arrow: false,
 };
+
+//DROPDOWN FAKE DATA
+
+export const dropdownFakeData = {
+  categories: ["TODAS", "default", "Snacks", "Cafés"],
+  clusters: [
+    "default",
+    "Lanzadera",
+    "EDEM",
+    "Angels",
+    "Serrano",
+    "Aquaservice",
+  ],
+  locations: ["TODAS", "default", "Piso 1", "Piso 2"],
+  machines: [
+    {
+      id: 1,
+      alias: "lanzadera com izq",
+    },
+  ],
+};
