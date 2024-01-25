@@ -9,9 +9,9 @@ import BigCard from "../../components/big-card/big-card.component";
 import Section from "../../components/section/section.component";
 import Metrics from "../../components/metrics/metrics.component";
 import Footer from "../../components/footer/footer.component";
-import axios from "axios";
 import MediumCard from "../../components/medium-card/medium-card.component";
 import {
+  machinesFakeData,
   mediumCardDataNeutral,
   mediumCardDataPositive,
   smallCardDataNegative,
@@ -47,11 +47,7 @@ const MyMachine = () => {
 
   useEffect(() => {
     const fetch = async () => {
-      const { data } = await axios.get(
-        `http://localhost:3001/api/metrics?clientId=natica&period=${period}`
-      );
-
-      setMetricsData(data);
+      setMetricsData(machinesFakeData[period]);
     };
 
     fetch();

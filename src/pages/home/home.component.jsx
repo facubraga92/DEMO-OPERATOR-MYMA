@@ -37,8 +37,6 @@ const HomeBody = () => {
     fetch();
   }, [period]);
 
-  console.log(metricsData)
-
   // const handleSlideChange = (index) => {
   //   // Check if the index of the current slide is 0
   //   const isZero = index === 0;
