@@ -23,8 +23,6 @@ const HomeBody = () => {
 
   const [period, setPeriod] = useState("2w");
 
-  const [dropdownData, setDropdownData] = useState({});
-
   // const [machinesSelectorDisabled, setMachinesSelectorDisabled] =
   //   useState(true);
 
@@ -39,18 +37,6 @@ const HomeBody = () => {
 
     fetch();
   }, [period]);
-
-  useEffect(() => {
-    const fetch = async () => {
-      const { data } = await axios.get(
-        `http://localhost:3001/api/dd?clientId=natica`
-      );
-
-      setDropdownData(data);
-    };
-
-    fetch();
-  }, []);
 
   // const handleSlideChange = (index) => {
   //   // Check if the index of the current slide is 0
@@ -90,7 +76,7 @@ const HomeBody = () => {
           overflowX: "hidden",
         }}
       >
-        <Filters machinesSelectorDisabled dropdownData={dropdownData} />
+        <Filters machinesSelectorDisabled />
         <Slider {...sliderSettings}>
           <div>
             <BigCard

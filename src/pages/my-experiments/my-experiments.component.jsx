@@ -14,7 +14,6 @@ import axios from "axios";
 import ExperimentsCard from "../../components/experiments-card/experiments-card.component";
 
 const MyExperiments = () => {
-  const [dropdownData, setDropdownData] = useState({});
   const [metricsData, setMetricsData] = useState({});
   // eslint-disable-next-line
   const [period, setPeriod] = useState("2w");
@@ -64,18 +63,6 @@ const MyExperiments = () => {
     fetch();
   }, [period]);
 
-  useEffect(() => {
-    const fetch = async () => {
-      const { data } = await axios.get(
-        `http://localhost:3001/api/dd?clientId=natica`
-      );
-
-      setDropdownData(data);
-    };
-
-    fetch();
-  }, []);
-
   return (
     <>
       <Header
@@ -95,7 +82,7 @@ const MyExperiments = () => {
           overflowX: "hidden",
         }}
       >
-        <Filters dropdownData={dropdownData} />
+        <Filters />
         <Slider {...sliderSettings}>
           <div>
             <BigCard

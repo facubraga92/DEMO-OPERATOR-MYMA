@@ -20,7 +20,6 @@ import {
 import SmallCard from "../../components/small-card/small-card.component";
 
 const MyMachine = () => {
-  const [dropdownData, setDropdownData] = useState({});
   const [metricsData, setMetricsData] = useState({});
   const [period, setPeriod] = useState("2w");
 
@@ -58,18 +57,6 @@ const MyMachine = () => {
     fetch();
   }, [period]);
 
-  useEffect(() => {
-    const fetch = async () => {
-      const { data } = await axios.get(
-        `http://localhost:3001/api/dd?clientId=natica`
-      );
-
-      setDropdownData(data);
-    };
-
-    fetch();
-  }, []);
-
   return (
     <>
       <Header
@@ -89,7 +76,7 @@ const MyMachine = () => {
           overflowX: "hidden",
         }}
       >
-        <Filters dropdownData={dropdownData} />
+        <Filters />
         <Slider {...sliderSettings}>
           <div>
             <BigCard

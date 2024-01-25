@@ -1,8 +1,9 @@
 // eslint-disable-next-line
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Grid, MenuItem, Select } from "@mui/material";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import customSelectStyles from "./customSelectStyles";
+import axios from "axios";
 
 const CustomSelect = ({
   name,
@@ -54,9 +55,23 @@ const CustomSelect = ({
   </Select>
 );
 
-const Filters = ({ dropdownData, machinesSelectorDisabled }) => {
+const Filters = ({ machinesSelectorDisabled }) => {
+  const [dropdownData, setDropdownData] = useState({});
+
+  useEffect(() => {
+    const fetch = async () => {
+      const { data } = await axios.get(
+        `http://localhost:3001/api/dd?clientId=natica`
+      );
+
+      setDropdownData(data);
+    };
+
+    fetch();
+  }, []);
+
   const [filters, setFilters] = useState({
-    clusters: "default",
+    clusters: "default", //label: "Cliente"
     locations: "default",
     categories: "default", //label: "Tipo"
     machines: "default",
@@ -100,7 +115,7 @@ const Filters = ({ dropdownData, machinesSelectorDisabled }) => {
           value={filters.clusters}
           onChange={handleFilters}
           items={dropdownData?.clusters}
-          label="Cluster"
+          label="Cliente"
           width="5rem"
         />
       </Grid>

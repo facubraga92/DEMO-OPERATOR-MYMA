@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Header from "../../components/header/header.component";
 import { Box, Grid } from "@mui/material";
 import Filters from "../../components/filters/filters.component";
@@ -7,7 +7,6 @@ import "../../../node_modules/slick-carousel/slick/slick.css";
 import "../../../node_modules/slick-carousel/slick/slick-theme.css";
 import Section from "../../components/section/section.component";
 import Footer from "../../components/footer/footer.component";
-import axios from "axios";
 import {
   smallCardDataNegativeAlertsCosts,
   smallCardDataNegativeAlertsRotation,
@@ -15,8 +14,6 @@ import {
 import SmallCard from "../../components/small-card/small-card.component";
 
 const Alerts = () => {
-  const [dropdownData, setDropdownData] = useState({});
-
   const sliderSettings = {
     infinite: false,
     speed: 500,
@@ -25,17 +22,17 @@ const Alerts = () => {
     // afterChange: handleSlideChange,
   };
 
-  useEffect(() => {
-    const fetch = async () => {
-      const { data } = await axios.get(
-        `http://localhost:3001/api/dd?clientId=natica`
-      );
+  // useEffect(() => {
+  //   const fetch = async () => {
+  //     const { data } = await axios.get(
+  //       `http://localhost:3001/api/dd?clientId=natica`
+  //     );
 
-      setDropdownData(data);
-    };
+  //     setDropdownData(data);
+  //   };
 
-    fetch();
-  }, []);
+  //   fetch();
+  // }, []);
 
   return (
     <>
@@ -56,7 +53,7 @@ const Alerts = () => {
           overflowX: "hidden",
         }}
       >
-        <Filters dropdownData={dropdownData} />
+        <Filters />
         <Grid container sx={{ marginBlockStart: "3rem" }}>
           <Grid item xs={12}>
             <Section title="Costos de los Productos" />
