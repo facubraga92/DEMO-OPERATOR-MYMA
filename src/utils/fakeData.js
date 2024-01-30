@@ -405,7 +405,7 @@ export const machinesFakeData = {
     sales: {
       total: dataMMachines.sales.total / 4, // Estimativo basado en la duración del mes
       total_previous_period: dataMMachines.sales.total_previous_period / 4, // Estimativo basado en la duración del mes
-      difference_str: "0%", // No hay diferencia ya que es el primer periodo semanal
+      difference_str: "5%", // No hay diferencia ya que es el primer periodo semanal
       difference: 0,
       avg: dataMMachines.sales.avg / 4, // Estimativo basado en la duración del mes
       avg_sale_per_store: dataMMachines.sales.avg_sale_per_store / 4, // Estimativo basado en la duración del mes
@@ -415,7 +415,7 @@ export const machinesFakeData = {
     units: {
       total: dataMMachines.units.total / 4, // Estimativo basado en la duración del mes
       total_previous_period: dataMMachines.units.total_previous_period / 4, // Estimativo basado en la duración del mes
-      difference_str: "0%", // No hay diferencia ya que es el primer periodo semanal
+      difference_str: "7%", // No hay diferencia ya que es el primer periodo semanal
       difference: 0,
       avg_orders_per_customer: dataMMachines.units.avg_orders_per_customer / 4, // Estimativo basado en la duración del mes
       avg_units_per_order: dataMMachines.units.avg_units_per_order, // No se estima diferencia en la duración del mes
@@ -446,7 +446,7 @@ export const machinesFakeData = {
     sales: {
       total: dataMMachines.sales.total / 2, // Estimativo basado en la duración del mes
       total_previous_period: dataMMachines.sales.total_previous_period / 2, // Estimativo basado en la duración del mes
-      difference_str: "0%", // No hay diferencia ya que es el primer periodo de dos semanas
+      difference_str: "9%", // No hay diferencia ya que es el primer periodo de dos semanas
       difference: 0,
       avg: dataMMachines.sales.avg / 2, // Estimativo basado en la duración del mes
       avg_sale_per_store: dataMMachines.sales.avg_sale_per_store / 2, // Estimativo basado en la duración del mes
@@ -456,7 +456,7 @@ export const machinesFakeData = {
     units: {
       total: dataMMachines.units.total / 2, // Estimativo basado en la duración del mes
       total_previous_period: dataMMachines.units.total_previous_period / 2, // Estimativo basado en la duración del mes
-      difference_str: "0%", // No hay diferencia ya que es el primer periodo de dos semanas
+      difference_str: "12%", // No hay diferencia ya que es el primer periodo de dos semanas
       difference: 0,
       avg_orders_per_customer: dataMMachines.units.avg_orders_per_customer / 2, // Estimativo basado en la duración del mes
       avg_units_per_order: dataMMachines.units.avg_units_per_order, // No se estima diferencia en la duración del mes
@@ -526,7 +526,7 @@ export const machinesFakeData = {
     sales: {
       total: dataMMachines.sales.total * 12, // Estimativo basado en la duración del mes
       total_previous_period: dataMMachines.sales.total_previous_period * 12, // Estimativo basado en la duración del mes
-      difference_str: "0%", // No hay diferencia ya que es el primer año
+      difference_str: "33%", // No hay diferencia ya que es el primer año
       difference: 0,
       avg: dataMMachines.sales.avg * 12, // Estimativo basado en la duración del mes
       avg_sale_per_store: dataMMachines.sales.avg_sale_per_store * 12, // Estimativo basado en la duración del mes
@@ -536,7 +536,7 @@ export const machinesFakeData = {
     units: {
       total: dataMMachines.units.total * 12, // Estimativo basado en la duración del mes
       total_previous_period: dataMMachines.units.total_previous_period * 12, // Estimativo basado en la duración del mes
-      difference_str: "0%", // No hay diferencia ya que es el primer año
+      difference_str: "35%", // No hay diferencia ya que es el primer año
       difference: 0,
       avg_orders_per_customer: dataMMachines.units.avg_orders_per_customer * 12, // Estimativo basado en la duración del mes
       avg_units_per_order: dataMMachines.units.avg_units_per_order, // No se estima diferencia en la duración del mes
@@ -547,7 +547,6 @@ export const machinesFakeData = {
 };
 
 //EXPERIMENTS FAKE DATA
-//MACHINES FAKE DATA
 const dataMExperiments = {
   filters: {
     clientId: "natica",
@@ -654,7 +653,7 @@ export const experimentsFakeData = {
     sales: {
       total: dataMExperiments.sales.total / 2, // Estimativo basado en la duración del mes
       total_previous_period: dataMExperiments.sales.total_previous_period / 2, // Estimativo basado en la duración del mes
-      difference_str: "0%", // No hay diferencia ya que es el primer periodo de dos semanas
+      difference_str: "15%", // No hay diferencia ya que es el primer periodo de dos semanas
       difference: 0,
       avg: dataMExperiments.sales.avg / 2, // Estimativo basado en la duración del mes
       avg_sale_per_store: dataMExperiments.sales.avg_sale_per_store / 2, // Estimativo basado en la duración del mes
@@ -664,7 +663,7 @@ export const experimentsFakeData = {
     units: {
       total: dataMExperiments.units.total / 2, // Estimativo basado en la duración del mes
       total_previous_period: dataMExperiments.units.total_previous_period / 2, // Estimativo basado en la duración del mes
-      difference_str: "0%", // No hay diferencia ya que es el primer periodo de dos semanas
+      difference_str: "15%", // No hay diferencia ya que es el primer periodo de dos semanas
       difference: 0,
       avg_orders_per_customer:
         dataMExperiments.units.avg_orders_per_customer / 2, // Estimativo basado en la duración del mes

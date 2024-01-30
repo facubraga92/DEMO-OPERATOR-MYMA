@@ -30,6 +30,7 @@ const CustomSelect = ({
         fontSize: "1rem",
         justifyContent: "center",
         color: "#663B73",
+        
       }}
       value="default"
     >
@@ -112,7 +113,6 @@ const Filters = ({ machinesSelectorDisabled }) => {
           onChange={handleFilters}
           items={dropdownData?.clusters}
           label="Cliente"
-          width="5rem"
         />
       </Grid>
       <Grid
@@ -130,7 +130,6 @@ const Filters = ({ machinesSelectorDisabled }) => {
           onChange={handleFilters}
           items={dropdownData?.locations}
           label="Ubicación"
-          width="5rem"
         />
       </Grid>
       <Grid
@@ -148,7 +147,6 @@ const Filters = ({ machinesSelectorDisabled }) => {
           onChange={handleFilters}
           items={dropdownData?.categories}
           label="Tipo"
-          width="5rem"
         />
       </Grid>
       <Grid
@@ -166,7 +164,6 @@ const Filters = ({ machinesSelectorDisabled }) => {
           onChange={handleFilters}
           items={dropdownData?.machines}
           label="Máquinas"
-          width="auto"
           isMachines={true}
           disabled={machinesSelectorDisabled}
         />

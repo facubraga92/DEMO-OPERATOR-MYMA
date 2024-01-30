@@ -13,6 +13,7 @@ const SmallCard = ({
   title,
   description,
   variant,
+  header,
 }) => {
   return (
     <Grid container>
@@ -139,39 +140,131 @@ const SmallCard = ({
               </Typography>
             </Grid>
           </Grid>
+
           <Grid
             item
             sx={{
-              display: "flex",
+              // display: "flex",
               justifyContent: "center",
               alignItems: "center",
             }}
             xs={7 / 3}
           >
-            <Typography>{oldValue}</Typography>
+            <Grid
+              sx={{
+                height: 1 / 3,
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+              xs={12}
+            >
+              {header && (
+                <Typography
+                  sx={{
+                    fontSize: "0.8rem",
+                    fontWeight: "bold",
+                    color: "#5A5956",
+                  }}
+                >
+                  V-Antes
+                </Typography>
+              )}
+            </Grid>
+            <Grid
+              sx={{
+                height: 2 / 3,
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "start",
+              }}
+              xs={12}
+            >
+              <Typography>{oldValue}</Typography>
+            </Grid>
           </Grid>
           <Grid
+            item
             sx={{
-              display: "flex",
               justifyContent: "center",
               alignItems: "center",
             }}
-            item
             xs={7 / 3}
           >
-            <Typography>{newValue}</Typography>
+            <Grid
+              sx={{
+                height: 1 / 3,
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+              xs={12}
+            >
+              {header && (
+                <Typography
+                  sx={{
+                    fontSize: "0.8rem",
+                    fontWeight: "bold",
+                    color: "#5A5956",
+                  }}
+                >
+                  V-Actual
+                </Typography>
+              )}
+            </Grid>
+            <Grid
+              sx={{
+                height: 2 / 3,
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "start",
+              }}
+              xs={12}
+            >
+              <Typography>{newValue}</Typography>
+            </Grid>
           </Grid>
           <Grid
+            item
             sx={{
-              display: "flex",
               justifyContent: "center",
               alignItems: "center",
-              color: "#00A87C",
             }}
-            item
             xs={7 / 3}
           >
-            <Typography>{change}</Typography>
+            <Grid
+              sx={{
+                height: 1 / 3,
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+              xs={12}
+            >
+              {header && (
+                <Typography
+                  sx={{
+                    fontSize: "0.8rem",
+                    fontWeight: "bold",
+                    color: "#5A5956",
+                  }}
+                >
+                  Change %
+                </Typography>
+              )}
+            </Grid>
+            <Grid
+              sx={{
+                height: 2 / 3,
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "start",
+                color: "#00A87C",
+              }}
+              xs={12}
+            >
+              <Typography>{change}</Typography>
+            </Grid>
           </Grid>
         </Grid>
       )}

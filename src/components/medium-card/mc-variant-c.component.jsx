@@ -118,8 +118,8 @@ const MediumCardVariantC = ({
             >
               <ul style={{ paddingLeft: "1rem" }}>
                 {list.map((element, index) => (
-                  <li style={{ marginBlock: "-0.5rem" }} key={index}>
-                    <Typography variant="caption" fontWeight="bold">
+                  <li style={{ marginBlock: "-0.5rem", fontSize:"0.85rem" }} key={index}>
+                    <Typography variant="caption" fontSize="0.69rem" fontWeight="bold">
                       {element}
                     </Typography>
                   </li>

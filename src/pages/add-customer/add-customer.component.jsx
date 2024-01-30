@@ -16,7 +16,7 @@ import { useState, useEffect } from "react";
 import { createCustomer } from "../../services/customer.service";
 import { Link, useNavigate } from "react-router-dom";
 import ReactGA from "react-ga4";
-import TermsAndConditionsModal from "../../components/terms-and-conditions-modal/terms-and-conditions-modal.component";
+import TermsAndConditionsModal from "../../components/t&c-modal/t&c-modal.component";
 import axios from "axios";
 import { BASE_URL } from "../../services/utils";
 
