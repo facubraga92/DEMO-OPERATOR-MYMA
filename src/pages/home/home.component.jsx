@@ -1,7 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-// eslint-disable-next-line
-import { Box, Skeleton } from "@mui/material";
+import { Box } from "@mui/material";
 import { useEffect, useState } from "react";
 import Footer from "../../components/footer/footer.component";
 import Header from "../../components/header/header.component";
@@ -114,16 +113,10 @@ const HomeBody = () => {
             <Metrics slideIndex="1" metricsData={metricsData} />
           </div>
         </Slider>
-        <Section title="Posiciones" header />
-        {/* <Skeleton
-          animation="pulse"
-          sx={{ marginInline: "1rem", marginBlockEnd: "1rem" }}
-          variant="rectangular"
-          height={118}
-        /> */}
-        <TrafficLight {...trafficLightData1} client="LANZADERA" header />
-        <TrafficLight {...trafficLightData2} client="Howard Hotel" header />
-        <TrafficLight {...trafficLightData3} client="UP Universidad" header />
+        <Section title="POSICIONES" header="b" />
+        <TrafficLight {...trafficLightData1} client="Lanzadera" header />
+        <TrafficLight {...trafficLightData2} client="EDEM" header />
+        <TrafficLight {...trafficLightData3} client="Angels" header />
       </Box>
       <Footer activeIconID={0} />
     </>

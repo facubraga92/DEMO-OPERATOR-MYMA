@@ -2,6 +2,11 @@ import { Grid, Typography } from "@mui/material";
 import React from "react";
 
 const Section = ({ title, header }) => {
+  const variantTexts = {
+    a: ["V-Antes", "V-Actual", "Change %"],
+    b: ["Vol. Un.", "Fact.", "Rentab."],
+  };
+
   return (
     <Grid container>
       <Grid
@@ -45,11 +50,11 @@ const Section = ({ title, header }) => {
               <Typography
                 sx={{
                   fontSize: "0.8rem",
-                  fontWeight: "bold",
-                  color: "#5A5956",
+                  // fontWeight: "bold",
+                  color: "#a6a6a6",
                 }}
               >
-                V-Antes
+                {variantTexts[header][0]}
               </Typography>
             </Grid>
             <Grid
@@ -64,11 +69,11 @@ const Section = ({ title, header }) => {
               <Typography
                 sx={{
                   fontSize: "0.8rem",
-                  fontWeight: "bold",
-                  color: "#5A5956",
+                  // fontWeight: "bold",
+                  color: "#a6a6a6",
                 }}
               >
-                V-Actual
+                {variantTexts[header][1]}
               </Typography>
             </Grid>
             <Grid
@@ -83,11 +88,11 @@ const Section = ({ title, header }) => {
               <Typography
                 sx={{
                   fontSize: "0.8rem",
-                  fontWeight: "bold",
-                  color: "#5A5956",
+                  // fontWeight: "bold",
+                  color: "#a6a6a6",
                 }}
               >
-                Change %
+                {variantTexts[header][2]}
               </Typography>
             </Grid>
           </>
