@@ -12,10 +12,10 @@ import Footer from "../../components/footer/footer.component";
 import axios from "axios";
 import MediumCard from "../../components/medium-card/medium-card.component";
 import {
-  mediumCardDataNeutral,
+  // mediumCardDataNeutral,
   mediumCardDataPositive,
   smallCardDataNegative,
-  smallCardDataPositive,
+  // smallCardDataPositive,
 } from "../../utils/fakeData";
 import SmallCard from "../../components/small-card/small-card.component";
 
@@ -41,6 +41,11 @@ const MyMachine = () => {
     title: "Unidades",
     subtitle: "Marina de Empresas",
     headline: "Unidades",
+  };
+  const bigCardThirdSlider = {
+    title: "Beneficios",
+    subtitle: "Marina de Empresas",
+    headline: "Beneficios Brutos",
   };
 
   // END OF HARDCODED FAKE DATA //
@@ -96,6 +101,15 @@ const MyMachine = () => {
               logo="shopcart"
             />
           </div>
+          <div>
+            <BigCard
+              period={period}
+              setPeriod={setPeriod}
+              bigCardData={bigCardThirdSlider}
+              metricsData={metricsData}
+              logo="trendlinechart"
+            />
+          </div>
         </Slider>
 
         <Section title="KPIS Relevante" />
@@ -107,11 +121,11 @@ const MyMachine = () => {
             <Metrics slideIndex="1" metricsData={metricsData} />
           </div>
         </Slider>
-        <Section title="Experimentos" />
+        {/* <Section title="Experimentos" />
         <Slider {...sliderSettings}>
           <SmallCard header {...smallCardDataPositive} />
           <SmallCard header {...smallCardDataPositive} />
-        </Slider>
+        </Slider> */}
         <Section title="Alertas" />
         <Slider {...sliderSettings}>
           <SmallCard {...smallCardDataNegative} />
@@ -122,11 +136,11 @@ const MyMachine = () => {
           <MediumCard variant={"a"} data={mediumCardDataPositive} />
           <MediumCard variant={"a"} data={mediumCardDataPositive} />
         </Slider>
-        <Section title="Campañas" />
+        {/* <Section title="Campañas" />
         <Slider {...sliderSettings}>
           <MediumCard variant={"c"} data={mediumCardDataNeutral} />
           <MediumCard variant={"c"} data={mediumCardDataNeutral} />
-        </Slider>
+        </Slider> */}
       </Box>
       <Footer activeIconID={1} />
     </>

@@ -41,7 +41,7 @@ export const smallCardDataNegativeAlertsRotation = {
 
 export const mediumCardDataPositive = {
   type: "TOP 3",
-  title: "Experimentos en [15 días]",
+  title: "Ventas en [15 días]",
   list: [
     { "Sandwich Pastrami": "+39 Ventas" },
     { "Sandwich Mila": "+27 Ventas" },

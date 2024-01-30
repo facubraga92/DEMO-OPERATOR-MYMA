@@ -45,7 +45,12 @@ const MetricItem = ({ value, label, symbol }) => (
     </Grid>
     <Grid item sx={{ display: "flex", alignItems: "center" }} xs={12}>
       <Typography
-        sx={{ fontSize: "0.7rem", fontWeight: "bold", textAlign: "center" }}
+        sx={{
+          fontSize: "0.65rem",
+          fontWeight: "bold",
+          textAlign: "center",
+          lineHeight: "0.7rem",
+        }}
       >
         {label}
       </Typography>
