@@ -1,5 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
+// eslint-disable-next-line
 import { Box, Skeleton } from "@mui/material";
 import { useEffect, useState } from "react";
 import Footer from "../../components/footer/footer.component";
@@ -14,7 +15,14 @@ import Filters from "../../components/filters/filters.component";
 import Slider from "react-slick";
 import "../../../node_modules/slick-carousel/slick/slick.css";
 import "../../../node_modules/slick-carousel/slick/slick-theme.css";
-import { bigCardFirstSlider, bigCardSecondSlider } from "../../utils/fakeData";
+import {
+  bigCardFirstSlider,
+  bigCardSecondSlider,
+  trafficLightData1,
+  trafficLightData2,
+  trafficLightData3,
+} from "../../utils/fakeData";
+import TrafficLight from "../../components/traffic-light/traffic-light.component";
 
 const HomeBody = () => {
   const [runTutorial, setRunTutorial] = useState(false);
@@ -71,7 +79,7 @@ const HomeBody = () => {
       <Box
         sx={{
           height: "100%",
-          marginBottom: "76px",
+          marginBottom: "90px",
           overflowY: "scroll",
           overflowX: "hidden",
         }}
@@ -106,13 +114,16 @@ const HomeBody = () => {
             <Metrics slideIndex="1" metricsData={metricsData} />
           </div>
         </Slider>
-        <Section title="Información Relevante" />
-        <Skeleton
+        <Section title="Posiciones" header />
+        {/* <Skeleton
           animation="pulse"
           sx={{ marginInline: "1rem", marginBlockEnd: "1rem" }}
           variant="rectangular"
           height={118}
-        />
+        /> */}
+        <TrafficLight {...trafficLightData1} client="LANZADERA" header />
+        <TrafficLight {...trafficLightData2} client="Howard Hotel" header />
+        <TrafficLight {...trafficLightData3} client="UP Universidad" header />
       </Box>
       <Footer activeIconID={0} />
     </>

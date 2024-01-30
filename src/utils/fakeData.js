@@ -754,3 +754,22 @@ export const experimentsFakeData = {
     },
   },
 };
+
+
+
+//TRAFFIC LIGHT FAKE DATA
+export const trafficLightData1 = {
+  unitVolume: "red",
+  billing: "green",
+  profitability: "yellow",
+};
+export const trafficLightData2 = {
+  unitVolume: "green",
+  billing: "green",
+  profitability: "yellow",
+};
+export const trafficLightData3 = {
+  unitVolume: "red",
+  billing: "green",
+  profitability: "red",
+};
