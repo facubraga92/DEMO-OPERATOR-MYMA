@@ -162,8 +162,8 @@ const SmallCard = ({
               {header && (
                 <Typography
                   sx={{
-                    fontSize: "0.8rem",
-                    fontWeight: "bold",
+                    fontSize: "0.7rem",
+                    // fontWeight: "bold",
                     color: "#5A5956",
                   }}
                 >
@@ -203,8 +203,8 @@ const SmallCard = ({
               {header && (
                 <Typography
                   sx={{
-                    fontSize: "0.8rem",
-                    fontWeight: "bold",
+                    fontSize: "0.7rem",
+                    // fontWeight: "bold",
                     color: "#5A5956",
                   }}
                 >
@@ -244,8 +244,8 @@ const SmallCard = ({
               {header && (
                 <Typography
                   sx={{
-                    fontSize: "0.8rem",
-                    fontWeight: "bold",
+                    fontSize: "0.7rem",
+                    // fontWeight: "bold",
                     color: "#5A5956",
                   }}
                 >

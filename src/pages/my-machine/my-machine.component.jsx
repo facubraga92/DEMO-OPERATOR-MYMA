@@ -109,8 +109,8 @@ const MyMachine = () => {
         </Slider>
         <Section title="Experimentos" />
         <Slider {...sliderSettings}>
-          <SmallCard {...smallCardDataPositive} />
-          <SmallCard {...smallCardDataPositive} />
+          <SmallCard header {...smallCardDataPositive} />
+          <SmallCard header {...smallCardDataPositive} />
         </Slider>
         <Section title="Alertas" />
         <Slider {...sliderSettings}>
