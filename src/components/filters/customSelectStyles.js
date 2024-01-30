@@ -1,4 +1,5 @@
 export const customSelectStyles = (isMachines) => ({
+  minWidth: "85px",
   width: isMachines ? "6rem" : "5rem",
   height: "1.5rem",
   fontSize: "0.6rem",
@@ -6,6 +7,7 @@ export const customSelectStyles = (isMachines) => ({
   textAlign: "center",
   color: "#663B73",
   backgroundColor: "#fff",
+
   ".css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input":
     {
       padding: 0,
@@ -13,6 +15,9 @@ export const customSelectStyles = (isMachines) => ({
   ".MuiOutlinedInput-notchedOutline": { border: 0 },
   "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
     borderColor: "#663B73",
+  },
+  ".css-qiwgdb.MuiSelect-select": {
+    textOverflow: "clip",
   },
 });
 
