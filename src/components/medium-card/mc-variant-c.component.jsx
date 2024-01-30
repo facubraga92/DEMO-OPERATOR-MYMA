@@ -116,10 +116,10 @@ const MediumCardVariantC = ({
               item
               sx={{ display: "flex", alignItems: "center", height: 2 / 3 }}
             >
-              <ul style={{ paddingLeft: "1rem" }}>
+              <ul style={{ paddingLeft: "1rem", lineHeight: "0rem" }}>
                 {list.map((element, index) => (
-                  <li style={{ marginBlock: "-0.5rem" }} key={index}>
-                    <Typography variant="caption" fontWeight="bold">
+                  <li style={{}} key={index}>
+                    <Typography fontSize="0.65rem" fontWeight="bold">
                       {element}
                     </Typography>
                   </li>
