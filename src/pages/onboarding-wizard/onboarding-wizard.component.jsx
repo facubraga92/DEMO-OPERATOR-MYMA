@@ -56,7 +56,7 @@ const Footer = ({ steps }) => {
 
   const closeWizard = () => {
     setHasBeenState("true");
-    navigate("/auth");
+    navigate("/home");
   };
 
   const handleClick = () => {
@@ -96,7 +96,7 @@ const Footer = ({ steps }) => {
           label={"Omitir intro"}
           variant="outlined"
           handleClick={() => {
-            navigate("/auth");
+            navigate("/home");
           }}
         >
           <CloseSquare />
