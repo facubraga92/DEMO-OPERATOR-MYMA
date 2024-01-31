@@ -3,7 +3,8 @@ import React, { useEffect, useState } from "react";
 import { Grid, MenuItem, Select } from "@mui/material";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import customSelectStyles from "./customSelectStyles";
-import axios from "axios";
+// import axios from "axios";
+import { dropdownFakeData } from "../../utils/fakeData";
 
 const CustomSelect = ({
   name,
@@ -19,7 +20,7 @@ const CustomSelect = ({
     IconComponent={() => (
       <KeyboardArrowDownIcon sx={{ fontSize: "0.7rem", color: "#999" }} />
     )}
-    MenuProps={{ sx: { width: isMachines ? "auto" : "5rem" } }}
+    MenuProps={{ sx: { width: "auto" } }}
     sx={customSelectStyles(isMachines)}
     value={value}
     onChange={onChange}
@@ -60,11 +61,7 @@ const Filters = ({ machinesSelectorDisabled }) => {
 
   useEffect(() => {
     const fetch = async () => {
-      const { data } = await axios.get(
-        `http://localhost:3001/api/dd?clientId=natica`
-      );
-
-      setDropdownData(data);
+      setDropdownData(dropdownFakeData);
     };
 
     fetch();

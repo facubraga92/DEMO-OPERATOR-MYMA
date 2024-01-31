@@ -14,7 +14,6 @@ export const bigCardThirdSlider = {
   headline: "Beneficios Brutos",
 };
 
-
 //SMALL CARDS FAKE DATA
 export const smallCardDataPositive1 = {
   type: "Rotación",
@@ -53,7 +52,6 @@ export const smallCardDataNegativeAlertsRotation = {
   description: "Acción: Ajustar precios para no perder beneficios",
   variant: "negative",
 };
-
 
 //MEDIUM CARDS FAKE DATA
 export const mediumCardDataPositive = {
@@ -135,6 +133,7 @@ export const dropdownFakeData = {
   categories: ["TODAS", "default", "Snacks", "Cafés"],
   clusters: [
     "default",
+    "TODAS",
     "Lanzadera",
     "EDEM",
     "Angels",
