@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/DEMO-OPERATOR-MYMA/static/css/main.af06b0b0.css",
-    "main.js": "/DEMO-OPERATOR-MYMA/static/js/main.722e2d91.js",
+    "main.js": "/DEMO-OPERATOR-MYMA/static/js/main.b0531f87.js",
     "static/js/27.56e62150.chunk.js": "/DEMO-OPERATOR-MYMA/static/js/27.56e62150.chunk.js",
     "static/media/MuseoSansRounded-500.ttf": "/DEMO-OPERATOR-MYMA/static/media/MuseoSansRounded-500.fd0cb991c9d126c7c3ee.ttf",
     "static/media/MuseoSansRounded-900.ttf": "/DEMO-OPERATOR-MYMA/static/media/MuseoSansRounded-900.537054abc750bd048132.ttf",
@@ -50,10 +50,11 @@
     "static/media/arrow-green-small.svg": "/DEMO-OPERATOR-MYMA/static/media/arrow-green-small.d178cd1adbae62a9ed21f5536dcde4df.svg",
     "static/media/arrow-red-big.svg": "/DEMO-OPERATOR-MYMA/static/media/arrow-red-big.b9415d6b457ff4e265f8a91a13268b3f.svg",
     "static/media/arrow-green-big.svg": "/DEMO-OPERATOR-MYMA/static/media/arrow-green-big.3b1db07bc47e95b9ac51bfeb22b0e3e3.svg",
-    "static/media/arrow-red-small.svg": "/DEMO-OPERATOR-MYMA/static/media/arrow-red-small.0bb5fc184a4b92b2bbcd2ff058f56cb1.svg"
+    "static/media/arrow-red-small.svg": "/DEMO-OPERATOR-MYMA/static/media/arrow-red-small.0bb5fc184a4b92b2bbcd2ff058f56cb1.svg",
+    "static/media/traffic-light-dot.svg": "/DEMO-OPERATOR-MYMA/static/media/traffic-light-dot.eee6d2a7bc17868359dfcc288bbbce75.svg"
   },
   "entrypoints": [
     "static/css/main.af06b0b0.css",
-    "static/js/main.722e2d91.js"
+    "static/js/main.b0531f87.js"
   ]
 }
