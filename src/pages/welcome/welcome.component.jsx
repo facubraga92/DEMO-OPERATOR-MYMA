@@ -43,7 +43,7 @@ const Welcome = () => {
     if (hasBeenLS) navigate("/home");
   }, [hasBeenLS, navigate]);
 
-  const handleNext = () => navigate("/onboarding");
+  const handleNext = () => navigate("/home");
 
   return (
     <ContainerRounded bgColor="beige">
