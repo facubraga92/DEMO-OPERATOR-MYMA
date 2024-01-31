@@ -17,6 +17,7 @@ import "../../../node_modules/slick-carousel/slick/slick-theme.css";
 import {
   bigCardFirstSlider,
   bigCardSecondSlider,
+  bigCardThirdSlider,
   trafficLightData1,
   trafficLightData2,
   trafficLightData3,
@@ -101,6 +102,15 @@ const HomeBody = () => {
               bigCardData={bigCardSecondSlider}
               metricsData={metricsData}
               logo="shopcart"
+            />
+          </div>
+          <div>
+            <BigCard
+              period={period}
+              setPeriod={setPeriod}
+              bigCardData={bigCardThirdSlider}
+              metricsData={metricsData}
+              logo="trendlinechart"
             />
           </div>
         </Slider>

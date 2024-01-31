@@ -8,6 +8,11 @@ export const bigCardSecondSlider = {
   subtitle: "Marina de Empresas",
   headline: "Unidades",
 };
+export const bigCardThirdSlider = {
+  title: "Beneficios",
+  subtitle: "Marina de Empresas",
+  headline: "Beneficios Brutos",
+};
 // eslint-disable-next-line
 export const smallCardDataPositive = {
   type: "Rotación",
@@ -754,8 +759,6 @@ export const experimentsFakeData = {
     },
   },
 };
-
-
 
 //TRAFFIC LIGHT FAKE DATA
 export const trafficLightData1 = {
