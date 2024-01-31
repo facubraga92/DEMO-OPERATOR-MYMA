@@ -57,14 +57,19 @@ const Insights = () => {
             display: "flex",
             marginBlockStart: "2.5rem",
             marginBlockEnd: "1rem",
-            // alignItems: "center",
+            alignItems: "center",
             justifyContent: "center",
           }}
         >
           <Grid
             item
             xs={8}
-            sx={{ display: "flex", height: "60%", alignItems: "end" }}
+            sx={{
+              display: "flex",
+              height: "60%",
+              alignItems: "center",
+              marginTop: "0rem",
+            }}
           >
             <Typography
               variant="h5"
@@ -88,7 +93,7 @@ const Insights = () => {
             sx={{
               display: "flex",
               justifyContent: "center",
-              height: "35%",
+              height: "40%",
             }}
           >
             <InsightsOutlinedIcon
