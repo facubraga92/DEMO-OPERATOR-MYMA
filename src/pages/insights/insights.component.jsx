@@ -56,7 +56,7 @@ const Insights = () => {
           sx={{
             display: "flex",
             marginBlockStart: "2.5rem",
-            marginBlockEnd: "1rem",
+            // marginBlockEnd: "1rem",
             alignItems: "center",
             justifyContent: "center",
           }}
