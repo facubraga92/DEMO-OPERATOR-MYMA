@@ -190,9 +190,9 @@ const BigCard = ({
                     alignItems: "center",
                   }}
                 >
-                  {metricsData?.[metricsProperty]?.total.toLocaleString(
-                    "es-ES"
-                  )}
+                  {metricsData?.[metricsProperty]?.total
+                    .toFixed(1)
+                    .toLocaleString("es-ES")}
                 </Typography>
                 <Typography
                   sx={{
@@ -243,7 +243,13 @@ const BigCard = ({
                 alignItems: "end",
               }}
             >
-              {sprintProgress && <ProgressBar bgColor="#663B73" width="10rem" completed={sprintProgress} />}
+              {sprintProgress && (
+                <ProgressBar
+                  bgColor="#663B73"
+                  width="10rem"
+                  completed={sprintProgress}
+                />
+              )}
               {period && (
                 <ToggleButtonGroup
                   color="black"
