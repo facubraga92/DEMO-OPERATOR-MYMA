@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/DEMO-OPERATOR-MYMA/static/css/main.af06b0b0.css",
-    "main.js": "/DEMO-OPERATOR-MYMA/static/js/main.b0531f87.js",
+    "main.js": "/DEMO-OPERATOR-MYMA/static/js/main.c362623e.js",
     "static/js/27.56e62150.chunk.js": "/DEMO-OPERATOR-MYMA/static/js/27.56e62150.chunk.js",
     "static/media/MuseoSansRounded-500.ttf": "/DEMO-OPERATOR-MYMA/static/media/MuseoSansRounded-500.fd0cb991c9d126c7c3ee.ttf",
     "static/media/MuseoSansRounded-900.ttf": "/DEMO-OPERATOR-MYMA/static/media/MuseoSansRounded-900.537054abc750bd048132.ttf",
@@ -44,8 +44,8 @@
     "static/media/card-icon.svg": "/DEMO-OPERATOR-MYMA/static/media/card-icon.3dbf7c4d130bfec1dc2aca8bab520258.svg",
     "static/media/scan-qr.svg": "/DEMO-OPERATOR-MYMA/static/media/scan-qr.36ce83e40bde684ed31742602de03342.svg",
     "static/media/slick.woff": "/DEMO-OPERATOR-MYMA/static/media/slick.295183786cd8a1389865.woff",
-    "static/media/home-icon.svg": "/DEMO-OPERATOR-MYMA/static/media/home-icon.d11643baecc57f02c3a10aacc6cde5dc.svg",
-    "static/media/erlenmeyer-icon.svg": "/DEMO-OPERATOR-MYMA/static/media/erlenmeyer-icon.692da0bfe397aeb50c75cca64e604ccc.svg",
+    "static/media/home-icon.svg": "/DEMO-OPERATOR-MYMA/static/media/home-icon.6eabe847791f441fa5ebf1b8a1216641.svg",
+    "static/media/erlenmeyer-icon.svg": "/DEMO-OPERATOR-MYMA/static/media/erlenmeyer-icon.1217d89675783a793bf13f03745b7159.svg",
     "index.html": "/DEMO-OPERATOR-MYMA/index.html",
     "static/media/arrow-green-small.svg": "/DEMO-OPERATOR-MYMA/static/media/arrow-green-small.d178cd1adbae62a9ed21f5536dcde4df.svg",
     "static/media/arrow-red-big.svg": "/DEMO-OPERATOR-MYMA/static/media/arrow-red-big.b9415d6b457ff4e265f8a91a13268b3f.svg",
@@ -55,6 +55,6 @@
   },
   "entrypoints": [
     "static/css/main.af06b0b0.css",
-    "static/js/main.b0531f87.js"
+    "static/js/main.c362623e.js"
   ]
 }
