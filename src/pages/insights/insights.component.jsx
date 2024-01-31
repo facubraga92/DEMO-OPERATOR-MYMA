@@ -1,22 +1,24 @@
 import React from "react";
 import Header from "../../components/header/header.component";
-import { Box, Grid } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 import Filters from "../../components/filters/filters.component";
-import Slider from "react-slick";
 import "../../../node_modules/slick-carousel/slick/slick.css";
 import "../../../node_modules/slick-carousel/slick/slick-theme.css";
-import Section from "../../components/section/section.component";
 import Footer from "../../components/footer/footer.component";
-import {
-  mediumCardDataLoserOfMonth,
-  mediumCardDataNegative,
-  mediumCardDataPositive,
-  mediumCardDataTopSpendingPerTurns,
-  mediumCardDataWinnerOfMonth,
-} from "../../utils/fakeData";
-import MediumCard from "../../components/medium-card/medium-card.component";
+import InsightsOutlinedIcon from "@mui/icons-material/InsightsOutlined";
+// import Slider from "react-slick";
+// import Section from "../../components/section/section.component";
+// import {
+//   mediumCardDataLoserOfMonth,
+//   mediumCardDataNegative,
+//   mediumCardDataPositive,
+//   mediumCardDataTopSpendingPerTurns,
+//   mediumCardDataWinnerOfMonth,
+// } from "../../utils/fakeData";
+// import MediumCard from "../../components/medium-card/medium-card.component";
 
 const Insights = () => {
+  // eslint-disable-next-line
   const sliderSettings = {
     infinite: false,
     speed: 500,
@@ -40,15 +42,62 @@ const Insights = () => {
       />
       <Box
         sx={{
+          display: "flex",
           height: "100%",
           marginBottom: "76px",
           overflowY: "scroll",
           overflowX: "hidden",
+          backgroundColor: "#C4C4C4",
         }}
       >
         <Filters />
-        <Grid container sx={{ marginBlockStart: "2.5rem" }}>
-          <Grid item xs={12}>
+        <Grid
+          container
+          sx={{
+            display: "flex",
+            marginBlockStart: "2.5rem",
+            marginBlockEnd: "1rem",
+            // alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <Grid
+            item
+            xs={8}
+            sx={{ display: "flex", height: "60%", alignItems: "end" }}
+          >
+            <Typography
+              variant="h5"
+              sx={{ textAlign: "center", color: "#683d76" }}
+            >
+              <span>
+                Estamos analizando las interacciones de tus clientes con tus
+                máquinas y sus transacciones.
+              </span>
+              <br />
+              <br />
+              <span style={{ fontWeight: "bold" }}>
+                Próximamente, proporcionaremos los insights más valiosos sobre
+                tus consumidores.
+              </span>
+            </Typography>
+          </Grid>
+          <Grid
+            item
+            xs={8}
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              height: "35%",
+            }}
+          >
+            <InsightsOutlinedIcon
+              sx={{ fontSize: "12rem" }}
+              style={{ fill: "#fff" }}
+            />
+          </Grid>
+
+          {/* <Grid item xs={12}>
             <Section title="Gustan & Aprendizajes :)" />
           </Grid>
           <Grid sx={{ marginBlockStart: "0.5rem" }} item xs={12}>
@@ -76,7 +125,7 @@ const Insights = () => {
                 data={mediumCardDataTopSpendingPerTurns}
               />
             </Slider>
-          </Grid>
+          </Grid> */}
         </Grid>
       </Box>
       <Footer activeIconID={4} />
