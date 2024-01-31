@@ -12,8 +12,11 @@ import Footer from "../../components/footer/footer.component";
 import axios from "axios";
 import MediumCard from "../../components/medium-card/medium-card.component";
 import {
+  mediumCardDataLoserOfMonth,
+  mediumCardDataNegative,
   // mediumCardDataNeutral,
   mediumCardDataPositive,
+  mediumCardDataWinnerOfMonth,
   smallCardDataNegative,
   // smallCardDataPositive,
 } from "../../utils/fakeData";
@@ -134,7 +137,11 @@ const MyMachine = () => {
         <Section title="Insights" />
         <Slider {...sliderSettings}>
           <MediumCard variant={"a"} data={mediumCardDataPositive} />
-          <MediumCard variant={"a"} data={mediumCardDataPositive} />
+          <MediumCard variant={"d"} data={mediumCardDataWinnerOfMonth} />
+        </Slider>
+        <Slider {...sliderSettings}>
+          <MediumCard variant={"a"} data={mediumCardDataNegative} />
+          <MediumCard variant={"d"} data={mediumCardDataLoserOfMonth} />
         </Slider>
         {/* <Section title="Campañas" />
         <Slider {...sliderSettings}>
