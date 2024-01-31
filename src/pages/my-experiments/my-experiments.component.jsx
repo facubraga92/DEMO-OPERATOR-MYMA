@@ -12,6 +12,11 @@ import Footer from "../../components/footer/footer.component";
 import axios from "axios";
 // import MediumCard from "../../components/medium-card/medium-card.component";
 import ExperimentsCard from "../../components/experiments-card/experiments-card.component";
+import SmallCard from "../../components/small-card/small-card.component";
+import {
+  smallCardDataPositive1,
+  smallCardDataPositive2,
+} from "../../utils/fakeData";
 
 const MyExperiments = () => {
   const [metricsData, setMetricsData] = useState({});
@@ -27,17 +32,6 @@ const MyExperiments = () => {
   };
 
   // HARDCODED FAKE DATA //
-  // eslint-disable-next-line
-  const smallCardDataPositive = {
-    type: "Rotación",
-    productName: "Ensalada Caesar",
-    productSku: "T: LANZ IZ . EID:002",
-    oldValue: "2",
-    newValue: "10",
-    change: "+80%",
-    variant: "positive",
-  };
-
   const bigCardFirstSlider = {
     title: "Ingresos Incrementales",
     subtitle: "Lanzadera - Com Izq",
@@ -86,7 +80,7 @@ const MyExperiments = () => {
         <Slider {...sliderSettings}>
           <div>
             <BigCard
-              sprintProgress={70}
+              // sprintProgress={70}
               bigCardData={bigCardFirstSlider}
               metricsData={metricsData}
               logo="experiment"
@@ -96,7 +90,7 @@ const MyExperiments = () => {
           </div>
           <div>
             <BigCard
-              sprintProgress={70}
+              // sprintProgress={70}
               bigCardData={bigCardSecondSlider}
               metricsData={metricsData}
               logo="experiment"
@@ -106,8 +100,14 @@ const MyExperiments = () => {
           </div>
         </Slider>
 
-        <Section title="EXPERIMENTOS" />
-        <ExperimentsCard {...smallCardDataPositive} />
+        <Section title="IMPACTO EXPERIMENT." header="a" />
+        <SmallCard {...smallCardDataPositive1} />
+        <SmallCard {...smallCardDataPositive2} />
+        <Section title="EXPERIMENTOS A ACCIONAR" />
+        <Slider {...sliderSettings}>
+          <ExperimentsCard />
+          <ExperimentsCard />
+        </Slider>
         {/* <ExperimentsCard {...smallCardDataPositive} /> */}
         {/* <Skeleton
           variant="rectangular"

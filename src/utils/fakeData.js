@@ -13,17 +13,27 @@ export const bigCardThirdSlider = {
   subtitle: "Marina de Empresas",
   headline: "Beneficios Brutos",
 };
-// eslint-disable-next-line
-export const smallCardDataPositive = {
+
+
+//SMALL CARDS FAKE DATA
+export const smallCardDataPositive1 = {
   type: "Rotación",
-  productName: "Ensalada Caesar",
-  productSku: "T: LANZ IZ . EID:002",
+  productName: "Sandwich Atún",
+  productSku: "M:Lan 001 [04-04/19-04]",
   oldValue: "2",
   newValue: "10",
   change: "+80%",
   variant: "positive",
 };
-// eslint-disable-next-line
+export const smallCardDataPositive2 = {
+  type: "Rotación",
+  productName: "Ensalada Caesar",
+  productSku: "M:Lan 002 [15-04/30-04]",
+  oldValue: "6",
+  newValue: "16",
+  change: "+62%",
+  variant: "positive",
+};
 export const smallCardDataNegative = {
   type: "Costos",
   title: "[Mercadona] Aumento de Precio sku: Sandiwch Pollo",
@@ -44,6 +54,8 @@ export const smallCardDataNegativeAlertsRotation = {
   variant: "negative",
 };
 
+
+//MEDIUM CARDS FAKE DATA
 export const mediumCardDataPositive = {
   type: "TOP 3",
   title: "Ventas en [15 días]",
