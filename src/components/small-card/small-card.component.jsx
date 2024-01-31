@@ -151,6 +151,7 @@ const SmallCard = ({
             xs={7 / 3}
           >
             <Grid
+              item
               sx={{
                 height: 1 / 3,
                 display: "flex",
@@ -172,6 +173,7 @@ const SmallCard = ({
               )}
             </Grid>
             <Grid
+              item
               sx={{
                 height: 2 / 3,
                 display: "flex",
@@ -192,6 +194,7 @@ const SmallCard = ({
             xs={7 / 3}
           >
             <Grid
+              item
               sx={{
                 height: 1 / 3,
                 display: "flex",
@@ -213,6 +216,7 @@ const SmallCard = ({
               )}
             </Grid>
             <Grid
+              item
               sx={{
                 height: 2 / 3,
                 display: "flex",
@@ -233,6 +237,7 @@ const SmallCard = ({
             xs={7 / 3}
           >
             <Grid
+              item
               sx={{
                 height: 1 / 3,
                 display: "flex",
@@ -254,6 +259,7 @@ const SmallCard = ({
               )}
             </Grid>
             <Grid
+              item
               sx={{
                 height: 2 / 3,
                 display: "flex",
