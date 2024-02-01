@@ -265,16 +265,16 @@ const BigCard = ({
                   size="small"
                 >
                   <ToggleButton value="w" aria-label="week">
-                    W{" "}
+                    D
                   </ToggleButton>
                   <ToggleButton value="2w" aria-label="sprint">
-                    2W
+                    S
                   </ToggleButton>
                   <ToggleButton value="m" aria-label="month">
-                    M{" "}
+                    M
                   </ToggleButton>
                   <ToggleButton value="y" aria-label="year">
-                    Y{" "}
+                    A
                   </ToggleButton>
                 </ToggleButtonGroup>
               )}
