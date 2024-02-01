@@ -112,7 +112,7 @@ const MyMachine = () => {
           </div>
         </Slider>
 
-        <Section title="KPIS Relevante" />
+        <Section title="KPIS Relevantes" />
         <Slider {...sliderSettings}>
           <div>
             <Metrics slideIndex="0" metricsData={metricsData} />

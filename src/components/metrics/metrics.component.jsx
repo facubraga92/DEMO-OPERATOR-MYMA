@@ -103,7 +103,7 @@ const Metrics = ({ metricsData, slideIndex }) => (
         }
         label={
           slideIndex === "0"
-            ? "Ingresos x Cliente Recurrente"
+            ? "Ingresos Medios x Cliente"
             : " Clientes Recurrentes (>10 meses)"
         }
       />

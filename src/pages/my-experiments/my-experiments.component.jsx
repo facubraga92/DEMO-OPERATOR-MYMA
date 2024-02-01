@@ -97,20 +97,14 @@ const MyExperiments = () => {
           </div>
         </Slider>
 
-        <Section title="IMPACTO EXPERIMENT." header="a" />
+        <Section title="Impacto x Experimento" header="a" />
         <SmallCard {...smallCardDataPositive1} />
         <SmallCard {...smallCardDataPositive2} />
-        <Section title="EXPERIMENTOS A ACCIONAR" />
+        <Section title="Experimentos a Accionar" />
         <Slider {...sliderSettings}>
           <ExperimentsCard />
           <ExperimentsCard />
         </Slider>
-        {/* <ExperimentsCard {...smallCardDataPositive} /> */}
-        {/* <Skeleton
-          variant="rectangular"
-          height={150}
-          sx={{ marginInline: "1rem" }}
-        /> */}
       </Box>
       <Footer activeIconID={2} />
     </>
