@@ -39,7 +39,7 @@
   "scripts": {
     "start": "react-scripts start",
     "predeploy":"npm run build",
-    "deploy":"gh-pages -d build",
+    "deploy": "gh-pages -d build -r https://github.com/facubraga92/DEMO-OPERATOR-MYMA.git",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
