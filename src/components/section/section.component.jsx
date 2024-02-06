@@ -5,6 +5,7 @@ const Section = ({ title, header }) => {
   const variantTexts = {
     a: ["V-Antes", "V-Actual", "Change %"],
     b: ["Vol. Un.", "Fact.", "Rentab."],
+    c: ["P-1", "P", "Var(%)"],
   };
 
   return (
@@ -31,8 +32,18 @@ const Section = ({ title, header }) => {
           item
           xs={header ? 5 : 12}
         >
-          <Typography sx={{ fontSize: "0.8rem", fontWeight: "bold" }}>
-            {title}
+          <Typography
+            sx={{
+              fontSize: header === "c" ? "0.7rem" : "0.8rem",
+            }}
+          >
+            <span style={{ fontWeight: "bold" }}>{title}</span>
+            {header === "c" && (
+              <>
+                &nbsp;
+                <span>(Un)</span>
+              </>
+            )}
           </Typography>
         </Grid>
 

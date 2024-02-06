@@ -97,7 +97,7 @@ const MyExperiments = () => {
           </div>
         </Slider>
 
-        <Section title="Impacto x Experimento" header="a" />
+        <Section title="Impacto Experimentos" header="c" />
         <SmallCard {...smallCardDataPositive1} />
         <SmallCard {...smallCardDataPositive2} />
         <Section title="Experimentos a Accionar" />
