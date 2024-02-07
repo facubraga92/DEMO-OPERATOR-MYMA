@@ -46,32 +46,58 @@ const SmallCard = ({
             <ArrowSmallRed />
           </Grid>
           <Grid item sx={{ display: "flex", flexDirection: "column" }} xs={11}>
-            <Grid item sx={{ display: "flex", alignItems: "center" }} xs={12}>
-              <Typography sx={{ color: "#FF0707", fontWeight: "bold" }}>
+            <Grid
+              item
+              sx={{ display: "flex", alignItems: "center", maxHeight: 1 / 5 }}
+              xs={12}
+            >
+              <Typography
+                sx={{
+                  color: "#FF0707",
+                  fontWeight: "bold",
+                  display: "flex",
+                }}
+              >
                 {type}
               </Typography>
             </Grid>
-            <Grid item xs={12} sx={{ display: "flex", alignItems: "center" }}>
+            <Grid
+              item
+              xs={12}
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                maxHeight: 2 / 5,
+                overflow: "hidden",
+              }}
+            >
               <Typography
                 sx={{
                   fontSize: "0.85rem",
                   fontWeight: "bold",
-                  overflow: "hidden",
-                  textOverflow: "ellipsis",
-                  whiteSpace: "nowrap",
+                  display: "flex",
+                  lineHeight: "0.85rem",
                 }}
               >
                 {title}
               </Typography>
             </Grid>
-            <Grid item sx={{ display: "flex", alignItems: "center" }} xs={12}>
+            <Grid
+              item
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                height: 2 / 5,
+                overflow: "hidden",
+              }}
+              xs={12}
+            >
               <Typography
                 sx={{
                   fontSize: "0.65rem",
                   fontWeight: "bold",
                   overflow: "hidden",
-                  textOverflow: "ellipsis",
-                  whiteSpace: "nowrap",
+                  lineHeight: "0.65rem",
                 }}
               >
                 {description}
