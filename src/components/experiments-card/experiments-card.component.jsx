@@ -175,7 +175,13 @@ const ExperimentsCard = ({
                 <ToggleButton value="problem">
                   <Typography
                     variant="caption"
-                    sx={{ color: "#EA572E", fontWeight: "bold" }}
+                    sx={{
+                      color:
+                        experimentMiddleSection === "problem"
+                          ? "#EA572E"
+                          : "#bfbfbf",
+                      fontWeight: "bold",
+                    }}
                   >
                     PROBLEMA
                   </Typography>
@@ -183,7 +189,13 @@ const ExperimentsCard = ({
                 <ToggleButton value="action">
                   <Typography
                     variant="caption"
-                    sx={{ color: "#663B73", fontWeight: "bold" }}
+                    sx={{
+                      color:
+                        experimentMiddleSection === "action"
+                          ? "#EA572E"
+                          : "#bfbfbf",
+                      fontWeight: "bold",
+                    }}
                   >
                     ACCIÓN
                   </Typography>
