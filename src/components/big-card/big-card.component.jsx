@@ -191,7 +191,7 @@ const BigCard = ({
                   }}
                 >
                   {metricsData?.[metricsProperty]?.total
-                    .toFixed(1)
+                    .toFixed(0)
                     .toLocaleString("es-ES")}
                 </Typography>
                 <Typography
