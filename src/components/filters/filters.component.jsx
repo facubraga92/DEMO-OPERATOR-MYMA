@@ -94,7 +94,7 @@ const Filters = ({ machinesSelectorDisabled }) => {
         alignContent: "center",
         paddingInline: "1rem",
         height: "2.5rem",
-        position: "fixed",
+        // position: "fixed",
         zIndex: "1",
       }}
     >

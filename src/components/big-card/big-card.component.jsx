@@ -66,7 +66,7 @@ const BigCard = ({
         xs={12}
         sx={{
           marginInline: "1rem",
-          marginBlockStart: "2.5rem",
+          marginBlockStart: "0.5rem",
           marginBlockEnd: "0.5rem",
           display: "flex",
           flexDirection: "column",
