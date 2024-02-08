@@ -120,7 +120,7 @@ const HomeBody = () => {
             <Metrics slideIndex="1" metricsData={metricsData} />
           </div>
         </Slider>
-        <Section title="Posiciones" header="b" />
+        <Section title="Rendimientos" header="b" />
         <TrafficLight {...trafficLightData1} client="Lanzadera" header />
         <TrafficLight {...trafficLightData2} client="EDEM" header />
         <TrafficLight {...trafficLightData3} client="Angels" header />
