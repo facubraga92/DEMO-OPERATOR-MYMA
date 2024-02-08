@@ -40,69 +40,75 @@ const Insights = () => {
         }
         avatar="FB"
       />
+
       <Box
         sx={{
-          display: "flex",
           height: "100%",
-          marginBottom: "76px",
+          marginBottom: "90px",
           overflowY: "scroll",
           overflowX: "hidden",
           backgroundColor: "#C4C4C4",
         }}
       >
         <Filters />
-        <Grid
-          container
+        <Box
           sx={{
             display: "flex",
-            marginBlockStart: "2.5rem",
-            // marginBlockEnd: "1rem",
-            alignItems: "center",
-            justifyContent: "center",
+            height: "100%",
           }}
         >
           <Grid
-            item
-            xs={8}
+            container
             sx={{
               display: "flex",
-              height: "60%",
+              marginBlockStart: "2.5rem",
+              // marginBlockEnd: "1rem",
               alignItems: "center",
-              marginTop: "0rem",
-            }}
-          >
-            <Typography
-              variant="h5"
-              sx={{ textAlign: "center", color: "#683d76" }}
-            >
-              <span>
-                Estamos analizando las interacciones de tus clientes con tus
-                máquinas y sus transacciones.
-              </span>
-              <br />
-              <br />
-              <span style={{ fontWeight: "bold" }}>
-                Próximamente, proporcionaremos los insights más valiosos sobre
-                tus consumidores.
-              </span>
-            </Typography>
-          </Grid>
-          <Grid
-            item
-            xs={8}
-            sx={{
-              display: "flex",
               justifyContent: "center",
-              height: "40%",
             }}
           >
-            <InsightsOutlinedIcon
-              sx={{ fontSize: "12rem" }}
-              style={{ fill: "#fff" }}
-            />
-          </Grid>
+            <Grid
+              item
+              xs={8}
+              sx={{
+                display: "flex",
+                height: "60%",
+                alignItems: "center",
+                marginTop: "0rem",
+              }}
+            >
+              <Typography
+                variant="h5"
+                sx={{ textAlign: "center", color: "#683d76" }}
+              >
+                <span>
+                  Estamos analizando las interacciones de tus clientes con tus
+                  máquinas y sus transacciones.
+                </span>
+                <br />
+                <br />
+                <span style={{ fontWeight: "bold" }}>
+                  Próximamente, proporcionaremos los insights más valiosos sobre
+                  tus consumidores.
+                </span>
+              </Typography>
+            </Grid>
+            <Grid
+              item
+              xs={8}
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                height: "40%",
+              }}
+            >
+              <InsightsOutlinedIcon
+                sx={{ fontSize: "12rem" }}
+                style={{ fill: "#fff" }}
+              />
+            </Grid>
 
-          {/* <Grid item xs={12}>
+            {/* <Grid item xs={12}>
             <Section title="Gustan & Aprendizajes :)" />
           </Grid>
           <Grid sx={{ marginBlockStart: "0.5rem" }} item xs={12}>
@@ -131,7 +137,8 @@ const Insights = () => {
               />
             </Slider>
           </Grid> */}
-        </Grid>
+          </Grid>
+        </Box>
       </Box>
       <Footer activeIconID={4} />
     </>
