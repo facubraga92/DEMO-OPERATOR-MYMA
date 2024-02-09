@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/DEMO-OPERATOR-MYMA/static/css/main.af06b0b0.css",
-    "main.js": "/DEMO-OPERATOR-MYMA/static/js/main.a31990ab.js",
+    "main.js": "/DEMO-OPERATOR-MYMA/static/js/main.b4d23a5f.js",
     "static/js/27.56e62150.chunk.js": "/DEMO-OPERATOR-MYMA/static/js/27.56e62150.chunk.js",
     "static/media/MuseoSansRounded-500.ttf": "/DEMO-OPERATOR-MYMA/static/media/MuseoSansRounded-500.fd0cb991c9d126c7c3ee.ttf",
     "static/media/MuseoSansRounded-900.ttf": "/DEMO-OPERATOR-MYMA/static/media/MuseoSansRounded-900.537054abc750bd048132.ttf",
@@ -55,6 +55,6 @@
   },
   "entrypoints": [
     "static/css/main.af06b0b0.css",
-    "static/js/main.a31990ab.js"
+    "static/js/main.b4d23a5f.js"
   ]
 }
