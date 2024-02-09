@@ -78,7 +78,7 @@ const MiddleSectionAction = () => {
               fontWeight: "bold",
             }}
           >
-            Ubicacion: Maquina Lanz Com 01 , Espacio 1026
+            Ubicacion: Maquina Lanz Com 01 , Espacio 1026.
           </Typography>
         </Grid>
       </Grid>
@@ -106,7 +106,7 @@ const MiddleSectionAction = () => {
               marginInlineStart: "0.2rem",
             }}
           >
-            Inicio 08/02 Fin 15/02
+            Inicio 08/02 Fin 15/02.
           </Typography>
         </Grid>
       </Grid>
