@@ -103,14 +103,14 @@ export const mediumCardDataExperiment = {
 export const mediumCardDataWinnerOfMonth = {
   type: "GANADOR DEL MES",
   content:
-    "Este [mes] el Producto mas vendido es [Ensalada Pasta] con  [60 Ventas]",
+    "Este mes el Producto mas vendido es Sandwich Pastrami con 60 Ventas.",
   variant: "positive",
   arrow: false,
 };
 export const mediumCardDataLoserOfMonth = {
   type: "PERDEDOR DEL MES",
   content:
-    "Este [mes] el Producto menos vendido es [Ensalada Pasta] con solo [3 Ventas]",
+    "Este mes el Producto menos vendido es Ensalada MEX con solo 3 Ventas.",
   variant: "negative",
   arrow: false,
 };

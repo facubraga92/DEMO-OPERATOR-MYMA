@@ -36,7 +36,7 @@ const MiddleSectionProblem = () => {
               marginInlineStart: "0.2rem",
             }}
           >
-            Baja de Rotacion de SKU 002
+            Baja de Rotacion de SKU 002.
           </Typography>
         </Grid>
       </Grid>
@@ -95,7 +95,7 @@ const MiddleSectionProblem = () => {
               marginInlineStart: "0.2rem",
             }}
           >
-            Impacto Negativo: -20 € perdidos x dia. -100 € perdidos x semana
+            Impacto Negativo: -20 € perdidos x dia. -100 € perdidos x semana.
           </Typography>
         </Grid>
       </Grid>
