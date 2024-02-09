@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="26" height="26" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
   <path class="st0" d="M41,315.8c-5.8,0-11.4-1.6-16.4-4.6L6,300v172.5h67.5V297.1l-11,10.2   C56.7,312.8,49,315.8,41,315.8z" id="XMLID_3390_" />
   <polygon class="st0" id="XMLID_183_" points="143.2,232.4 143.2,472.6 210.8,472.6 210.8,225.5 176.1,201.8  " />
   <path class="st0" d="M290.2,273.1c-6.4,0-12.6-1.9-17.9-5.5l-13.3-9.1v214h67.5V251.8L311,265.4   C305.2,270.4,297.8,273.1,290.2,273.1z" id="XMLID_182_" />
