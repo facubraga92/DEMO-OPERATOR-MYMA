@@ -115,30 +115,32 @@ const MediumCardVariantF = ({ type, list, variant, position, date }) => {
                     backgroundColor: index % 2 === 0 ? "#f2f2f2" : "white",
                   }}
                 >
-                  <Typography sx={{ fontSize: "0.8rem" }}>
-                    {Object.entries(element).map(([key, value]) => (
-                      <Grid item xs={12} sx={{ display: "flex" }} key={key}>
-                        <Grid
-                          item
-                          xs={9}
-                          sx={{ fontWeight: "bold", display: "flex" }}
-                        >
+                  {Object.entries(element).map(([key, value]) => (
+                    <Grid item xs={12} sx={{ display: "flex" }} key={key}>
+                      <Grid
+                        item
+                        xs={9}
+                        sx={{ fontWeight: "bold", display: "flex" }}
+                      >
+                        <Typography sx={{ fontSize: "0.8rem" }}>
                           {key}
-                        </Grid>
-                        <Grid
-                          item
-                          xs={3}
-                          sx={{
-                            fontWeight: "bold",
-                            display: "flex",
-                            justifyContent: "center",
-                          }}
-                        >
-                          {value}
-                        </Grid>
+                        </Typography>
                       </Grid>
-                    ))}
-                  </Typography>
+                      <Grid
+                        item
+                        xs={3}
+                        sx={{
+                          fontWeight: "bold",
+                          display: "flex",
+                          justifyContent: "center",
+                        }}
+                      >
+                        <Typography sx={{ fontSize: "0.8rem" }}>
+                          {value}
+                        </Typography>
+                      </Grid>
+                    </Grid>
+                  ))}
                 </li>
               ))}
             </ol>

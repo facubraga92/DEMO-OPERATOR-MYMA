@@ -107,30 +107,32 @@ const MediumCardVariantA = ({ type, title, list, icon, variant, arrow }) => {
                     }}
                     key={index}
                   >
-                    <Typography sx={{ fontSize: "0.9rem" }}>
-                      {Object.entries(element).map(([key, value]) => (
-                        <Grid item xs={12} key={key} sx={{ display: "flex" }}>
-                          <Grid
-                            item
-                            xs={9}
-                            sx={{ fontWeight: "bold", display: "flex" }}
-                          >
+                    {Object.entries(element).map(([key, value]) => (
+                      <Grid item xs={12} key={key} sx={{ display: "flex" }}>
+                        <Grid
+                          item
+                          xs={9}
+                          sx={{ fontWeight: "bold", display: "flex" }}
+                        >
+                          <Typography sx={{ fontSize: "0.9rem" }}>
                             {key}
-                          </Grid>
-                          <Grid
-                            item
-                            xs={3}
-                            sx={{
-                              fontWeight: "bold",
-                              display: "flex",
-                              justifyContent: "center",
-                            }}
-                          >
-                            {value}
-                          </Grid>
+                          </Typography>
                         </Grid>
-                      ))}
-                    </Typography>
+                        <Grid
+                          item
+                          xs={3}
+                          sx={{
+                            fontWeight: "bold",
+                            display: "flex",
+                            justifyContent: "center",
+                          }}
+                        >
+                          <Typography sx={{ fontSize: "0.9rem" }}>
+                            {value}
+                          </Typography>
+                        </Grid>
+                      </Grid>
+                    ))}
                   </li>
                 ))}
               </ol>

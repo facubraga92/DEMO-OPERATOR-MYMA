@@ -10,7 +10,7 @@ const HeaderContainer = styled(AppBar)((props) => {
   };
 });
 
-const Header = ({ title, setRunTutorial, runTutorial, avatar }) => {
+const Header = ({ title, setRunTutorial, runTutorial, avatar, longTitle }) => {
   // eslint-disable-next-line
   const openWhatsApp = () => {
     var number = `${process.env.REACT_APP_WA_NUMBER}`;
@@ -21,10 +21,9 @@ const Header = ({ title, setRunTutorial, runTutorial, avatar }) => {
   return (
     <HeaderContainer position="static">
       <Grid container>
-        <Grid item xs={12} sx={{}}></Grid>
         <Grid item xs={12} sx={{ display: "flex", position: "relative" }}>
           <Typography
-            variant="h5"
+            variant={longTitle ? "h6" : "h5"}
             textAlign={"center"}
             color="#FFF"
             sx={{ width: "100%", fontWeight: 800 }}

@@ -45,6 +45,7 @@ const Insights = () => {
           </div>
         }
         avatar="FB"
+        longTitle
       />
       <Box
         sx={{
