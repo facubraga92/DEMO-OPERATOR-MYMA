@@ -42,14 +42,14 @@ export const smallCardDataNegative = {
 };
 export const smallCardDataNegativeAlertsCosts = {
   type: "Costos",
-  title: "Aumento [SKU X] en [X centimos]",
+  title: "Aumento Ensalada Caesar en 25 centimos",
   description: "Acción: Ajustar precios para no perder beneficios",
   variant: "negative",
 };
 export const smallCardDataNegativeAlertsRotation = {
   type: "Rotación",
-  title: "Aumento [SKU X] en [X centimos]",
-  description: "Acción: Ajustar precios para no perder beneficios",
+  title: "Disminución en Ventas Ensalada MEX",
+  description: "Acción: Revisar estrategias de marketing y promoción para impulsar las ventas.",
   variant: "negative",
 };
 
@@ -147,7 +147,7 @@ export const mediumCardDataYesterdaySpendedItems1 = {
 };
 export const mediumCardDataYesterdaySpendedItems2 = {
   type: "TOP Consumo Turnos",
-  position: "EDEN",
+  position: "EDEM",
   date: "09/02",
   list: [
     { "Ensalada de Atún": "4" },

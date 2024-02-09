@@ -58,7 +58,7 @@ const Insights = () => {
         <Filters />
         <Grid container sx={{ marginBlockStart: "0.5rem" }}>
           <Grid item xs={12}>
-            <Section title="Ventas Ayer. Compras Mañana. Listas p/ Comer" />
+            <Section title="LISTOS P/ COMER: &nbsp; Ventas → Nuevas Compras" />
           </Grid>
           <Grid sx={{ marginBlockStart: "0.5rem" }} item xs={12}>
             <Slider {...sliderSettings}>
