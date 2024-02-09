@@ -26,22 +26,22 @@ const MiddleSectionAction = () => {
         </Grid>
         <Grid
           sx={{
-            overflow: "hidden",
             display: "flex",
             alignItems: "center",
+            marginInlineStart: "0.2rem",
           }}
           item
           xs={11}
         >
           <Typography
             sx={{
-              fontSize: "0.79rem",
-              lineHeight: "1",
+              fontSize: "0.7rem",
+              lineHeight: "0.7rem",
               fontWeight: "bold",
             }}
           >
-            Retirar [SKU A Problema:] en #Unidades: [6],
-            <br /> Agregar [SKU B Experimento:] #Unidades [6].
+            Retirar SKU A Problema: en Unidades: 6,
+            <br /> Agregar SKU B Experimento: Unidades 6.
           </Typography>
         </Grid>
       </Grid>
@@ -58,25 +58,27 @@ const MiddleSectionAction = () => {
           {/* <CalendarAlertIcon
                     style={{ height: "1.2rem", width: "1.2rem" }}
                   /> */}
-          <VendingMachineIcon style={{ width: "1.3rem", fill: "#000" , height:"1.3rem" }} />
+          <VendingMachineIcon
+            style={{ width: "1.3rem", fill: "#000", height: "1.3rem" }}
+          />
         </Grid>
         <Grid
           sx={{
-            overflow: "hidden",
             display: "flex",
             alignItems: "center",
+            marginInlineStart: "0.2rem",
           }}
           item
           xs={11}
         >
           <Typography
             sx={{
-              fontSize: "0.79rem",
-              lineHeight: "1",
+              fontSize: "0.7rem",
+              lineHeight: "0.7rem",
               fontWeight: "bold",
             }}
           >
-            Ubicacion: Maquina [Lanz Com 01]. , Espacio [1026]{" "}
+            Ubicacion: Maquina Lanz Com 01 , Espacio 1026
           </Typography>
         </Grid>
       </Grid>
@@ -98,12 +100,13 @@ const MiddleSectionAction = () => {
         <Grid sx={{ display: "flex", alignItems: "center" }} item xs={11}>
           <Typography
             sx={{
-              fontSize: "0.79rem",
-              lineHeight: "1",
+              fontSize: "0.7rem",
+              lineHeight: "0.7rem",
               fontWeight: "bold",
+              marginInlineStart: "0.2rem",
             }}
           >
-            Inicio [Fecha] fin [fecha]
+            Inicio 08/02 Fin 15/02
           </Typography>
         </Grid>
       </Grid>

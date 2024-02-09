@@ -22,7 +22,6 @@ const MiddleSectionProblem = () => {
         </Grid>
         <Grid
           sx={{
-            overflow: "hidden",
             display: "flex",
             alignItems: "center",
           }}
@@ -31,12 +30,13 @@ const MiddleSectionProblem = () => {
         >
           <Typography
             sx={{
-              fontSize: "0.79rem",
-              lineHeight: "1",
+              fontSize: "0.7rem",
+              lineHeight: "0.7rem",
               fontWeight: "bold",
+              marginInlineStart: "0.2rem",
             }}
           >
-            Baja de Rotacion de [SKU 002]
+            Baja de Rotacion de SKU 002
           </Typography>
         </Grid>
       </Grid>
@@ -55,7 +55,6 @@ const MiddleSectionProblem = () => {
         </Grid>
         <Grid
           sx={{
-            overflow: "hidden",
             display: "flex",
             alignItems: "center",
           }}
@@ -64,12 +63,13 @@ const MiddleSectionProblem = () => {
         >
           <Typography
             sx={{
-              fontSize: "0.79rem",
-              lineHeight: "1",
+              fontSize: "0.7rem",
+              lineHeight: "0.7rem",
               fontWeight: "bold",
+              marginInlineStart: "0.2rem",
             }}
           >
-            Ventas: [2] Unidades durante [15] dias.
+            Ventas: 2 Unidades durante 15 dias.
           </Typography>
         </Grid>
       </Grid>
@@ -89,12 +89,13 @@ const MiddleSectionProblem = () => {
         <Grid sx={{ display: "flex", alignItems: "center" }} item xs={11}>
           <Typography
             sx={{
-              fontSize: "0.79rem",
-              lineHeight: "1",
+              fontSize: "0.7rem",
+              lineHeight: "0.7rem",
               fontWeight: "bold",
+              marginInlineStart: "0.2rem",
             }}
           >
-            Impacto Negativo: [-20 €] perdidos x dia. [-100 €] perdidos x semana
+            Impacto Negativo: -20 € perdidos x dia. -100 € perdidos x semana
           </Typography>
         </Grid>
       </Grid>

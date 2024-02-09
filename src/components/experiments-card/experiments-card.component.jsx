@@ -95,7 +95,7 @@ const ExperimentsCard = ({
           xs={12}
         >
           <Grid item sx={{ display: "flex", height: "100%" }}>
-            <Grid
+            {/* <Grid
               item
               sx={{
                 display: "flex",
@@ -103,8 +103,8 @@ const ExperimentsCard = ({
                 justifyContent: "center",
               }}
               xs={1}
-            ></Grid>
-            <Grid item sx={{ display: "flex", alignItems: "center" }} xs={11}>
+            ></Grid> */}
+            <Grid item sx={{ display: "flex", alignItems: "center" }} xs={12}>
               <Typography variant="body2" sx={{ fontWeight: "bold" }}>
                 EXPERIMENTO
               </Typography>
@@ -115,7 +115,6 @@ const ExperimentsCard = ({
               >
                 [0001]
               </Typography>
-              &nbsp;
               <Typography
                 sx={{
                   border: "1px solid #EA572E",
@@ -123,6 +122,7 @@ const ExperimentsCard = ({
                   borderRadius: "5px",
                   padding: "2px 7px",
                   fontSize: "0.5rem",
+                  marginInlineStart: "0.5rem",
                 }}
               >
                 Rotación
@@ -145,7 +145,7 @@ const ExperimentsCard = ({
         >
           {/* Middle section selector button  */}
           <Grid item sx={{ height: 1 / 4, display: "flex" }}>
-            <Grid
+            {/* <Grid
               item
               sx={{
                 display: "flex",
@@ -153,15 +153,16 @@ const ExperimentsCard = ({
                 justifyContent: "center",
               }}
               xs={1}
-            ></Grid>
+            ></Grid> */}
             <Grid
               sx={{
                 overflow: "hidden",
                 display: "flex",
                 alignItems: "center",
+                justifyContent: "center",
               }}
               item
-              xs={11}
+              xs={12}
             >
               <ToggleButtonGroup
                 // color="primary"
@@ -170,9 +171,13 @@ const ExperimentsCard = ({
                 onChange={handleMiddleSection}
                 aria-label="Platform"
                 size="small"
-                sx={{ height: "1.2rem" }}
+                fullWidth
+                sx={{
+                  height: "1.2rem",
+                  "& .Mui-selected": { backgroundColor: "#e6e6e6" },
+                }}
               >
-                <ToggleButton value="problem">
+                <ToggleButton sx={{ borderRadius: "5px" }} value="problem">
                   <Typography
                     variant="caption"
                     sx={{
@@ -186,7 +191,7 @@ const ExperimentsCard = ({
                     PROBLEMA
                   </Typography>
                 </ToggleButton>
-                <ToggleButton value="action">
+                <ToggleButton sx={{ borderRadius: "5px" }} value="action">
                   <Typography
                     variant="caption"
                     sx={{
