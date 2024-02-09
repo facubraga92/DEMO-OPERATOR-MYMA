@@ -56,23 +56,23 @@ export const smallCardDataNegativeAlertsRotation = {
 //MEDIUM CARDS FAKE DATA
 export const mediumCardDataPositive = {
   type: "TOP 3",
-  title: "Ventas en [15 días]",
+  title: "Más Vendidos en 15 días",
   list: [
-    { "Sandwich Pastrami": "+39 Ventas" },
-    { "Sandwich Mila": "+27 Ventas" },
-    { "Ensaladilla Tusa": "+26 Ventas" },
+    { "Sandwich Pastrami": "39 Ventas" },
+    { "Sandwich Mila": "27 Ventas" },
+    { "Ensaladilla Tusa": "26 Ventas" },
   ],
   value: "",
   icon: "experiment",
   variant: "positive",
 };
 export const mediumCardDataNegative = {
-  type: "TOP 3",
-  title: "Menos Vendidos en [15 días]",
+  type: "BOTTOM 3",
+  title: "Menos Vendidos en 15 días",
   list: [
-    { "Ensalada MEX": "6 Ventas" },
+    { "Ensalada MEX": "3 Ventas" },
     { "Carne / Papas": "4 Ventas" },
-    { "Ensalada Pasta": "3 Ventas" },
+    { "Ensalada Pasta": "6 Ventas" },
   ],
   value: "",
   icon: "vending",
@@ -129,8 +129,8 @@ export const mediumCardDataTopSpendingPerTurns = {
 
 export const mediumCardDataYesterdaySpendedItems1 = {
   type: "TOP Consumo Turnos",
-  position:"LANZADERA",
-  date:"09/02",
+  position: "LANZADERA",
+  date: "09/02",
   list: [
     { "Ensalada Caesar": "12" },
     { "Ensalada de Atún": "10" },
@@ -147,8 +147,8 @@ export const mediumCardDataYesterdaySpendedItems1 = {
 };
 export const mediumCardDataYesterdaySpendedItems2 = {
   type: "TOP Consumo Turnos",
-  position:"EDEN",
-  date:"09/02",
+  position: "EDEN",
+  date: "09/02",
   list: [
     { "Ensalada de Atún": "4" },
     { "Ensalada Caesar": "6" },

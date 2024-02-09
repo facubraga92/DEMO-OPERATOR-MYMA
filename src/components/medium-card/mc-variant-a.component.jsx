@@ -92,14 +92,43 @@ const MediumCardVariantA = ({ type, title, list, icon, variant, arrow }) => {
           </Grid>
           <Grid item sx={{ display: "flex", alignItems: "center" }} xs={11}>
             {list && Array.isArray(list) && list.length > 0 && (
-              <ol style={{ paddingLeft: "1rem" }}>
+              <ol
+                style={{
+                  paddingLeft: "0rem",
+                  fontSize: "0.9rem",
+                  width: "100%",
+                  listStyleType: "none",
+                }}
+              >
                 {list.map((element, index) => (
-                  <li key={index}>
-                    <Typography sx={{ fontWeight: "bold" }}>
+                  <li
+                    style={{
+                      backgroundColor: index % 2 === 0 ? "#f2f2f2" : "white",
+                    }}
+                    key={index}
+                  >
+                    <Typography sx={{ fontSize: "0.9rem" }}>
                       {Object.entries(element).map(([key, value]) => (
-                        <span key={key}>
-                          {key}: {value}
-                        </span>
+                        <Grid item xs={12} key={key} sx={{ display: "flex" }}>
+                          <Grid
+                            item
+                            xs={9}
+                            sx={{ fontWeight: "bold", display: "flex" }}
+                          >
+                            {key}
+                          </Grid>
+                          <Grid
+                            item
+                            xs={3}
+                            sx={{
+                              fontWeight: "bold",
+                              display: "flex",
+                              justifyContent: "center",
+                            }}
+                          >
+                            {value}
+                          </Grid>
+                        </Grid>
                       ))}
                     </Typography>
                   </li>
