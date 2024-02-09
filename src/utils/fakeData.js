@@ -127,6 +127,43 @@ export const mediumCardDataTopSpendingPerTurns = {
   arrow: false,
 };
 
+export const mediumCardDataYesterdaySpendedItems1 = {
+  type: "TOP Consumo Turnos",
+  position:"LANZADERA",
+  date:"09/02",
+  list: [
+    { "Ensalada Caesar": "12" },
+    { "Ensalada de Atún": "10" },
+    { "Lasagna Bolognesa": "8" },
+    { "Lasagna de Espinacas": "9" },
+    { "Pollo al Curry c/Arroz": "4" },
+    { "Ensaladilla Rusa": "15" },
+    { "Crema de Esparragos": "12" },
+    { "Crema de Calabaza": "9" },
+    { "Paella Valenciana": "7" },
+  ],
+  variant: "neutral",
+  arrow: false,
+};
+export const mediumCardDataYesterdaySpendedItems2 = {
+  type: "TOP Consumo Turnos",
+  position:"EDEN",
+  date:"09/02",
+  list: [
+    { "Ensalada de Atún": "4" },
+    { "Ensalada Caesar": "6" },
+    { "Lasagna Bolognesa": "3" },
+    { "Pollo al Curry c/Arroz": "4" },
+    { "Lasagna de Espinacas": "15" },
+    { "Crema de Esparragos": "7" },
+    { "Crema de Calabaza": "5" },
+    { "Paella Valenciana": "7" },
+    { "Ensaladilla Rusa": "11" },
+  ],
+  variant: "neutral",
+  arrow: false,
+};
+
 //DROPDOWN FAKE DATA
 
 export const dropdownFakeData = {

@@ -4,6 +4,7 @@ import MediumCardVariantB from "./mc-variant-b.component";
 import MediumCardVariantC from "./mc-variant-c.component";
 import MediumCardVariantD from "./mc-variant-d.component";
 import MediumCardVariantE from "./mc-variant-e.component";
+import MediumCardVariantF from "./mc-variant-f.component";
 
 const variantComponents = {
   a: MediumCardVariantA,
@@ -11,6 +12,7 @@ const variantComponents = {
   c: MediumCardVariantC,
   d: MediumCardVariantD,
   e: MediumCardVariantE,
+  f: MediumCardVariantF,
 };
 
 const MediumCard = ({ variant, data }) => {

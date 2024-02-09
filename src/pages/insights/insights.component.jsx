@@ -7,8 +7,11 @@ import "../../../node_modules/slick-carousel/slick/slick-theme.css";
 import Footer from "../../components/footer/footer.component";
 import Section from "../../components/section/section.component";
 import Slider from "react-slick";
-import SmallCard from "../../components/small-card/small-card.component";
-import { smallCardDataNegativeAlertsCosts } from "../../utils/fakeData";
+import {
+  mediumCardDataYesterdaySpendedItems1,
+  mediumCardDataYesterdaySpendedItems2,
+} from "../../utils/fakeData";
+import MediumCard from "../../components/medium-card/medium-card.component";
 // import Slider from "react-slick";
 // import Section from "../../components/section/section.component";
 // import {
@@ -59,16 +62,22 @@ const Insights = () => {
           <Grid sx={{ marginBlockStart: "0.5rem" }} item xs={12}>
             <Slider {...sliderSettings}>
               <div>
-                <SmallCard {...smallCardDataNegativeAlertsCosts} />
+                <MediumCard
+                  variant="f"
+                  data={mediumCardDataYesterdaySpendedItems1}
+                />
               </div>
               <div>
-                <SmallCard {...smallCardDataNegativeAlertsCosts} />
+                <MediumCard
+                  variant="f"
+                  data={mediumCardDataYesterdaySpendedItems2}
+                />
               </div>
             </Slider>
           </Grid>
         </Grid>
       </Box>
-      <Footer activeIconID={3} />
+      <Footer activeIconID={4} />
     </>
   );
 };
