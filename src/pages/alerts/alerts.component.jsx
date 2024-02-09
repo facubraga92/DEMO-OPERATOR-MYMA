@@ -54,7 +54,7 @@ const Alerts = () => {
         }}
       >
         <Filters />
-        <Grid container sx={{ marginBlockStart: "3rem" }}>
+        <Grid container sx={{ marginBlockStart: "0.5rem" }}>
           <Grid item xs={12}>
             <Section title="Costos de los Productos" />
           </Grid>
